@@ -7,7 +7,6 @@ https://rubyinstaller.org/downloads/
 
 Installer dans C:/Ruby/
 
-
 ## INSTALLER LE DEV KIT RUBY
 
 https://github.com/oneclick/rubyinstaller/wiki/Development-Kit#installation-instructions
@@ -43,45 +42,49 @@ source cache successfully updated
 
 ## FINAL STEPS
 ### 1. Installer bundler
-gem install bundler
+> gem install bundler
 
 ### 2. Installer redcarpet
-gem install redcarpet --platform=ruby --verbose
+> gem install redcarpet --platform=ruby --verbose
 
 ### 3. Installer hologram
-gem install hologram
+> gem install hologram
 
 ### 4. Dans le dossier du styleguide, lancer la commande qui init hologram :
-hologram init
+> hologram init
 
 ### 5. Installer Yaml
-npm install js-yaml
+> npm install js-yaml
 
 ### 6. Installer le plugin gulp-hologram
-npm install gulp-hologram --save-dev
-https://www.npmjs.com/package/gulp-hologram
+> npm install gulp-hologram --save-dev
 
-### 7. Lancer gulp
-(watch est dans la task gulp) 
+>> voir : https://www.npmjs.com/package/gulp-hologram
 
-### 8. Aller sur http://localhost:3000
+### 7. Lancer gulp (watch est dans la task gulp) 
+> gulp
 
-### 9. Penser à configurer Wamp en mettant comme chemin NOMDUREPO/styleguide
+
+### 8. Aller sur 
+> http://localhost:3000
+
+### 9. Penser à configurer Wamp en mettant comme chemin 
+> NOMDUREPO/styleguide
 
 
 ## CLEAN THE STYLEGUIDE
-gulp clear
+> gulp clear
 
 ## BUILD THE STYLEGUIDE
-hologram -c hologram_config.yml
+> hologram -c hologram_config.yml
 
 
 
 ## THEME HOLOGRAM DE BASE
 https://github.com/wearecube/hologram-github-theme
-Lancer
-npm install --save-dev hologram-github-theme
 
+Lancer :
+> npm install --save-dev hologram-github-theme
 
 
 ## SOURCES
