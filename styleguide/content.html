@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Pages &ndash; Styleguide Infobam</title>
+    <title>Content &ndash; Styleguide Infobam</title>
 
     <!-- Styleguide CSS -->
     <link rel="stylesheet" href="styles/hgt-syntax.css">
@@ -27,19 +27,29 @@
           </a>
 
           
-          <a href="pages.html"
+          <a href="text.html"
+             class="hgt-pagehead-nav-item ">
+            Text
+          </a>
+          
+          <a href="content.html"
              class="hgt-pagehead-nav-item selected">
-            Pages
+            Content
           </a>
           
-          <a href="components.html"
+          <a href="buttons.html"
              class="hgt-pagehead-nav-item ">
-            Components
+            Buttons
           </a>
           
-          <a href="basics.html"
+          <a href="navigation.html"
              class="hgt-pagehead-nav-item ">
-            Basics
+            Navigation
+          </a>
+          
+          <a href="forms.html"
+             class="hgt-pagehead-nav-item ">
+            Forms
           </a>
           
           <a href="index.html"
@@ -60,6 +70,10 @@
             <nav class="hgt-menu">
               
                 
+                  <a href="#02_General" class="hgt-menu-item">General</a>
+                
+              
+                
                   <a href="#blocks" class="hgt-menu-item">Blocks</a>
                 
               
@@ -68,11 +82,15 @@
                 
               
                 
-                  <a href="#general" class="hgt-menu-item">General</a>
+                  <a href="#identification-banner" class="hgt-menu-item">Identification banner</a>
                 
               
                 
                   <a href="#store" class="hgt-menu-item">Store</a>
+                
+              
+                
+                  <a href="#tables" class="hgt-menu-item">Tables</a>
                 
               
             </nav>
@@ -81,6 +99,8 @@
 
         <div class="hgt-column three-fourths">
           <div class="hgt-content">
+<h1 id="02_General" class="styleguide">General</h1>
+<p class="styleguide">When creating a new cms page, be sure to set the <code class="styleguide">1 column</code> template in order to have the correct layout applied. This is valid for all the CMS templates.</p><p class="styleguide">The heading will be displayed at the top of the page. Most of the time, we recommend to match the page title and the heading.</p>
 <h1 id="blocks" class="styleguide">Blocks</h1>
 <p class="styleguide">This allow to organize CMS page content in blocks with image and text. On large screens the blocks are listed tow by two.</p><div class="codeExample">
   <div class="exampleOutput">
@@ -369,8 +389,174 @@
   </div>
 </div>
 
-<h1 id="general" class="styleguide">General</h1>
-<p class="styleguide">When creating a new cms page, be sure to set the <code class="styleguide">1 column</code> template in order to have the correct layout applied. This is valid for all the CMS templates.</p><p class="styleguide">The heading will be displayed at the top of the page. Most of the time, we recommend to match the page title and the heading.</p>
+<h1 id="identification-banner" class="styleguide">Identification banner</h1>
+<p class="styleguide">These banners are used to identify the vehicle or the client depending on the context.</p><p class="styleguide">Each action button must have an icon that indicate the context because on small screens only the icon is displayed. There may be several action buttons or just one.
+These buttons will be <code class="styleguide">&lt;a&gt;</code> links or <code class="styleguide">&lt;button&gt;</code> for a js action, depending of the desired behavior.</p>
+<h2>Vehicle</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="identification-banner identification-banner--vehicle">
+    <div class="identification-banner__inner container">
+        <div class="identification-banner__icon">
+            <svg class="icon" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-vehicle'); ?>"></use>
+            </svg>
+        </div>
+        <div class="identification-banner__infos">
+            <span class="identification-banner__title">Peugeot 308</span>
+            <span class="identification-banner__details">308 II 1.6 BlueHDi S&amp;S 120 cv</span>
+        </div>
+        <div class="identification-banner__actions">
+            <a class="btn btn--secondary" href="#">
+                <span class="text">Changer de véhicule</span>
+                <svg class="icon icon--edit" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-edit'); ?>"></use>
+                </svg>
+            </a>
+            <a class="btn btn--primary" href="#">
+                <span class="text">Mes véhicules</span>
+                <svg class="icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-vehicle'); ?>"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner identification-banner--vehicle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__inner container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__icon"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-vehicle'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__infos"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"identification-banner__title"</span><span class="nt">&gt;</span>Peugeot 308<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"identification-banner__details"</span><span class="nt">&gt;</span>308 II 1.6 BlueHDi S<span class="ni">&amp;amp;</span>S 120 cv<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__actions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--secondary"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>Changer de véhicule<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon icon--edit"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-edit'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+                <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>Mes véhicules<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-vehicle'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+                <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">In the case the vehicule isn&#39;t identified, the banner invite the client to do so:</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="identification-banner identification-banner--alert">
+    <div class="identification-banner__inner container">
+        <div class="identification-banner__icon">
+            <svg class="icon" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-alert'); ?>"></use>
+            </svg>
+        </div>
+        <div class="identification-banner__infos">
+            <span class="identification-banner__message">Affine ta recherche en identifiant ton véhicule :</span>
+        </div>
+        <div class="identification-banner__actions">
+            <button class="btn btn--primary" type="button">
+                <span class="text">J’identifie mon véhicule</span>
+                <svg class="icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-vehicle'); ?>"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner identification-banner--alert"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__inner container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__icon"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-alert'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__infos"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"identification-banner__message"</span><span class="nt">&gt;</span>Affine ta recherche en identifiant ton véhicule :<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__actions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>J’identifie mon véhicule<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-vehicle'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+                <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Client</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="identification-banner identification-banner--account">
+    <div class="identification-banner__inner container">
+        <div class="identification-banner__icon">
+            <svg class="icon" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-account'); ?>"></use>
+            </svg>
+        </div>
+        <div class="identification-banner__infos">
+            <span class="identification-banner__title">Jacques Durand</span>
+        </div>
+        <div class="identification-banner__actions">
+            <a class="btn btn--secondary" href="#">
+                <span class="text">Me déconnecter</span>
+                <svg class="icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-logout'); ?>"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner identification-banner--account"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__inner container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__icon"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-account'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__infos"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"identification-banner__title"</span><span class="nt">&gt;</span>Jacques Durand<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__actions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--secondary"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>Me déconnecter<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-logout'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+                <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
 <h1 id="store" class="styleguide">Store</h1>
 <p class="styleguide">This page model can be used to display informations about a store.</p><p class="styleguide">The map is optional and it will require a Google Maps Embed API key to work. You can learn more about Google Maps Embed API here : https://developers.google.com/maps/documentation/embed/guide
 This tool can be useful to generate the map: https://developers.google.com/maps/documentation/embed/start</p><div class="codeExample">
@@ -515,6 +701,77 @@ This tool can be useful to generate the map: https://developers.google.com/maps/
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="tables" class="styleguide">Tables</h1>
+<p class="styleguide">To add basic styling to a table, add the base class <code class="styleguide">table</code> to any <code class="styleguide">&lt;table&gt;</code>. It may seem super redundant, but it&#39;s to avoid conflicts with other use of the <code class="styleguide">&lt;table&gt;</code> markup.</p><p class="styleguide">You can add <code class="styleguide">table--responsive</code> class to <code class="styleguide">table</code>s and it will make them mobile friendly by enabling horizontal scrolling. Only applies &lt;768px. Everything above that will display normally. This isn&#39;t included with the <code class="styleguide">table</code> class because it will depend on the table size. Also other possibilities exist to make <code class="styleguide">&lt;table&gt;</code> mobile friendly, this one is just the more generic.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <table class="table table--responsive">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First</th>
+            <th>Second</th>
+            <th>Third</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+    </tbody>
+</table>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table--responsive"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>#<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>First<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Second<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Third<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>First<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Second<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Third<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>First<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Second<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Third<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>First<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Second<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Third<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></pre>
     </div>
   </div>
 </div>

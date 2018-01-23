@@ -431,11 +431,10 @@ svg[class^="icon"] {
 
 /*doc
 ---
-title: Typography
-name: typography
-category: Basics
+title: Headings
+name: 01_Headings
+category: Text
 ---
-## Headings
 
 ```html_example
 <h1>h1. Heading</h1>
@@ -446,7 +445,13 @@ category: Basics
 <h6>h6. Heading</h6>
 ```
 
-## Texts
+*/
+/*doc
+---
+title: Texts
+name: Texts
+category: Text
+---
 
 ```html_example
 <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
@@ -454,7 +459,13 @@ category: Basics
 <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta <em>gravida at eget metus</em>. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 ```
 
-## Lists
+*/
+/*doc
+---
+title: Lists
+name: Lists
+category: Text
+---
 
 A list of items, unordered or ordered
 
@@ -483,7 +494,19 @@ A list of items, unordered or ordered
 </ol>
 ```
 */
-/* line 85, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/*doc
+---
+title: Links
+name: Links
+category: Text
+---
+```html_example
+<a>Exemple de lien</a>
+```
+
+
+*/
+/* line 114, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 1rem 0;
   font-family: "Roboto", sans-serif;
@@ -493,54 +516,54 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
 }
 
-/* line 94, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 123, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 h1, h2, h3 {
   margin-top: 1.5rem;
 }
 
-/* line 98, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 127, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 h1 {
   font-size: 4rem;
 }
 
-/* line 102, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 131, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 h2 {
   font-size: 3.2rem;
 }
 
-/* line 106, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 135, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 h3 {
   font-size: 2rem;
 }
 
-/* line 110, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 139, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 h4 {
   font-size: 1.8rem;
 }
 
-/* line 114, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 143, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 h5 {
   font-size: 1.6rem;
 }
 
-/* line 118, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 147, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 h6 {
   font-size: 1.5rem;
 }
 
-/* line 126, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 155, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 p {
   margin: 0 0 1rem;
 }
 
-/* line 135, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 164, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 ul,
 ol {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
-/* line 140, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 169, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 ul ul,
 ul ol,
 ol ul,
@@ -548,12 +571,13 @@ ol ol {
   margin-bottom: 0;
 }
 
-/* line 150, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
+/* line 179, theme-magento2-frontend-infobam/web/css/quarks/_typography.scss */
 a {
   text-decoration: underline;
   text-decoration-skip: ink;
   color: #323232;
   transition: color .1s ease-in-out;
+  cursor: pointer;
 }
 
 /* line 124, theme-magento2-frontend-infobam/web/css/utilities/_utilities.scss */
@@ -572,7 +596,7 @@ a:focus {
 ---
 title: Forms
 name: forms
-category: Basics
+category: Forms
 ---
 Individual form controls automatically receive some global styling. All textual `<input>`, `<textarea>`, and `<select>` elements with `.form-control` are set to `width: 100%;` by default. Wrap labels and controls in .form-group for optimum spacing.
 
@@ -1378,7 +1402,7 @@ div.mage-error {
 ---
 title: Tables
 name: tables
-category: Basics
+category: Content
 ---
 To add basic styling to a table, add the base class `table` to any `<table>`. It may seem super redundant, but it's to avoid conflicts with other use of the `<table>` markup.
 
@@ -1510,8 +1534,8 @@ th {
 /*doc
 ---
 title: Buttons
-name: buttons
-category: Basics
+name: 03_Buttons
+category: Buttons
 ---
 The `btn` classes are designed to be used with the `<button>` element. However, you can also use these classes on `<a>` or `<input>` elements (though some browsers may apply a slightly different rendering).
 
@@ -1787,8 +1811,8 @@ fieldset[disabled] .action-secondary {
 /*doc
 ---
 title: Tooltip
-name: tooltip
-category: Basics
+name: Tooltip
+category: Buttons
 ---
 The tooltip provide extra informations when it's hovered or clicked. It can be use in a `<label>`, for example, to give more information about the field.
 
@@ -1871,7 +1895,7 @@ The hidden text must be placed in the `aria-label` attribute.
 ---
 title: Messages
 name: messages
-category: Basics
+category: Forms
 ---
 Message is used to display information to the user. This message can be an information, a success message, a warning, or a error.
 
@@ -2776,7 +2800,7 @@ Message is used to display information to the user. This message can be an infor
 ---
 title: Breadcrumb
 name: breadcrumb
-category: Components
+category: Navigation
 ---
 Breadcrumb use microdata, useful for search engine optimisation. The position store in a `meta` tag need to be updated.
 
@@ -2914,7 +2938,7 @@ Breadcrumb use microdata, useful for search engine optimisation. The position st
 ---
 title: Pagination
 name: pagination
-category: Components
+category: Navigation
 ---
 Pagniation use microdata to help search engine to recognize it as a navigation element.
 
@@ -5255,7 +5279,7 @@ Pagniation use microdata to help search engine to recognize it as a navigation e
 ---
 title: Identification banner
 name: identification-banner
-category: Components
+category: Content
 ---
 These banners are used to identify the vehicle or the client depending on the context.
 
@@ -12085,7 +12109,7 @@ a.checkout-progress__title:focus {
 ---
 title: Blocks
 name: blocks
-category: Pages
+category: Content
 ---
 This allow to organize CMS page content in blocks with image and text. On large screens the blocks are listed tow by two.
 
@@ -12219,7 +12243,7 @@ This allow to organize CMS page content in blocks with image and text. On large 
 ---
 title: Chapters
 name: chapters
-category: Pages
+category: Content
 ---
 This page may include anchors or links to other pages. However, this is optional.
 
@@ -12531,7 +12555,7 @@ The content can be organized into an accordion if the HTMl markup is respected a
 ---
 title: Store
 name: store
-category: Pages
+category: Content
 ---
 This page model can be used to display informations about a store.
 
@@ -14689,8 +14713,8 @@ a.messenger-link {
 /*doc
 ---
 title: General
-name: general
-category: Pages
+name: 02_General
+category: Content
 ---
 When creating a new cms page, be sure to set the `1 column` template in order to have the correct layout applied. This is valid for all the CMS templates.
 

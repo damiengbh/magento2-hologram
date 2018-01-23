@@ -8,11 +8,10 @@
 
 /*doc
 ---
-title: Typography
-name: typography
-category: Basics
+title: Headings
+name: 01_Headings
+category: Text
 ---
-## Headings
 
 ```html_example
 <h1>h1. Heading</h1>
@@ -23,7 +22,15 @@ category: Basics
 <h6>h6. Heading</h6>
 ```
 
-## Texts
+*/
+
+
+/*doc
+---
+title: Texts
+name: Texts
+category: Text
+---
 
 ```html_example
 <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
@@ -31,7 +38,15 @@ category: Basics
 <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta <em>gravida at eget metus</em>. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 ```
 
-## Lists
+*/
+
+
+/*doc
+---
+title: Lists
+name: Lists
+category: Text
+---
 
 A list of items, unordered or ordered
 
@@ -59,6 +74,20 @@ A list of items, unordered or ordered
     <li>Aenean sit amet erat nunc</li>
 </ol>
 ```
+*/
+
+
+/*doc
+---
+title: Links
+name: Links
+category: Text
+---
+```html_example
+<a>Exemple de lien</a>
+```
+
+
 */
 
 
@@ -154,7 +183,7 @@ a {
     }
     color: $link-color;
     transition: color .1s ease-in-out;
-
+    cursor:pointer;
     @include hover() {
         color: $link-hover-color;
     }
