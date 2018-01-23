@@ -1,0 +1,125 @@
+//
+// Product preview
+// --------------------------------------------------------------------------
+
+.product-preview {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+
+// Image
+// --------------------------------------------------------------------------
+
+.product-preview__image {
+    width: 130px;
+
+    a {
+        display: block;
+    }
+}
+
+
+// Details
+// --------------------------------------------------------------------------
+
+.product-preview__details {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    padding: 0 0 0 10px;
+
+    @media (min-width: $screen-md-min) {
+        padding: 0 0 0 32px;
+    }
+}
+
+
+// Brand
+// --------------------------------------------------------------------------
+
+.product-preview__brand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 65px;
+
+    @media (min-width: $screen-md-min) {
+        max-width: 450px;
+    }
+}
+
+
+// Name
+// --------------------------------------------------------------------------
+
+.product-preview__name {
+    display: block;
+    margin: 0 0 3px;
+    font-size: $font-size-large;
+    letter-spacing: .5px;
+
+    a {
+        text-decoration: none;
+    }
+
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 12px;
+        font-size: $font-size-large + .4rem;
+        line-height: 1.3;
+    }
+}
+
+
+// Reference
+// --------------------------------------------------------------------------
+
+.product-preview__ref {
+    display: block;
+    margin: 0 0 8px;
+    font-size: $font-size-base + .1rem;
+    letter-spacing: .5px;
+    color: $color-gray;
+
+    @media (min-width: $screen-md-min) {
+        margin: 0;
+        font-size: $font-size-large;
+        font-weight: 600;
+        line-height: 1;
+        color: $text-color;
+    }
+}
+
+
+// Price
+// --------------------------------------------------------------------------
+
+.product-preview__price {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: $font-size-base + .1rem;
+    letter-spacing: .5px;
+    line-height: 1.3;
+
+    strong {
+        font-size: $font-size-large + .2rem;
+        letter-spacing: .5px;
+    }
+
+    em {
+        font-style: normal;
+        color: $color-gray;
+    }
+
+    @media (min-width: $screen-md-min) {
+        margin: -16px 0 0;
+        text-align: right;
+
+        strong {
+            font-size: $font-size-large + .4rem;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+//
+// Catalog head
+// --------------------------------------------------------------------------
+
+.catalog-head {
+    margin: 0 0 24px;
+    padding: 16px 0 0;
+    border-top: 1px solid $color-gray-light;
+
+    @media (max-width: $screen-xs-max) {
+        margin-left: (-$gutter-sm / 2);
+        margin-right: (-$gutter-sm / 2);
+        padding-left: ($gutter-sm / 2);
+        padding-right: ($gutter-sm / 2);
+    }
+
+    @media (min-width: $screen-sm-min) {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+
+// Infos
+// --------------------------------------------------------------------------
+.catalog-search .catalog-head__infos {
+    display: none;
+}
+
+.catalog-head__infos {
+    display: block;
+    margin: 0 0 12px;
+    font-size: $font-size-large + .1rem;
+    font-weight: bold;
+    letter-spacing: .5px;
+
+    em {
+        font-style: normal;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        em {
+            display: inline-block;
+            margin: 0 6px 0 0;
+            font-size: $font-size-large + 1.6rem;
+            font-weight: 600;
+            line-height: 1;
+            vertical-align: -.15em;
+        }
+
+        span {
+            @include sr-only();
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        flex: 1 1 auto;
+        margin: 0;
+    }
+}
+
+
+// Filter
+// --------------------------------------------------------------------------
+
+.catalog-head__filter {
+    .form-control-select {
+        display: inline-block;
+
+        &::after {
+            top: 11px;
+            width: 13px;
+            height: 13px;
+            border-color: #fff;
+            border-width: 0 3px 3px 0;
+        }
+    }
+
+    label {
+        cursor: default;
+    }
+
+    .form-control {
+        width: auto;
+        padding-right: 50px;
+        font-size: $font-size-base + .1rem;
+        color: #fff;
+        background-color: $color-gray;
+        border: 0;
+        border-radius: 5px;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        text-align: center;
+
+        label {
+            @include sr-only();
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        display: flex;
+        align-items: center;
+
+        label {
+            display: flex;
+            align-items: center;
+            margin: 0 16px 0 0;
+            font-weight: bold;
+        }
+
+        .icon {
+            width: 22px;
+            height: 22px;
+            margin: 0 8px 0 0;
+            fill: $color-primary;
+        }
+    }
+}

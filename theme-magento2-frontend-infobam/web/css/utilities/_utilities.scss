@@ -1,0 +1,247 @@
+ //
+// Utilities
+// --------------------------------------------------------------------------
+
+
+// Mixins
+// --------------------------------------------------------------------------
+
+@mixin container($max-size: $screen-xl-min, $padding: ($gutter-md / 2)) {
+    max-width: $max-size;
+    margin-left: auto;
+    margin-right: auto;
+
+    @if ($padding != 0) {
+        padding-left: $gutter-sm / 2;
+        padding-right: $gutter-sm / 2;
+
+        @media (min-width: $screen-md-min) {
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+    }
+}
+
+// Clear floats
+// See: http://www.cssmojo.com/latest_new_clearfix_so_far/
+@mixin clearfix() {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// CSS image replacement
+@mixin text-hide() {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+// Reset text styles (except font-size or word-wrap)
+@mixin reset-text() {
+    font-family: $font-family-base;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    line-height: $line-height-base;
+    text-align: left; // Fallback for where `start` is not supported
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+}
+
+// Only display content to screen readers
+// See: http://a11yproject.com/posts/how-to-hide-content
+@mixin sr-only() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0,0,0,0);
+    clip-path: inset(50%);
+    border: 0;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links
+// See: http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+@mixin sr-only-focusable() {
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        white-space: normal;
+        clip: auto;
+        clip-path: none;
+    }
+}
+
+// Border radius
+@mixin border-top-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+    border-bottom-left-radius: $radius;
+    border-top-left-radius: $radius;
+}
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+@mixin list-unstyled() {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+// Define focus for all and hover from medium screens
+// Waiting for Media Queries Level 4: http://drafts.csswg.org/mediaqueries/#hover
+@mixin hover() {
+    &:focus {
+        @content;
+    }
+
+    @media (min-width: $screen-md-min) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    & > .embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+// Animations
+// --------------------------------------------------------------------------
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.collapse {
+    html:not(.no-js) & {
+        display: none;
+
+        &.in {
+            display: block;
+        }
+    }
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition-property: height, visibility;
+    transition-duration: .35s;
+    transition-timing-function: ease;
+}
+
+
+// Loader
+// --------------------------------------------------------------------------
+
+.loading-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255,255,255,.6);
+    z-index: 10;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        margin: -25px 0 0 -25px;
+        border: 4px solid rgba(0,0,0,.2);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+        z-index: 1;
+    }
+
+    .loader {
+        @include sr-only();
+    }
+}
+
+
+// TODO /!\ Do not send this into production
+// --------------------------------------------------------------------------
+
+.todo {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(red, .1);
+        z-index: -1;
+    }
+
+    &::after {
+        content: "@todo" !important;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        padding: 5px 10px;
+        font-size: $font-size-base;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: red;
+        background-color: rgba(red, .1);
+        z-index: $zindex-fixed;
+    }
+}

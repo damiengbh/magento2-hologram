@@ -1,0 +1,351 @@
+//
+// Account order
+// --------------------------------------------------------------------------
+
+
+// Status
+// --------------------------------------------------------------------------
+
+.account-order-status {
+    position: relative;
+    margin: 0 0 16px;
+    padding: 16px 0 48px;
+    background-color: #fbfbfb;
+    z-index: 1;
+
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.account-order-status__steps {
+    @include list-unstyled();
+    @include container($max-size: $screen-lg-min);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 18px;
+        left: $gutter-sm / 2;
+        width: 0;
+        height: 5px;
+        background-color: $color-secondary;
+        z-index: -1;
+    }
+
+    @media (min-width: $screen-md-min) {
+        justify-content: center;
+
+        &::before {
+            left: (25% / 2);
+        }
+    }
+}
+
+.account-order-status__steps--step-1 {
+    .account-order-status__step {
+        &:first-child {
+            .account-order-status__step-label {
+                background-color: $color-secondary;
+
+                .text {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+}
+
+.account-order-status__steps--step-2 {
+    &::before {
+        width: 30%;
+    }
+
+    .account-order-status__step {
+        &:nth-child(-n+2) {
+            .account-order-status__step-label {
+                background-color: $color-secondary;
+
+                .text {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        &::before {
+            width: 25%;
+        }
+    }
+}
+
+.account-order-status__steps--step-3 {
+    &::before {
+        width: 60%;
+    }
+
+    .account-order-status__step {
+        &:nth-child(-n+3) {
+            .account-order-status__step-label {
+                background-color: $color-secondary;
+
+                .text {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        &::before {
+            width: 50%;
+        }
+    }
+}
+
+.account-order-status__steps--step-4 {
+    &::before {
+        right: $gutter-sm / 2;
+        width: auto;
+    }
+
+    .account-order-status__step {
+        .account-order-status__step-label {
+            background-color: $color-secondary;
+
+            .text {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        &::before {
+            right: (25% / 2);
+        }
+    }
+}
+
+.account-order-status__step {
+    @media (min-width: $screen-md-min) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.account-order-status__step-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #d2d2d2;
+    border-radius: 50%;
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .text {
+        overflow: hidden;
+        font-size: $font-size-base + .1rem;
+        font-weight: bold;
+        letter-spacing: .5px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        color: #d2d2d2;
+    }
+
+    @media (max-width: $screen-sm-max) {
+        .text {
+            position: absolute;
+            top: calc(100% + 20px);
+            left: $gutter-sm / 2;
+            right: $gutter-sm / 2;
+            text-align: left;
+        }
+
+        &:not(.account-order-status__step-label--active) {
+            .text {
+                @include sr-only();
+            }
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        position: relative;
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .text {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+    }
+}
+
+
+// Details
+// --------------------------------------------------------------------------
+
+.account-order-details {
+    @include container();
+
+    @media (min-width: $screen-md-min) {
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+}
+
+.account-order-details__main {
+    @media (min-width: $screen-md-min) {
+        flex: 1 1 0;
+        margin: 0 16px 0 0;
+        padding: 0 0 56px;
+    }
+}
+
+.account-order-details__head {
+    margin: 0 0 16px;
+    border-bottom: 1px solid $color-gray-light;
+
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 32px;
+    }
+}
+
+.account-order-details__title {
+    display: block;
+    margin: 0 0 10px;
+    font-size: $font-size-large + .2rem;
+    font-weight: bold;
+    letter-spacing: .8px;
+
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 12px;
+    }
+}
+
+.account-order-details__subtitle {
+    display: block;
+    margin: 0 0 16px;
+    font-size: $font-size-base + .1rem;
+    font-weight: normal;
+    letter-spacing: .8px;
+    line-height: 1.4;
+
+    span {
+        display: block;
+    }
+
+    @media (min-width: $screen-md-min) {
+        span {
+            display: inline-block;
+            vertical-align: top;
+
+            &:not(:last-child) {
+                &::after {
+                    content: "-";
+                    margin: 0 6px;
+                }
+            }
+        }
+    }
+}
+
+.account-order-details__products {
+    @include list-unstyled();
+
+    & > li {
+        margin: 0 0 32px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        & > li {
+            width: calc(50% - 8px);
+
+            &:nth-child(2n+1) {
+                margin-right: 16px;
+            }
+        }
+    }
+}
+
+
+// Aside
+// --------------------------------------------------------------------------
+
+.account-order-details__aside {
+    margin: 32px 0 0;
+
+    @media (min-width: $screen-md-min) {
+        width: 340px;
+        margin: 0;
+    }
+}
+
+
+// Actions
+// --------------------------------------------------------------------------
+
+.account-order-details__actions {
+    margin: 16px 0 0;
+
+    @media (min-width: $screen-md-min) {
+        position: absolute;
+        bottom: 0;
+        left: ($gutter-md / 2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% - (30px + 16px + 340px));
+    }
+}
+
+.account-order-details__actions-item {
+    text-align: center;
+
+    &:not(:last-child) {
+        margin: 0 0 24px;
+    }
+
+    a {
+        &:not(.btn) {
+            font-size: $font-size-base + .1rem;
+            letter-spacing: .5px;
+            color: $color-gray;
+
+            @include hover() {
+                color: $link-hover-color;
+            }
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        &:not(:last-child) {
+            margin: 0 16px 0 0;
+        }
+    }
+}

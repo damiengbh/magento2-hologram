@@ -1,0 +1,72 @@
+//
+// Account navigation
+// --------------------------------------------------------------------------
+
+.account-navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 45px;
+    padding: 8px 0;
+    border-bottom: 1px solid $color-gray-light;
+
+    @media (min-width: $screen-md-min) {
+        padding: 16px 0;
+    }
+}
+
+
+// List
+// --------------------------------------------------------------------------
+
+.account-navigation__list {
+    @include container($max-size: $screen-lg-min);
+
+    .owl-prev,
+    .owl-next {
+        background-color: #fff;
+    }
+
+    @media (min-width: $screen-md-min) {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+
+// Item
+// --------------------------------------------------------------------------
+
+.account-navigation__item {
+    font-size: $font-size-base + .1rem;
+    font-weight: bold;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        padding: 0 0 4px;
+        line-height: 1;
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+        transition: color .1s ease-in-out, border-color .1s ease-in-out;
+
+        @include hover() {
+            border-color: currentColor;
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        font-size: $font-size-large + .2rem;
+    }
+}
+
+.account-navigation__item--active {
+    a {
+        color: $link-hover-color;
+        border-color: currentColor;
+    }
+}

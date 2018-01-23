@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+// Utilities
+// --------------------------------------------------------------------------
+
+@import "utilities/variables";
+
+
+// Page
+// --------------------------------------------------------------------------
+
+.page-print {
+    padding: 0;
+    background-color: #fff;
+}
+
+.container {
+    max-width: $screen-lg-min;
+}
+
+
+// Logo
+// --------------------------------------------------------------------------
+
+.logo {
+    margin: 30px 0;
+}
+
+
+@media print {
+    // Reset
+    // ----------------------------------------------------------------------
+    html,
+    body {
+        height: auto;
+    }
+
+    body {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .container {
+        max-width: inherit;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    // Global
+    // ----------------------------------------------------------------------
+    * {
+        font-family: $font-family-sans-serif;
+        font-size: 6pt !important;
+        color: #000;
+    }
+
+    .wrapper {
+        flex: none;
+    }
+
+
+    // Logo
+    // ----------------------------------------------------------------------
+    .logo {
+        margin: 0 0 10pt;
+
+        img {
+            width: 120pt;
+            font-family: $font-family-sans-serif;
+            font-size: 12pt !important;
+            font-weight: bold;
+            line-height: 1;
+        }
+    }
+
+    // Headings
+    // ----------------------------------------------------------------------
+    .section-head {
+        margin: 0 0 8pt;
+    }
+
+    .section-head__title {
+        font-size: 10pt !important;
+    }
+
+    .section-head__status {
+        margin: 5pt 0 0;
+    }
+
+    // Table
+    // ----------------------------------------------------------------------
+    .table {
+        margin: 0;
+    }
+
+    // Invoice
+    // ----------------------------------------------------------------------
+    .account-invoice__ref {
+        margin: 0 0 8pt;
+        font-size: 7pt !important;
+    }
+
+    .account-invoice__infos {
+        margin: 0 0 8pt;
+    }
+
+    .account-invoice__blocks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .account-invoice__block {
+        width: calc(50% - 8pt);
+        margin: 0 0 8pt;
+    }
+
+    .account-invoice__heading {
+        padding: 4pt;
+        color: $text-color;
+    }
+
+    .account-invoice__content {
+        padding: 4pt;
+    }
+
+    .account-invoice__table {
+        thead {
+            th {
+                color: $text-color;
+            }
+        }
+    }
+}

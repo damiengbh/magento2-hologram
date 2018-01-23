@@ -1,0 +1,63 @@
+//
+// Widget features
+// --------------------------------------------------------------------------
+
+.widget-features {
+    margin: 16px (-$gutter-sm / 2) 0;
+    padding: 40px;
+    background-color: #fbfbfb;
+
+    @media (min-width: $screen-md-min) {
+        margin: 24px 0 0;
+    }
+}
+
+
+// List
+// --------------------------------------------------------------------------
+
+.widget-features__list {
+    @include list-unstyled();
+}
+
+
+// Item
+// --------------------------------------------------------------------------
+
+.widget-features__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 60px;
+    overflow: hidden;
+    font-size: $font-size-large;
+    font-weight: 600;
+    letter-spacing: .5px;
+    height: 60px;
+    line-height: 1.7rem;
+    text-overflow: ellipsis;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background-color: $color-secondary;
+        border-radius: 50%;
+    }
+
+    &:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .icon {
+        position: absolute;
+        top: 20px;
+        left: 8px;
+        width: 23px;
+        height: 23px;
+        fill: #fff;
+    }
+}

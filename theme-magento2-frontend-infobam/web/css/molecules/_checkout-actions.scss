@@ -1,0 +1,117 @@
+//
+// Checkout actions
+// --------------------------------------------------------------------------
+
+.checkout-actions {
+    margin: 32px 0 0;
+
+    @media (max-width: $screen-sm-max) {
+        .btn {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 48px 0 0;
+    }
+}
+
+
+// Back
+// --------------------------------------------------------------------------
+
+.checkout-actions__back {
+    margin: 0 0 32px (-$gutter-sm / 2);
+
+    & > button,
+    & > a {
+        position: relative;
+        display: inline-block;
+        padding: 0 0 0 58px;
+        font-size: $font-size-large;
+        font-weight: 600;
+        text-decoration: none;
+        color: $color-gray;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 40px;
+            background-color: $color-gray-lighter;
+            @include border-right-radius(50%);
+        }
+
+        span {
+            line-height: 40px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                width: 16px;
+                height: 2px;
+                background-color: $color-gray-darker;
+                border-radius: 2px;
+                transform: translate(0,-50%);
+                z-index: 1;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 14px;
+                width: 11px;
+                height: 11px;
+                background-color: transparent;
+                border: 2px solid $color-gray-darker;
+                border-width: 0 2px 2px 0;
+                transform: translate(0,-50%) rotate(135deg);
+                z-index: 1;
+            }
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        flex: 1 1 auto;
+        margin: 0;
+    }
+}
+
+
+// Continue
+// --------------------------------------------------------------------------
+
+.checkout-actions__continue {
+    @media (max-width: $screen-sm-max) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 16px ($gutter-sm / 2);
+        background-color: #fff;
+        box-shadow: 0 -1px 1px 0 rgba(0,0,0,.1);
+        z-index: $zindex-fixed - 20;
+    }
+
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 0 16px;
+    }
+}
+
+// checkout quote
+.btn-secondary-quote{
+    margin-top: 15px;
+
+    @media (max-width: $screen-sm-min) {
+        text-align: center;
+    }
+}

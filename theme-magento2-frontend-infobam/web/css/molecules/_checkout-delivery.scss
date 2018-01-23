@@ -1,0 +1,114 @@
+//
+// Checkout delivery
+// --------------------------------------------------------------------------
+
+
+// Section
+// --------------------------------------------------------------------------
+
+.checkout-delivery__section {
+    margin: 0 0 16px;
+
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 32px;
+    }
+}
+
+
+// Addresses
+// --------------------------------------------------------------------------
+
+.checkout-delivery__addresses {
+    @include list-unstyled();
+    margin: 0 0 16px;
+
+    @media (min-width: $screen-md-min) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+
+// Address
+// --------------------------------------------------------------------------
+
+.checkout-delivery__address {
+    margin: 0 16px 16px 0;
+    padding: 16px;
+    font-size: $font-size-base + .1rem;
+    letter-spacing: .5px;
+    line-height: 1.4;
+    border: 1px solid $color-gray-light;
+    border-radius: 5px;
+
+    &.active {
+        border-color: $color-primary;
+    }
+
+    .btn {
+        margin: 16px 0 0;
+    }
+
+    @media (min-width: $screen-md-min) {
+        padding: 24px;
+    }
+}
+
+.checkout-delivery__address-name {
+    display: block;
+    margin: 0 0 8px;
+    font-size: $font-size-large + .2rem;
+    font-weight: bold;
+    letter-spacing: .8px;
+    line-height: 1.3;
+}
+
+.checkout-delivery__address-details {
+    color: $color-gray;
+}
+
+
+// Form
+// --------------------------------------------------------------------------
+
+.checkout-delivery__form {
+    padding: 16px;
+    border: 1px solid $color-gray-light;
+    border-radius: 5px;
+
+    .street {
+        .form-group {
+            label {
+                display: none;
+            }
+        }
+    }
+
+    label {
+        text-align: left;
+    }
+
+    @media (min-width: $screen-md-min) {
+        .form-group {
+            max-width: 380px;
+        }
+    }
+
+    @media (min-width: $screen-lg-min) {
+        padding: 24px;
+    }
+}
+
+
+// CGV
+// --------------------------------------------------------------------------
+
+.checkout-delivery__cgv {
+    .btn--link {
+        font-size: $font-size-base + .1rem;
+        font-weight: 600;
+        letter-spacing: .5px;
+        outline: none;
+    }
+}
