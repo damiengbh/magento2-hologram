@@ -1,0 +1,245 @@
+//
+// Account vehicles
+// --------------------------------------------------------------------------
+
+.account-vehicles {
+    @include container($max-size: $screen-lg-min);
+}
+
+
+// List
+// --------------------------------------------------------------------------
+
+.account-vehicles__list {
+    @include list-unstyled();
+    margin: 16px 0 0;
+
+    @media (min-width: $screen-sm-min) {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 32px 0 0;
+    }
+}
+
+
+// Item
+// --------------------------------------------------------------------------
+
+.account-vehicles__item {
+    position: relative;
+    margin: 0 0 16px;
+
+    @media (min-width: $screen-sm-min) {
+        width: 335px;
+        margin-right: 16px;
+    }
+}
+
+
+// Input
+// --------------------------------------------------------------------------
+
+.account-vehicles__input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+
+    &:checked {
+        & + .account-vehicles__label {
+            border-color: $color-secondary;
+
+            .account-vehicles__label-value {
+                &::before {
+                    background-color: $color-secondary;
+                    border-color: $input-checkbox-border-color;
+                }
+            }
+        }
+    }
+}
+
+
+// Label
+// --------------------------------------------------------------------------
+
+.account-vehicles__label {
+    display: block;
+    margin: 0;
+    padding: 32px 32px (32px + 21px);
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    transition: border-color .1s ease-in-out;
+    cursor: pointer;
+}
+
+.account-vehicles__label-name {
+    display: block;
+    margin: 0 0 4px;
+    font-size: $font-size-large + .2rem;
+    font-weight: bold;
+    letter-spacing: .8px;
+    line-height: 1.3;
+}
+
+.account-vehicles__label-infos {
+    display: block;
+    margin: 0 0 16px;
+    font-size: $font-size-base + .1rem;
+    letter-spacing: .5px;
+    line-height: 1.3;
+    color: $color-gray;
+}
+
+.account-vehicles__label-registration {
+    display: block;
+    margin: 0 0 16px;
+    font-size: $font-size-base + .1rem;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.account-vehicles__label-value {
+    position: relative;
+    display: block;
+    margin: 0 0 16px;
+    padding: 0 0 0 30px;
+    font-size: $font-size-base + .1rem;
+    letter-spacing: .5px;
+    line-height: 1.3;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background-color: $input-bg;
+        border: 2px solid $input-checkbox-border-color;
+        border-radius: 50%;
+        transition: background-color .1s ease-in-out, border-color .1s ease-in-out;
+    }
+}
+
+
+// Action
+// --------------------------------------------------------------------------
+
+.account-vehicles__action {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 3px;
+    z-index: 1;
+
+    .btn {
+        letter-spacing: .5px;
+    }
+
+    .btn--link {
+        color: $color-quinary;
+        margin-left: 10px;
+
+        @include hover() {
+            color: darken($color-quinary, 20%);
+        }
+    }
+}
+
+
+// Add
+// --------------------------------------------------------------------------
+
+.account-vehicles__add {
+    margin: 0 0 16px;
+
+    @media (min-width: $screen-sm-min) {
+        width: 335px;
+    }
+}
+
+.account-vehicles__add-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+    text-decoration: none;
+    text-align: center;
+    color: $color-gray;
+    background-color: transparent;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    cursor: pointer;
+
+    span {
+        position: relative;
+        display: inline-block;
+        max-width: 160px;
+        vertical-align: middle;
+        padding: 42px 0 0;
+        font-size: $font-size-large + .2rem;
+        font-weight: bold;
+        letter-spacing: .8px;
+        line-height: 1.3;
+        color: currentColor;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 34px;
+            height: 34px;
+            background-color: transparent;
+            border: 3px solid currentColor;
+            border-radius: 50%;
+            transform: translate(-50%,0);
+        }
+
+        &::after {
+            content: "+";
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            font-size: 2.4rem;
+            font-weight: 600;
+            line-height: 1;
+            color: currentColor;
+            transform: translate(-40%,0);
+        }
+    }
+
+    @include hover() {
+        color: $color-primary;
+    }
+}
+
+
+// New
+// --------------------------------------------------------------------------
+
+.account-vehicles__new {
+    margin: 32px 0 0;
+}
+
+.account-vehicles__new-title {
+    display: block;
+    margin: 0 0 24px;
+    font-size: $font-size-large + .2rem;
+    font-weight: bold;
+    letter-spacing: .8px;
+
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 32px;
+    }
+}
+
+.account-vehicles__new-form {
+    @media (min-width: $screen-md-min) {
+        max-width: 810px;
+    }
+}

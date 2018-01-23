@@ -1,0 +1,26 @@
+<?php
+/**
+ * @license All rights reserved
+ * @author Guirec Lefort <g.lefort@monsieurbiz.com>
+ * @copyright Copyright (c) 2017 Monsieur Biz (https://monsieurbiz.com/)
+ */
+/**
+ * @var $block \Magento\Theme\Block\Html\Title
+ */
+
+$cssClass = $block->getCssClass() ? ' ' . $block->getCssClass() : '';
+$title = '';
+if (trim($block->getPageHeading())) {
+    $title = $block->escapeHtml($block->getPageHeading());
+}
+?>
+<?php if ($title): ?>
+<div class="container">
+    <div class="section-head<?php echo $cssClass; ?>">
+        <h2<?php if ($block->getId()): ?> id="<?php echo $block->getId(); ?>"<?php endif; ?> class="section-head__title">
+            <?php echo /* @escapeNotVerified */ $title; ?>
+        </h2>
+        <?php echo $block->getChildHtml(); ?>
+    </div>
+</div>
+<?php endif; ?>

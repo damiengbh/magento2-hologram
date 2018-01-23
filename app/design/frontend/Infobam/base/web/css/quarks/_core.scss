@@ -1,0 +1,77 @@
+//
+// Core
+// --------------------------------------------------------------------------
+
+
+// Box model
+// --------------------------------------------------------------------------
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+// Global defaults
+// --------------------------------------------------------------------------
+
+html {
+    min-height: 100%;
+    font-size: 62.5%;
+    // IE9-IE11 math fixing. See http://bit.ly/1g4X0bX
+    font-size: calc(1em * .625);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    @media (min-width: $screen-sm-min) {
+        height: 100%;
+    }
+}
+
+body {
+    position: relative;
+    height: 100%;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $body-bg;
+}
+
+
+// Reset fonts for relevant elements
+// --------------------------------------------------------------------------
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+// Responsive images
+// --------------------------------------------------------------------------
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+// SVG icons
+// --------------------------------------------------------------------------
+
+svg[class^="icon"] {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+}

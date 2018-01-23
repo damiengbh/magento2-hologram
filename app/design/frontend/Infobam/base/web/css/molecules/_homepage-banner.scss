@@ -1,0 +1,55 @@
+//
+// Homepage banner
+// --------------------------------------------------------------------------
+
+.homepage-banner {
+    display: none;
+
+    @media (min-width: $screen-md-min) {
+        display: block;
+        margin: 0 0 48px;
+
+        a {
+            display: block;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    /* Style for Slide */
+    div#slider {
+        width: 100%;
+        overflow: hidden
+    }
+
+    div#slider figure {
+        position: relative;
+        width: 500%;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        text-align: left;
+        animation: 30s slideme infinite;
+    }
+
+    div#slider figure img {
+        width: 20%; height: auto;
+        float: left;
+    }
+
+    @keyframes slideme { /* Keep all in percents for responsivity */
+        0% { left: 0%; }
+        20% { left: 0%; }
+        25% { left: -100%; }
+        45% { left: -100%; }
+        50% { left: -200%; }
+        70% { left: -200%; }
+        75% { left: -300%; }
+        95% { left: -300%; }
+        100% { left: -400%; }
+    }
+
+    /* End Slide */
+}

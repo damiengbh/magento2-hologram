@@ -1,0 +1,81 @@
+//
+// Checkout features
+// --------------------------------------------------------------------------
+
+.checkout-features {
+    margin: 0 (-$gutter-sm / 2);
+
+    @media (min-width: $screen-md-min) {
+        max-width: $screen-lg-min;
+        margin: 0 auto;
+        padding: 0 ($gutter-md / 2);
+    }
+}
+
+
+// List
+// --------------------------------------------------------------------------
+
+.checkout-features__list {
+    @include list-unstyled();
+    padding: 40px;
+    background-color: #fbfbfb;
+
+    @media (min-width: $screen-md-min) {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 20px 0;
+    }
+}
+
+
+// Item
+// --------------------------------------------------------------------------
+
+.checkout-features__item {
+    position: relative;
+    padding: 0 0 0 60px;
+    overflow: hidden;
+    font-size: $font-size-large;
+    font-weight: 600;
+    letter-spacing: .5px;
+    line-height: 40px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background-color: $color-secondary;
+        border-radius: 50%;
+    }
+
+    &:not(:last-child) {
+        margin: 0 0 16px;
+    }
+
+    .icon {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 23px;
+        height: 23px;
+        fill: #fff;
+    }
+
+    @media (min-width: $screen-md-min) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // width: calc(100% / 3);
+
+        &:not(:last-child) {
+            margin: 0;
+        }
+    }
+}

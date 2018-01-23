@@ -1,0 +1,87 @@
+<div id="popup-modal-identification">
+    <strong class="headline"><?php echo __('Quelle est ma voiture ?'); ?></strong>
+    <div class="message message--error" style="display:none">
+        <?php echo __('Impossible de trouver votre véhicule'); ?>
+    </div>
+    <input type="hidden" name="product_to_add_to_cart" value="" />
+    <?php echo $block->getChildHtml('modal.vehicle.identification'); ?>
+</div>
+<script type="text/javascript">
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                modalClass: 'modal-search-engine',
+                buttons: []
+            };
+
+            var popup = modal(options, $('#popup-modal-identification'));
+
+            $('#popup-modal-identification form').submit(function( event ) {
+                event.preventDefault();
+
+                var form = $(this);
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action'),
+                    data: form.serialize(),
+                    success: function (data) {
+                        var versionId = false;
+                        if (data.version_id !== undefined) {
+                            versionId = data.version_id;
+                        }
+
+                        if(!versionId) {
+                            $('#popup-modal-identification .message--error').show();
+                            return;
+                        }
+
+                        $('#popup-modal-identification .message--error').hide();
+                        var productId = $('#popup-modal-identification input[name="product_to_add_to_cart"]').val();
+                        if(!productId) {
+                            return;
+                        }
+
+                        // Find the form to submit for product list and product view page
+                        $('.catalog-product__addtocart').each(function( index ) {
+                            var form = $(this);
+
+                            var formProductId = form.find('input[name="product"]').val();
+                            if (formProductId !== productId) {
+                                return;
+                            }
+
+                            $('#popup-modal-identification').modal('closeModal');
+                            form.submit();
+                        });
+
+                        // Find the form to submit for upsell page
+                        $('.catalog-previews__item-action').each(function( index ) {
+                            var form = $(this);
+
+                            var formProductId = form.find('input[name="product"]').val();
+                            if (formProductId !== productId) {
+                                return;
+                            }
+
+                            $('#popup-modal-identification').modal('closeModal');
+                            form.submit();
+                        });
+                    },
+                    error: function (data) {
+                        $('#popup-modal-identification .message--error').show();
+                    },
+                });
+            });
+        }
+    );
+</script>

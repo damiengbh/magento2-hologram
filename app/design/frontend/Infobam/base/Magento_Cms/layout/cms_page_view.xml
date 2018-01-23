@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- Add required js -->
+        <link src="js/bootstrap/transition.js" />
+        <link src="js/bootstrap/collapse.js" />
+    </head>
+    <body>
+        <!-- Move breadcrumbs -->
+        <move element="breadcrumbs" destination="columns.top" before="page.main.title" />
+
+        <!-- Create cms container -->
+        <referenceContainer name="content">
+            <container name="page.cms.container" htmlTag="div" htmlClass="container">
+                <container name="page.cms.content" htmlTag="div" htmlClass="page" />
+            </container>
+        </referenceContainer>
+
+        <!-- Move content into the cms container -->
+        <move element="cms_page" destination="page.cms.content" before="-" />
+    </body>
+</page>

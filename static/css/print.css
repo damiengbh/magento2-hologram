@@ -1,0 +1,106 @@
+/* line 12, app/design/frontend/Infobam/base/web/css/print.scss */
+.page-print {
+  padding: 0;
+  background-color: #fff;
+}
+
+/* line 17, app/design/frontend/Infobam/base/web/css/print.scss */
+.container {
+  max-width: 1200px;
+}
+
+/* line 25, app/design/frontend/Infobam/base/web/css/print.scss */
+.logo {
+  margin: 30px 0;
+}
+
+@media print {
+  /* line 33, app/design/frontend/Infobam/base/web/css/print.scss */
+  html,
+  body {
+    height: auto;
+  }
+  /* line 38, app/design/frontend/Infobam/base/web/css/print.scss */
+  body {
+    max-width: 100%;
+    margin: 0;
+  }
+  /* line 43, app/design/frontend/Infobam/base/web/css/print.scss */
+  .container {
+    max-width: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  /* line 52, app/design/frontend/Infobam/base/web/css/print.scss */
+  * {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 6pt !important;
+    color: #000;
+  }
+  /* line 58, app/design/frontend/Infobam/base/web/css/print.scss */
+  .wrapper {
+    flex: none;
+  }
+  /* line 65, app/design/frontend/Infobam/base/web/css/print.scss */
+  .logo {
+    margin: 0 0 10pt;
+  }
+  /* line 68, app/design/frontend/Infobam/base/web/css/print.scss */
+  .logo img {
+    width: 120pt;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12pt !important;
+    font-weight: bold;
+    line-height: 1;
+  }
+  /* line 79, app/design/frontend/Infobam/base/web/css/print.scss */
+  .section-head {
+    margin: 0 0 8pt;
+  }
+  /* line 83, app/design/frontend/Infobam/base/web/css/print.scss */
+  .section-head__title {
+    font-size: 10pt !important;
+  }
+  /* line 87, app/design/frontend/Infobam/base/web/css/print.scss */
+  .section-head__status {
+    margin: 5pt 0 0;
+  }
+  /* line 93, app/design/frontend/Infobam/base/web/css/print.scss */
+  .table {
+    margin: 0;
+  }
+  /* line 99, app/design/frontend/Infobam/base/web/css/print.scss */
+  .account-invoice__ref {
+    margin: 0 0 8pt;
+    font-size: 7pt !important;
+  }
+  /* line 104, app/design/frontend/Infobam/base/web/css/print.scss */
+  .account-invoice__infos {
+    margin: 0 0 8pt;
+  }
+  /* line 108, app/design/frontend/Infobam/base/web/css/print.scss */
+  .account-invoice__blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  /* line 115, app/design/frontend/Infobam/base/web/css/print.scss */
+  .account-invoice__block {
+    width: calc(50% - 8pt);
+    margin: 0 0 8pt;
+  }
+  /* line 120, app/design/frontend/Infobam/base/web/css/print.scss */
+  .account-invoice__heading {
+    padding: 4pt;
+    color: #323232;
+  }
+  /* line 125, app/design/frontend/Infobam/base/web/css/print.scss */
+  .account-invoice__content {
+    padding: 4pt;
+  }
+  /* line 131, app/design/frontend/Infobam/base/web/css/print.scss */
+  .account-invoice__table thead th {
+    color: #323232;
+  }
+}

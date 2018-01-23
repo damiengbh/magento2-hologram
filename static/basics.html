@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Basics &ndash; Styleguide Infobam</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="styles/hgt-syntax.css">
+    <link rel="stylesheet" href="styles/hgt.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="css/styles.css">
+      
+    
+</head>
+
+  <body class="hgt-body">
+    <div class="hgt-pagehead">
+      <div class="hgt-container">
+        <nav class="hgt-pagehead-nav" role="navigation">
+          <a href="index.html"
+             class="hgt-pagehead-nav-item ">
+            Home
+          </a>
+
+          
+          <a href="pages.html"
+             class="hgt-pagehead-nav-item ">
+            Pages
+          </a>
+          
+          <a href="components.html"
+             class="hgt-pagehead-nav-item ">
+            Components
+          </a>
+          
+          <a href="basics.html"
+             class="hgt-pagehead-nav-item selected">
+            Basics
+          </a>
+          
+          <a href="index.html"
+             class="hgt-pagehead-nav-item ">
+            
+          </a>
+          
+        </nav>
+
+        <h1 class="hgt-pagehead-title">Styleguide Infobam</h1>
+      </div>
+    </div>
+
+    <div class="hgt-styleguide hgt-container">
+      <div class="hgt-columns">
+        
+          <div class="hgt-column one-fourth">
+            <nav class="hgt-menu">
+              
+                
+                  <a href="#buttons" class="hgt-menu-item">Buttons</a>
+                
+              
+                
+                  <a href="#forms" class="hgt-menu-item">Forms</a>
+                
+              
+                
+                  <a href="#messages" class="hgt-menu-item">Messages</a>
+                
+              
+                
+                  <a href="#tables" class="hgt-menu-item">Tables</a>
+                
+              
+                
+                  <a href="#tooltip" class="hgt-menu-item">Tooltip</a>
+                
+              
+                
+                  <a href="#typography" class="hgt-menu-item">Typography</a>
+                
+              
+            </nav>
+          </div>
+        
+
+        <div class="hgt-column three-fourths">
+          <div class="hgt-content">
+<h1 id="buttons" class="styleguide">Buttons</h1>
+<p class="styleguide">The <code class="styleguide">btn</code> classes are designed to be used with the <code class="styleguide">&lt;button&gt;</code> element. However, you can also use these classes on <code class="styleguide">&lt;a&gt;</code> or <code class="styleguide">&lt;input&gt;</code> elements (though some browsers may apply a slightly different rendering).</p><p class="styleguide">When using button classes on <code class="styleguide">&lt;a&gt;</code> elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a <code class="styleguide">role=&quot;button&quot;</code> to appropriately convey their purpose to assistive technologies such as screen readers.</p><div class="codeTable">
+  <table>
+    <tbody>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <a href="#" class="btn btn--primary" role="button">Link</a>
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <button type="button" class="btn btn--primary">Button</button>
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span><span class="nt">&gt;</span>Button<span class="nt">&lt;/button&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <input type="button" value="Input" class="btn btn--primary">
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">value=</span><span class="s">"Input"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span><span class="nt">&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <input type="submit" value="Submit" class="btn btn--primary">
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span><span class="nt">&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <input type="reset" value="Reset" class="btn btn--primary">
+
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="na">value=</span><span class="s">"Reset"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span><span class="nt">&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+
+<h2>Button styles</h2>
+<p class="styleguide">There are three styles for buttons: default, primary and secondary. Simply add the style modifier class for the desired style.</p><div class="codeTable">
+  <table>
+    <tbody>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <button type="button" class="btn btn--default">Button default</button>
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--default"</span><span class="nt">&gt;</span>Button default<span class="nt">&lt;/button&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <button type="button" class="btn btn--primary">Button primary</button>
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span><span class="nt">&gt;</span>Button primary<span class="nt">&lt;/button&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <button type="button" class="btn btn--secondary">Button secondary</button>
+
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--secondary"</span><span class="nt">&gt;</span>Button secondary<span class="nt">&lt;/button&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+
+<h2>Button sizes</h2>
+<p class="styleguide">There are three 3 sizes for buttons: Large, medium (default) and small. Simply add the size modifier class for the desired size.</p><div class="codeTable">
+  <table>
+    <tbody>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <button type="button" class="btn btn--primary btn--lg">Button large</button>
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--primary btn--lg"</span><span class="nt">&gt;</span>Button large<span class="nt">&lt;/button&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+        <tr>
+          <th>
+            <div class="exampleOutput">
+              <button type="button" class="btn btn--primary btn--sm">Button small</button>
+
+            </div>
+          </th>
+          <td>
+            <div class="codeBlock">
+              <div class="highlight">
+                <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--primary btn--sm"</span><span class="nt">&gt;</span>Button small<span class="nt">&lt;/button&gt;</span></pre>
+              </div>
+            </div>
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+
+<h2>Button disabled state</h2>
+<p class="styleguide">Make buttons look inactive by adding the <code class="styleguide">disabled</code> boolean attribute to any <code class="styleguide">&lt;button&gt;</code> element.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button" class="btn btn--primary" disabled>Disabled button</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">disabled</span><span class="nt">&gt;</span>Disabled button<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">Disabled buttons using the <code class="styleguide">&lt;a&gt;</code> element behave a bit different:
+* <code class="styleguide">&lt;a&gt;</code> don’t support the disabled attribute, so you must add the <code class="styleguide">disabled</code> class to make it visually appear disabled.
+* Some future-friendly styles are included to disable all pointer-events on anchor buttons. In browsers which support that property, you won’t see the disabled cursor at all.
+* Disabled buttons should include the <code class="styleguide">aria-disabled=&quot;true&quot;</code> attribute to indicate the state of the element to assistive technologies.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <a href="#" class="btn btn--primary disabled" role="button" aria-disabled="true">Disabled link</a>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn--primary disabled"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">aria-disabled=</span><span class="s">"true"</span><span class="nt">&gt;</span>Disabled link<span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">In addition, even in browsers that do support <code class="styleguide">pointer-events: none</code>, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, add a <code class="styleguide">tabindex=&quot;-1&quot;</code> attribute on these links (to prevent them from receiving keyboard focus) and use custom JavaScript to disable their functionality.</p>
+<h2>Button link</h2>
+<p class="styleguide">In particular cases, you may want to use <code class="styleguide">&lt;button&gt;</code> tag but have the display and behavior of a classic link. To do that, add the <code class="styleguide">btn--link</code> modifier class.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <p>Maecenas sed diam eget risus varius <button type="button" class="btn btn--link">blandit</button> sit amet non magna.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p&gt;</span>Maecenas sed diam eget risus varius <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn--link"</span><span class="nt">&gt;</span>blandit<span class="nt">&lt;/button&gt;</span> sit amet non magna.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="forms" class="styleguide">Forms</h1>
+<p class="styleguide">Individual form controls automatically receive some global styling. All textual <code class="styleguide">&lt;input&gt;</code>, <code class="styleguide">&lt;textarea&gt;</code>, and <code class="styleguide">&lt;select&gt;</code> elements with <code class="styleguide">.form-control</code> are set to <code class="styleguide">width: 100%;</code> by default. Wrap labels and controls in .form-group for optimum spacing.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <form>
+    <div class="form-group">
+        <label for="example-input">Input text</label>
+        <input type="text" id="example-input" class="form-control" placeholder="Placeholder">
+    </div>
+    <div class="form-group">
+        <label for="example-textarea">Textarea</label>
+        <textarea id="example-textarea" class="form-control" rows="6"></textarea>
+    </div>
+</form>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-input"</span><span class="nt">&gt;</span>Input text<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"example-input"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">placeholder=</span><span class="s">"Placeholder"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-textarea"</span><span class="nt">&gt;</span>Textarea<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">"example-textarea"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">rows=</span><span class="s">"6"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Selects</h2>
+<p class="styleguide">Select have differents styles between browsers and some styles that cannot be modified. To be able to be consistent across browsers and have a custom style, the the <code class="styleguide">select</code> is wrapped with a <code class="styleguide">form-control-select</code> class.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <label for="example-select">Select</label>
+<div class="form-control-select">
+    <select id="example-select" class="form-control">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
+    </select>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-select"</span><span class="nt">&gt;</span>Select<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control-select"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"example-select"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Option 1<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Option 2<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Option 3<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Option 4<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">To be disabled, the custom <code class="styleguide">select</code> require to add a <code class="styleguide">disabled</code> class in addition to the <code class="styleguide">disabled</code> attribute on the <code class="styleguide">select</code> itself.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <label for="example-select">Select</label>
+<div class="form-control-select disabled">
+    <select id="example-select" class="form-control" disabled>
+        <option>Option 1</option>
+        <option>Option 2</option>
+    </select>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-select"</span><span class="nt">&gt;</span>Select<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control-select disabled"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"example-select"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Option 1<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Option 2<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Checkbox and radio</h2>
+<p class="styleguide">Similar as the select, to have the same render across browsers we add the class <code class="styleguide">form-control-checkbox</code> for checkbox and <code class="styleguide">form-control-radio</code> for radio.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="form-control-checkbox">
+    <input type="checkbox" id="example-checkbox-1" value="">
+    <label for="example-checkbox-1">Option one</label>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control-checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"example-checkbox-1"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-checkbox-1"</span><span class="nt">&gt;</span>Option one<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="form-control-checkbox">
+    <input type="checkbox" id="example-checkbox-2" value="" checked>
+    <label for="example-checkbox-2">Option two is checked</label>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control-checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"example-checkbox-2"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">checked</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-checkbox-2"</span><span class="nt">&gt;</span>Option two is checked<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="form-control-checkbox">
+    <input type="checkbox" id="example-checkbox-3" value="" disabled>
+    <label for="example-checkbox-3">Option three is disabled</label>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control-checkbox"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"example-checkbox-3"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-checkbox-3"</span><span class="nt">&gt;</span>Option three is disabled<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="form-control-radio">
+    <input type="radio" name="example-radio" id="example-radio-1" value="">
+    <label for="example-radio-1">Option one</label>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control-radio"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"example-radio"</span> <span class="na">id=</span><span class="s">"example-radio-1"</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-radio-1"</span><span class="nt">&gt;</span>Option one<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="form-control-radio">
+    <input type="radio" name="example-radio" id="example-radio-2" value="" checked>
+    <label for="example-radio-2">Option two is checked</label>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control-radio"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"example-radio"</span> <span class="na">id=</span><span class="s">"example-radio-2"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">checked</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-radio-2"</span><span class="nt">&gt;</span>Option two is checked<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="form-control-radio">
+    <input type="radio" name="example-radio" id="example-radio-3" value="" disabled>
+    <label for="example-radio-3">Option three is disabled</label>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-control-radio"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"example-radio"</span> <span class="na">id=</span><span class="s">"example-radio-3"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-radio-3"</span><span class="nt">&gt;</span>Option three is disabled<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Form container</h2>
+<p class="styleguide">A form can be visually delimited for better readability.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="form-container">
+    <div class="form-group">
+        <label for="container-example-input">Input text</label>
+        <input type="text" id="container-example-input" class="form-control">
+    </div>
+    <div class="form-submit">
+        <button type="submit" class="btn btn--primary">Submit</button>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"container-example-input"</span><span class="nt">&gt;</span>Input text<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"container-example-input"</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-submit"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Validation states</h2>
+<p class="styleguide">There are two validation states: Success and error. To use, add <code class="styleguide">valid</code> or <code class="styleguide">mage-error</code> to any <code class="styleguide">input.form-control</code> element. A validation message error with the class <code class="styleguide">mage-error</code> can be added to give more information about the error.</p><p class="styleguide">It use the classes used by Magento 2 in the default scripts, so Magento 2 will add the corresponding class by itself when form validation will perform.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="form-group">
+    <label for="example-input-success">Validation success</label>
+    <input type="text" id="example-input-success" class="form-control valid">
+</div>
+<div class="form-group">
+    <label for="example-input-error">Validation error</label>
+    <input type="text" id="example-input-error" class="form-control mage-error">
+    <div class="mage-error">Validation error message</div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-input-success"</span><span class="nt">&gt;</span>Validation success<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"example-input-success"</span> <span class="na">class=</span><span class="s">"form-control valid"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-input-error"</span><span class="nt">&gt;</span>Validation error<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"example-input-error"</span> <span class="na">class=</span><span class="s">"form-control mage-error"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mage-error"</span><span class="nt">&gt;</span>Validation error message<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="messages" class="styleguide">Messages</h1>
+<p class="styleguide">Message is used to display information to the user. This message can be an information, a success message, a warning, or a error.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="message message--info">
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+</div>
+
+<div class="message message--success">
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+</div>
+
+<div class="message message--warning">
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+</div>
+
+<div class="message message--error">
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"message message--info"</span><span class="nt">&gt;</span>
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"message message--success"</span><span class="nt">&gt;</span>
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"message message--warning"</span><span class="nt">&gt;</span>
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"message message--error"</span><span class="nt">&gt;</span>
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="tables" class="styleguide">Tables</h1>
+<p class="styleguide">To add basic styling to a table, add the base class <code class="styleguide">table</code> to any <code class="styleguide">&lt;table&gt;</code>. It may seem super redundant, but it&#39;s to avoid conflicts with other use of the <code class="styleguide">&lt;table&gt;</code> markup.</p><p class="styleguide">You can add <code class="styleguide">table--responsive</code> class to <code class="styleguide">table</code>s and it will make them mobile friendly by enabling horizontal scrolling. Only applies &lt;768px. Everything above that will display normally. This isn&#39;t included with the <code class="styleguide">table</code> class because it will depend on the table size. Also other possibilities exist to make <code class="styleguide">&lt;table&gt;</code> mobile friendly, this one is just the more generic.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <table class="table table--responsive">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First</th>
+            <th>Second</th>
+            <th>Third</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+    </tbody>
+</table>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table--responsive"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>#<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>First<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Second<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Third<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>First<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Second<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Third<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>First<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Second<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Third<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;td&gt;</span>First<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Second<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Third<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="tooltip" class="styleguide">Tooltip</h1>
+<p class="styleguide">The tooltip provide extra informations when it&#39;s hovered or clicked. It can be use in a <code class="styleguide">&lt;label&gt;</code>, for example, to give more information about the field.</p><p class="styleguide">The hidden text must be placed in the <code class="styleguide">aria-label</code> attribute.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button" class="tooltip" aria-label="This text provide extra informations" role="tooltip">Help</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"tooltip"</span> <span class="na">aria-label=</span><span class="s">"This text provide extra informations"</span> <span class="na">role=</span><span class="s">"tooltip"</span><span class="nt">&gt;</span>Help<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="typography" class="styleguide">Typography</h1>
+
+<h2>Headings</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <h1>h1. Heading</h1>
+<h2>h2. Heading</h2>
+<h3>h3. Heading</h3>
+<h4>h4. Heading</h4>
+<h5>h5. Heading</h5>
+<h6>h6. Heading</h6>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;h1&gt;</span>h1. Heading<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>h2. Heading<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>h3. Heading<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;</span>h4. Heading<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;</span>h5. Heading<span class="nt">&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;</span>h6. Heading<span class="nt">&lt;/h6&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Texts</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, <a href="#">nascetur ridiculus mus</a>. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec <strong>ullamcorper nulla</strong> non metus auctor fringilla.</p>
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta <em>gravida at eget metus</em>. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p&gt;</span>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>nascetur ridiculus mus<span class="nt">&lt;/a&gt;</span>. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec <span class="nt">&lt;strong&gt;</span>ullamcorper nulla<span class="nt">&lt;/strong&gt;</span> non metus auctor fringilla.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta <span class="nt">&lt;em&gt;</span>gravida at eget metus<span class="nt">&lt;/em&gt;</span>. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Lists</h2>
+<p class="styleguide">A list of items, unordered or ordered</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li>Nulla volutpat aliquam velit
+        <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+        </ul>
+    </li>
+    <li>Faucibus porta lacus fringilla vel</li>
+    <li>Aenean sit amet erat nunc</li>
+</ul>
+
+<ol>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li>Nulla volutpat aliquam velit</li>
+    <li>Phasellus iaculis neque</li>
+    <li>Purus sodales ultricies</li>
+    <li>Faucibus porta lacus fringilla vel</li>
+    <li>Aenean sit amet erat nunc</li>
+</ol>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Consectetur adipiscing elit<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Nulla volutpat aliquam velit
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Phasellus iaculis neque<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>Purus sodales ultricies<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Faucibus porta lacus fringilla vel<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Aenean sit amet erat nunc<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;ol&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Lorem ipsum dolor sit amet<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Consectetur adipiscing elit<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Nulla volutpat aliquam velit<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Phasellus iaculis neque<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Purus sodales ultricies<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Faucibus porta lacus fringilla vel<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Aenean sit amet erat nunc<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span></pre>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="hgt-footer">
+      Built using <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/wearecube/hologram-github-theme">Hologram Github Theme</a>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="scripts/vendor/jquery.waypoints.min.js"></script>
+  <script src="scripts/vendor/sticky.min.js"></script>
+  <script src="scripts/vendor/infinite.min.js"></script>
+  <script src="scripts/hgt.js"></script>
+
+  
+    
+      <script type="text/javascript" src="scripts/main.js"></script>
+    
+  
+
+  
+</body>
+</html>

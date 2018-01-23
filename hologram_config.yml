@@ -1,0 +1,42 @@
+# The global title that is displayed at the top of the pages
+global_title: Styleguide Infobam
+
+# Relative path(s) to your source files
+# source: app_github # GITHUB THEME
+source: app/design/frontend/Infobam/base/web # INFOBAM THEME
+
+# Relative path where you want the documentation to be built
+destination: static
+
+# The path that contains supporting assets for the documentation page
+# documentation_assets: node_modules/hologram-github-theme # GITHUB THEME
+documentation_assets: assets
+
+# Category that will be used as the index.html (optional)
+# index: styleguide # GITHUB THEME
+index: index # INFOBAM THEME
+
+# A list of relative paths to folders containing any dependencies to copy
+dependencies:
+#  - 'dist'
+
+# The CSS files to be included in the styleguide
+css_include:
+# - 'css/main.css' # GITHUB THEME
+- 'css/styles.css' # INFOBAM THEME
+
+# The JavaScript files to included in the styleguide
+js_include:
+  - 'scripts/main.js'
+
+# To additionally output navigation for top level sections, set the value to
+# 'section'. To output navigation for sub-sections,
+# set the value to `all`
+nav_level: all
+
+# Hologram displays warnings when there are issues with your docs
+# (e.g. if a component's parent is not found, if the _header.html and/or
+#  _footer.html files aren't found)
+# If you want Hologram to exit on these warnings, set the value to 'true'
+# (Default value is 'false')
+exit_on_warnings: false

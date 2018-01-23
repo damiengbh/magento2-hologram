@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Components &ndash; Styleguide Infobam</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="styles/hgt-syntax.css">
+    <link rel="stylesheet" href="styles/hgt.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="css/styles.css">
+      
+    
+</head>
+
+  <body class="hgt-body">
+    <div class="hgt-pagehead">
+      <div class="hgt-container">
+        <nav class="hgt-pagehead-nav" role="navigation">
+          <a href="index.html"
+             class="hgt-pagehead-nav-item ">
+            Home
+          </a>
+
+          
+          <a href="pages.html"
+             class="hgt-pagehead-nav-item ">
+            Pages
+          </a>
+          
+          <a href="components.html"
+             class="hgt-pagehead-nav-item selected">
+            Components
+          </a>
+          
+          <a href="basics.html"
+             class="hgt-pagehead-nav-item ">
+            Basics
+          </a>
+          
+          <a href="index.html"
+             class="hgt-pagehead-nav-item ">
+            
+          </a>
+          
+        </nav>
+
+        <h1 class="hgt-pagehead-title">Styleguide Infobam</h1>
+      </div>
+    </div>
+
+    <div class="hgt-styleguide hgt-container">
+      <div class="hgt-columns">
+        
+          <div class="hgt-column one-fourth">
+            <nav class="hgt-menu">
+              
+                
+                  <a href="#breadcrumb" class="hgt-menu-item">Breadcrumb</a>
+                
+              
+                
+                  <a href="#identification-banner" class="hgt-menu-item">Identification banner</a>
+                
+              
+                
+                  <a href="#pagination" class="hgt-menu-item">Pagination</a>
+                
+              
+            </nav>
+          </div>
+        
+
+        <div class="hgt-column three-fourths">
+          <div class="hgt-content">
+<h1 id="breadcrumb" class="styleguide">Breadcrumb</h1>
+<p class="styleguide">Breadcrumb use microdata, useful for search engine optimisation. The position store in a <code class="styleguide">meta</code> tag need to be updated.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+    <li class="breadcrumb__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <a href="#" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+    </li>
+    <li class="breadcrumb__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <a href="#" itemprop="item"><span itemprop="name">Catalogue</span></a>
+        <meta itemprop="position" content="2">
+    </li>
+    <li class="breadcrumb__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <a href="#" itemprop="item"><span itemprop="name">Amortisseurs</span></a>
+        <meta itemprop="position" content="3">
+    </li>
+    <li class="breadcrumb__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <strong itemprop="item"><span itemprop="name">Amortisseurs avant</span></strong>
+        <meta itemprop="position" content="4">
+    </li>
+</ol>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"breadcrumb"</span> <span class="na">itemscope=</span><span class="s">""</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/BreadcrumbList"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"breadcrumb__item"</span> <span class="na">itemscope=</span><span class="s">""</span> <span class="na">itemprop=</span><span class="s">"itemListElement"</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/ListItem"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">itemprop=</span><span class="s">"item"</span><span class="nt">&gt;&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"position"</span> <span class="na">content=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"breadcrumb__item"</span> <span class="na">itemscope=</span><span class="s">""</span> <span class="na">itemprop=</span><span class="s">"itemListElement"</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/ListItem"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">itemprop=</span><span class="s">"item"</span><span class="nt">&gt;&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;</span>Catalogue<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"position"</span> <span class="na">content=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"breadcrumb__item"</span> <span class="na">itemscope=</span><span class="s">""</span> <span class="na">itemprop=</span><span class="s">"itemListElement"</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/ListItem"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">itemprop=</span><span class="s">"item"</span><span class="nt">&gt;&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;</span>Amortisseurs<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"position"</span> <span class="na">content=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"breadcrumb__item"</span> <span class="na">itemscope=</span><span class="s">""</span> <span class="na">itemprop=</span><span class="s">"itemListElement"</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/ListItem"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;strong</span> <span class="na">itemprop=</span><span class="s">"item"</span><span class="nt">&gt;&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;</span>Amortisseurs avant<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">itemprop=</span><span class="s">"position"</span> <span class="na">content=</span><span class="s">"4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="identification-banner" class="styleguide">Identification banner</h1>
+<p class="styleguide">These banners are used to identify the vehicle or the client depending on the context.</p><p class="styleguide">Each action button must have an icon that indicate the context because on small screens only the icon is displayed. There may be several action buttons or just one.
+These buttons will be <code class="styleguide">&lt;a&gt;</code> links or <code class="styleguide">&lt;button&gt;</code> for a js action, depending of the desired behavior.</p>
+<h2>Vehicle</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="identification-banner identification-banner--vehicle">
+    <div class="identification-banner__inner container">
+        <div class="identification-banner__icon">
+            <svg class="icon" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-vehicle'); ?>"></use>
+            </svg>
+        </div>
+        <div class="identification-banner__infos">
+            <span class="identification-banner__title">Peugeot 308</span>
+            <span class="identification-banner__details">308 II 1.6 BlueHDi S&amp;S 120 cv</span>
+        </div>
+        <div class="identification-banner__actions">
+            <a class="btn btn--secondary" href="#">
+                <span class="text">Changer de véhicule</span>
+                <svg class="icon icon--edit" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-edit'); ?>"></use>
+                </svg>
+            </a>
+            <a class="btn btn--primary" href="#">
+                <span class="text">Mes véhicules</span>
+                <svg class="icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-vehicle'); ?>"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner identification-banner--vehicle"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__inner container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__icon"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-vehicle'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__infos"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"identification-banner__title"</span><span class="nt">&gt;</span>Peugeot 308<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"identification-banner__details"</span><span class="nt">&gt;</span>308 II 1.6 BlueHDi S<span class="ni">&amp;amp;</span>S 120 cv<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__actions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--secondary"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>Changer de véhicule<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon icon--edit"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-edit'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+                <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>Mes véhicules<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-vehicle'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+                <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">In the case the vehicule isn&#39;t identified, the banner invite the client to do so:</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="identification-banner identification-banner--alert">
+    <div class="identification-banner__inner container">
+        <div class="identification-banner__icon">
+            <svg class="icon" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-alert'); ?>"></use>
+            </svg>
+        </div>
+        <div class="identification-banner__infos">
+            <span class="identification-banner__message">Affine ta recherche en identifiant ton véhicule :</span>
+        </div>
+        <div class="identification-banner__actions">
+            <button class="btn btn--primary" type="button">
+                <span class="text">J’identifie mon véhicule</span>
+                <svg class="icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-vehicle'); ?>"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner identification-banner--alert"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__inner container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__icon"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-alert'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__infos"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"identification-banner__message"</span><span class="nt">&gt;</span>Affine ta recherche en identifiant ton véhicule :<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__actions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>J’identifie mon véhicule<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-vehicle'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+                <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Client</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="identification-banner identification-banner--account">
+    <div class="identification-banner__inner container">
+        <div class="identification-banner__icon">
+            <svg class="icon" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-account'); ?>"></use>
+            </svg>
+        </div>
+        <div class="identification-banner__infos">
+            <span class="identification-banner__title">Jacques Durand</span>
+        </div>
+        <div class="identification-banner__actions">
+            <a class="btn btn--secondary" href="#">
+                <span class="text">Me déconnecter</span>
+                <svg class="icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-logout'); ?>"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner identification-banner--account"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__inner container"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__icon"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-account'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__infos"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"identification-banner__title"</span><span class="nt">&gt;</span>Jacques Durand<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"identification-banner__actions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn--secondary"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>Me déconnecter<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;use</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xlink:href=</span><span class="s">"&lt;?php echo $this-&gt;getViewFileUrl('images/icons.svg#icon-logout'); ?&gt;"</span><span class="nt">&gt;&lt;/use&gt;</span>
+                <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="pagination" class="styleguide">Pagination</h1>
+<p class="styleguide">Pagniation use microdata to help search engine to recognize it as a navigation element.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <nav class="pagination" role="navigation">
+    <ul class="pagination__list" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+        <li class="pagination__item pagination__item--previous">
+            <span itemprop="name">Page précédente</span>
+        </li>
+        <li class="pagination__item pagination__item--active">
+            <span itemprop="name"><em>Page</em> 1</span>
+        </li>
+        <li class="pagination__item">
+            <a href="#" itemprop="url">
+                <span itemprop="name"><em>Page</em> 2</span>
+            </a>
+        </li>
+        <li class="pagination__item">
+            <a href="#" itemprop="url">
+                <span itemprop="name"><em>Page</em> 3</span>
+            </a>
+        </li>
+        <li class="pagination__item">
+            <span>…</span>
+        </li>
+        <li class="pagination__item">
+            <a href="#" itemprop="url">
+                <span itemprop="name"><em>Page</em> 10</span>
+            </a>
+        </li>
+        <li class="pagination__item pagination__item--next">
+            <a href="#" itemprop="url">
+                <span itemprop="name">Page suivante</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"pagination__list"</span> <span class="na">itemscope=</span><span class="s">""</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/SiteNavigationElement"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination__item pagination__item--previous"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;</span>Page précédente<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination__item pagination__item--active"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;&lt;em&gt;</span>Page<span class="nt">&lt;/em&gt;</span> 1<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">itemprop=</span><span class="s">"url"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;&lt;em&gt;</span>Page<span class="nt">&lt;/em&gt;</span> 2<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">itemprop=</span><span class="s">"url"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;&lt;em&gt;</span>Page<span class="nt">&lt;/em&gt;</span> 3<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>…<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination__item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">itemprop=</span><span class="s">"url"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;&lt;em&gt;</span>Page<span class="nt">&lt;/em&gt;</span> 10<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"pagination__item pagination__item--next"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">itemprop=</span><span class="s">"url"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">"name"</span><span class="nt">&gt;</span>Page suivante<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span></pre>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="hgt-footer">
+      Built using <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/wearecube/hologram-github-theme">Hologram Github Theme</a>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="scripts/vendor/jquery.waypoints.min.js"></script>
+  <script src="scripts/vendor/sticky.min.js"></script>
+  <script src="scripts/vendor/infinite.min.js"></script>
+  <script src="scripts/hgt.js"></script>
+
+  
+    
+      <script type="text/javascript" src="scripts/main.js"></script>
+    
+  
+
+  
+</body>
+</html>

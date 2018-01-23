@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @license All rights reserved
+ * @author Maxime Huran <m.huran@monsieurbiz.com> <@MaximeHuran>
+ * @copyright Copyright (c) 2017 Monsieur Biz (https://monsieurbiz.com/)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- Add required scripts -->
+        <link src="js/bootstrap/transition.js" />
+        <link src="js/bootstrap/collapse.js" />
+        <link src="js/owl.carousel.js" />
+        <link src="js/product.js" />
+    </head>
+    <body>
+        <!-- Move breadcrumbs -->
+        <move element="breadcrumbs" destination="columns.top" before="page.main.title" />
+
+        <!-- Move current vehicle block -->
+        <move element="vehicle.current" destination="columns.top" before="breadcrumbs" />
+
+        <!-- Update and move SKU template -->
+        <referenceBlock name="product.info.sku" template="product/view/sku.phtml" >
+            <referenceBlock name="product.info.sku" template="product/view/sku.phtml">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getRefBrandShort</argument>
+                    <argument name="at_code" xsi:type="string">ref_brand_short</argument>
+                    <argument name="css_class" xsi:type="string">ref_brand_short</argument>
+                    <argument name="at_label" xsi:type="string">SKU</argument>
+                    <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                </arguments>
+            </referenceBlock>
+        </referenceBlock>
+        <move element="product.info.sku" destination="page.main.title" />
+
+        <!-- Remove useless blocks -->
+        <referenceBlock name="product.info.details" remove="true" />
+        <referenceBlock name="product.info.simple" remove="true" />
+        <referenceBlock name="product.info.simpleplain" remove="true" />
+        <referenceBlock name="product.info.virtual" remove="true" />
+        <referenceBlock name="product.info.review" remove="true" />
+        <referenceBlock name="product.info.mailto" remove="true" />
+        <referenceBlock name="product.info.social" remove="true" />
+
+        <!-- Rename container class -->
+        <referenceContainer name="columns" htmlTag="div" htmlClass="container" />
+        <referenceContainer name="main" htmlTag="div" htmlClass="catalog-product" />
+
+        <!-- Remove useless markup -->
+        <referenceContainer name="product.info.main" htmlTag="" htmlClass="" />
+        <referenceContainer name="product.info.media" htmlTag="" htmlClass="" />
+
+        <!-- Create container for technical details blocks -->
+        <referenceContainer name="main">
+            <container name="product.view.infos.container" htmlTag="div" htmlClass="catalog-product__infos-container" after="product.info" />
+        </referenceContainer>
+        <!-- Move technical details blocks in the container -->
+        <move element="product.info.technical-details" destination="product.view.infos.container" />
+        <move element="product.info.manufacturer-references" destination="product.view.infos.container" />
+        <move element="product.info.vehicles" destination="product.view.infos.container" />
+
+        <!-- Move info block after media container -->
+        <move element="product.info" destination="content" after="product.info.media" />
+        <move element="product.price.final" destination="product.info" />
+        <referenceBlock name="product.info">
+            <block class="Rapidoto\Catalog\Block\Catalog\Product\Actions" name="product.actions" as="product.actions" template="Magento_Catalog::product/actions.phtml">
+                <block class="Rapidoto\ProductAlert\Block\Product\ListProduct\Stock" name="productalert.stock" as="productalert_stock" template="product/list.phtml">
+                    <arguments>
+                        <argument name="html_class" xsi:type="string">stock</argument>
+                        <argument translate="true" name="signup_label" xsi:type="string">Keep me informed</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceBlock>
+
+        <!-- Create container for cms blocks -->
+        <referenceContainer name="main">
+            <container name="product.view.aside" htmlTag="div" htmlClass="catalog-product__aside" after="-" />
+        </referenceContainer>
+        <!-- Move cms blocks in the container -->
+        <move element="product.view.conditions" destination="product.view.aside" />
+        <move element="product.view.contact" destination="product.view.aside" />
+
+        <!-- Modal to identify vehicle on add to cart -->
+        <referenceBlock name="content">
+            <block class="Magento\Framework\View\Element\Template" name="modal.identification" template="Magento_Catalog::identification.phtml" after="-">
+                <block class="Rapidoto\Catalog\Block\VehicleIdentification" name="modal.vehicle.identification" template="vehicle_identification.phtml">
+                    <arguments>
+                        <argument name="action" xsi:type="string">rapidoto_catalog/vehicleIdentification</argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

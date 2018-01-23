@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pages &ndash; Styleguide Infobam</title>
+
+    <!-- Styleguide CSS -->
+    <link rel="stylesheet" href="styles/hgt-syntax.css">
+    <link rel="stylesheet" href="styles/hgt.css">
+
+    <!-- Source CSS -->
+    
+      
+        <link rel="stylesheet" href="css/styles.css">
+      
+    
+</head>
+
+  <body class="hgt-body">
+    <div class="hgt-pagehead">
+      <div class="hgt-container">
+        <nav class="hgt-pagehead-nav" role="navigation">
+          <a href="index.html"
+             class="hgt-pagehead-nav-item ">
+            Home
+          </a>
+
+          
+          <a href="pages.html"
+             class="hgt-pagehead-nav-item selected">
+            Pages
+          </a>
+          
+          <a href="components.html"
+             class="hgt-pagehead-nav-item ">
+            Components
+          </a>
+          
+          <a href="basics.html"
+             class="hgt-pagehead-nav-item ">
+            Basics
+          </a>
+          
+          <a href="index.html"
+             class="hgt-pagehead-nav-item ">
+            
+          </a>
+          
+        </nav>
+
+        <h1 class="hgt-pagehead-title">Styleguide Infobam</h1>
+      </div>
+    </div>
+
+    <div class="hgt-styleguide hgt-container">
+      <div class="hgt-columns">
+        
+          <div class="hgt-column one-fourth">
+            <nav class="hgt-menu">
+              
+                
+                  <a href="#blocks" class="hgt-menu-item">Blocks</a>
+                
+              
+                
+                  <a href="#chapters" class="hgt-menu-item">Chapters</a>
+                
+              
+                
+                  <a href="#general" class="hgt-menu-item">General</a>
+                
+              
+                
+                  <a href="#store" class="hgt-menu-item">Store</a>
+                
+              
+            </nav>
+          </div>
+        
+
+        <div class="hgt-column three-fourths">
+          <div class="hgt-content">
+<h1 id="blocks" class="styleguide">Blocks</h1>
+<p class="styleguide">This allow to organize CMS page content in blocks with image and text. On large screens the blocks are listed tow by two.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="page-blocks">
+    <div class="page-block">
+        <h2 class="page-block__title">Sed posuere consectetur est at lobortis</h2>
+        <div class="page-block__content">
+            <div class="page-block__image">
+                <img src="https://dummyimage.com/120x120/000/fff" alt="">
+            </div>
+            <div class="page-block__text">
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus
+                    vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="page-block">
+        <h2 class="page-block__title">Sed posuere consectetur est at lobortis</h2>
+        <div class="page-block__content">
+            <div class="page-block__image">
+                <img src="https://dummyimage.com/120x120/000/fff" alt="">
+            </div>
+            <div class="page-block__text">
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus
+                    vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="page-block">
+        <h2 class="page-block__title">Sed posuere consectetur est at lobortis</h2>
+        <div class="page-block__content">
+            <div class="page-block__image">
+                <img src="https://dummyimage.com/120x120/000/fff" alt="">
+            </div>
+            <div class="page-block__text">
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus
+                    vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+    </div>
+    <div class="page-block">
+        <h2 class="page-block__title">Sed posuere consectetur est at lobortis</h2>
+        <div class="page-block__content">
+            <div class="page-block__image">
+                <img src="https://dummyimage.com/120x120/000/fff" alt="">
+            </div>
+            <div class="page-block__text">
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus
+                    vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-blocks"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"page-block__title"</span><span class="nt">&gt;</span>Sed posuere consectetur est at lobortis<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__image"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://dummyimage.com/120x120/000/fff"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__text"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus
+                    vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"page-block__title"</span><span class="nt">&gt;</span>Sed posuere consectetur est at lobortis<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__image"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://dummyimage.com/120x120/000/fff"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__text"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus
+                    vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"page-block__title"</span><span class="nt">&gt;</span>Sed posuere consectetur est at lobortis<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__image"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://dummyimage.com/120x120/000/fff"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__text"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus
+                    vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"page-block__title"</span><span class="nt">&gt;</span>Sed posuere consectetur est at lobortis<span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__content"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__image"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://dummyimage.com/120x120/000/fff"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-block__text"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus
+                    vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="chapters" class="styleguide">Chapters</h1>
+<p class="styleguide">This page may include anchors or links to other pages. However, this is optional.</p><p class="styleguide">The content can be organized into an accordion if the HTMl markup is respected according to the example below:</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="page-chapters">
+    <div class="page-chapters__aside">
+        <button type="button" class="page-chapters__summary" data-toggle="collapse" data-target="#chapters-navigation" aria-expanded="false"
+            aria-controls="chapters-navigation">Sommaire</button>
+        <ul id="chapters-navigation" class="page-chapters__navigation collapse">
+            <li>
+                <a class="active" href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+        </ul>
+    </div>
+    <div id="chapters" class="page-chapters__main" role="tablist">
+        <div class="page-chapters__panel" data-collapse="group">
+            <div id="chapters-head-1" class="page-chapters__panel-head" role="tab">
+                <h2 class="page-chapters__panel-title">
+                    <a href="#chapters-content-1" data-toggle="collapse" data-parent="#chapters" aria-expanded="true" aria-controls="chapters-content-1"
+                        role="button">Duis mollis est non commodo luctus nisi erat porttitor ligula</a>
+                </h2>
+            </div>
+            <div id="chapters-content-1" class="page-chapters__panel-content collapse in" aria-labelledby="chapters-head-1"
+                aria-expanded="true" role="tabpanel">
+                <div class="page-chapters__panel-text">
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-chapters__panel" data-collapse="group">
+            <div id="chapters-head-2" class="page-chapters__panel-head" role="tab">
+                <h2 class="page-chapters__panel-title">
+                    <a href="#chapters-content-2" data-toggle="collapse" data-parent="#chapters" aria-expanded="false" aria-controls="chapters-content-2"
+                        role="button">Duis mollis est non commodo luctus nisi erat porttitor ligula</a>
+                </h2>
+            </div>
+            <div id="chapters-content-2" class="page-chapters__panel-content collapse" aria-labelledby="chapters-head-2"
+                aria-expanded="false" role="tabpanel">
+                <div class="page-chapters__panel-text">
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-chapters__panel" data-collapse="group">
+            <div id="chapters-head-3" class="page-chapters__panel-head" role="tab">
+                <h2 class="page-chapters__panel-title">
+                    <a href="#chapters-content-3" data-toggle="collapse" data-parent="#chapters" aria-expanded="false" aria-controls="chapters-content-3"
+                        role="button">Duis mollis est non commodo luctus nisi erat porttitor ligula</a>
+                </h2>
+            </div>
+            <div id="chapters-content-3" class="page-chapters__panel-content collapse" aria-labelledby="chapters-head-3"
+                aria-expanded="false" role="tabpanel">
+                <div class="page-chapters__panel-text">
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-chapters"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-chapters__aside"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"page-chapters__summary"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">"#chapters-navigation"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span>
+            <span class="na">aria-controls=</span><span class="s">"chapters-navigation"</span><span class="nt">&gt;</span>Sommaire<span class="nt">&lt;/button&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"chapters-navigation"</span> <span class="na">class=</span><span class="s">"page-chapters__navigation collapse"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"active"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Maecenas faucibus mollis interdum<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Maecenas faucibus mollis interdum<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Maecenas faucibus mollis interdum<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Maecenas faucibus mollis interdum<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Maecenas faucibus mollis interdum<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Maecenas faucibus mollis interdum<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chapters"</span> <span class="na">class=</span><span class="s">"page-chapters__main"</span> <span class="na">role=</span><span class="s">"tablist"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-chapters__panel"</span> <span class="na">data-collapse=</span><span class="s">"group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chapters-head-1"</span> <span class="na">class=</span><span class="s">"page-chapters__panel-head"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"page-chapters__panel-title"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#chapters-content-1"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-parent=</span><span class="s">"#chapters"</span> <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">aria-controls=</span><span class="s">"chapters-content-1"</span>
+                        <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Duis mollis est non commodo luctus nisi erat porttitor ligula<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chapters-content-1"</span> <span class="na">class=</span><span class="s">"page-chapters__panel-content collapse in"</span> <span class="na">aria-labelledby=</span><span class="s">"chapters-head-1"</span>
+                <span class="na">aria-expanded=</span><span class="s">"true"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-chapters__panel-text"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-chapters__panel"</span> <span class="na">data-collapse=</span><span class="s">"group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chapters-head-2"</span> <span class="na">class=</span><span class="s">"page-chapters__panel-head"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"page-chapters__panel-title"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#chapters-content-2"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-parent=</span><span class="s">"#chapters"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"chapters-content-2"</span>
+                        <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Duis mollis est non commodo luctus nisi erat porttitor ligula<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chapters-content-2"</span> <span class="na">class=</span><span class="s">"page-chapters__panel-content collapse"</span> <span class="na">aria-labelledby=</span><span class="s">"chapters-head-2"</span>
+                <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-chapters__panel-text"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-chapters__panel"</span> <span class="na">data-collapse=</span><span class="s">"group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chapters-head-3"</span> <span class="na">class=</span><span class="s">"page-chapters__panel-head"</span> <span class="na">role=</span><span class="s">"tab"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"page-chapters__panel-title"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#chapters-content-3"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-parent=</span><span class="s">"#chapters"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"chapters-content-3"</span>
+                        <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Duis mollis est non commodo luctus nisi erat porttitor ligula<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chapters-content-3"</span> <span class="na">class=</span><span class="s">"page-chapters__panel-content collapse"</span> <span class="na">aria-labelledby=</span><span class="s">"chapters-head-3"</span>
+                <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">role=</span><span class="s">"tabpanel"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-chapters__panel-text"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="general" class="styleguide">General</h1>
+<p class="styleguide">When creating a new cms page, be sure to set the <code class="styleguide">1 column</code> template in order to have the correct layout applied. This is valid for all the CMS templates.</p><p class="styleguide">The heading will be displayed at the top of the page. Most of the time, we recommend to match the page title and the heading.</p>
+<h1 id="store" class="styleguide">Store</h1>
+<p class="styleguide">This page model can be used to display informations about a store.</p><p class="styleguide">The map is optional and it will require a Google Maps Embed API key to work. You can learn more about Google Maps Embed API here : https://developers.google.com/maps/documentation/embed/guide
+This tool can be useful to generate the map: https://developers.google.com/maps/documentation/embed/start</p><div class="codeExample">
+  <div class="exampleOutput">
+    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+<p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+<div class="page-store">
+    <div class="page-store__infos">
+        <div class="page-store__address">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="{{view url="images/icons.svg#icon-localisation"}}"></use>
+            </svg>
+            GBH
+            <br>
+            Acajou
+            <br>
+            97232 Le Lamentin
+        </div>
+        <div class="page-store__phone">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="{{view url="images/icons.svg#icon-phone"}}"></use>
+            </svg>
+            01 02 03 04 05
+        </div>
+        <div class="page-store__openingtime">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="{{view url="images/icons.svg#icon-store"}}"></use>
+            </svg>
+            <strong>Horaires d’ouverture</strong>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Lundi</th>
+                        <td>9h - 12h</td>
+                        <td>14h - 18h</td>
+                    </tr>
+                    <tr>
+                        <th>Mardi</th>
+                        <td>9h - 12h</td>
+                        <td>14h - 18h</td>
+                    </tr>
+                    <tr>
+                        <th>Mercredi</th>
+                        <td>9h - 12h</td>
+                        <td>14h - 18h</td>
+                    </tr>
+                    <tr>
+                        <th>Jeudi</th>
+                        <td>9h - 12h</td>
+                        <td>14h - 18h</td>
+                    </tr>
+                    <tr>
+                        <th>Vendredi</th>
+                        <td>9h - 12h</td>
+                        <td>14h - 18h</td>
+                    </tr>
+                    <tr>
+                        <th>Samedi</th>
+                        <td>9h - 12h</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="page-store__map">
+        <div class="page-store__map-iframe">
+            <iframe class="embed" width="600" height="300" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=GBH,+Le+Lamentin&amp;key=YOUR_API_KEY"
+                allowfullscreen=""></iframe>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p&gt;</span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__infos"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__address"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{view url="</span><span class="na">images</span><span class="err">/</span><span class="na">icons</span><span class="err">.</span><span class="na">svg</span><span class="err">#</span><span class="na">icon-localisation</span><span class="err">"}}"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+            GBH
+            <span class="nt">&lt;br&gt;</span>
+            Acajou
+            <span class="nt">&lt;br&gt;</span>
+            97232 Le Lamentin
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__phone"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{view url="</span><span class="na">images</span><span class="err">/</span><span class="na">icons</span><span class="err">.</span><span class="na">svg</span><span class="err">#</span><span class="na">icon-phone</span><span class="err">"}}"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+            01 02 03 04 05
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__openingtime"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{view url="</span><span class="na">images</span><span class="err">/</span><span class="na">icons</span><span class="err">.</span><span class="na">svg</span><span class="err">#</span><span class="na">icon-store</span><span class="err">"}}"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+            <span class="nt">&lt;strong&gt;</span>Horaires d’ouverture<span class="nt">&lt;/strong&gt;</span>
+            <span class="nt">&lt;table&gt;</span>
+                <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Lundi<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Mardi<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Mercredi<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Jeudi<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Vendredi<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                        <span class="nt">&lt;th&gt;</span>Samedi<span class="nt">&lt;/th&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
+                        <span class="nt">&lt;td&gt;</span>-<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;/tbody&gt;</span>
+            <span class="nt">&lt;/table&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__map"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__map-iframe"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;iframe</span> <span class="na">class=</span><span class="s">"embed"</span> <span class="na">width=</span><span class="s">"600"</span> <span class="na">height=</span><span class="s">"300"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">src=</span><span class="s">"https://www.google.com/maps/embed/v1/place?q=GBH,+Le+Lamentin&amp;amp;key=YOUR_API_KEY"</span>
+                <span class="na">allowfullscreen=</span><span class="s">""</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="hgt-footer">
+      Built using <a href="https://github.com/trulia/hologram">Hologram</a> and <a href="https://github.com/wearecube/hologram-github-theme">Hologram Github Theme</a>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="scripts/vendor/jquery.waypoints.min.js"></script>
+  <script src="scripts/vendor/sticky.min.js"></script>
+  <script src="scripts/vendor/infinite.min.js"></script>
+  <script src="scripts/hgt.js"></script>
+
+  
+    
+      <script type="text/javascript" src="scripts/main.js"></script>
+    
+  
+
+  
+</body>
+</html>

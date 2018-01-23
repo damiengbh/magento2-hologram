@@ -1,0 +1,28 @@
+<?php
+/**
+ * @license All rights reserved
+ * @author Guirec Lefort <g.lefort@monsieurbiz.com>
+ * @copyright Copyright (c) 2017 Monsieur Biz (https://monsieurbiz.com/)
+ */
+
+/**
+ * Customer service template
+ *
+ * @var $block \Magento\Framework\View\Element\Template
+ */
+
+// @TODO: Get the phone number from configuration
+$_phoneNumber = '05 96 50 37 56';
+$_phoneNumberFormated = str_replace(' ','', $_phoneNumber);
+?>
+<div class="header-customer-service">
+    <?php echo sprintf(__('<a href="tel:%1$s">'), $_phoneNumberFormated); ?>
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-phone'); ?>"></use>
+        </svg>
+    </a>
+    <p>
+        <?php echo sprintf(__('À votre écoute au <a href="tel:%1$s">%2$s</a>'), $_phoneNumberFormated, $_phoneNumber); ?>
+        <small><?php echo __('(price of a local call, 7 days a week)'); ?></small>
+    </p>
+</div>

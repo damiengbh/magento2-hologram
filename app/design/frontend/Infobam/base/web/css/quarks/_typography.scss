@@ -1,0 +1,161 @@
+//
+// Typography
+// --------------------------------------------------------------------------
+
+
+// Documentation
+// --------------------------------------------------------------------------
+
+/*doc
+---
+title: Typography
+name: typography
+category: Basics
+---
+## Headings
+
+```html_example
+<h1>h1. Heading</h1>
+<h2>h2. Heading</h2>
+<h3>h3. Heading</h3>
+<h4>h4. Heading</h4>
+<h5>h5. Heading</h5>
+<h6>h6. Heading</h6>
+```
+
+## Texts
+
+```html_example
+<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, <a href="#">nascetur ridiculus mus</a>. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec <strong>ullamcorper nulla</strong> non metus auctor fringilla.</p>
+<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta <em>gravida at eget metus</em>. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+```
+
+## Lists
+
+A list of items, unordered or ordered
+
+```html_example
+<ul>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li>Nulla volutpat aliquam velit
+        <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+        </ul>
+    </li>
+    <li>Faucibus porta lacus fringilla vel</li>
+    <li>Aenean sit amet erat nunc</li>
+</ul>
+
+<ol>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li>Nulla volutpat aliquam velit</li>
+    <li>Phasellus iaculis neque</li>
+    <li>Purus sodales ultricies</li>
+    <li>Faucibus porta lacus fringilla vel</li>
+    <li>Aenean sit amet erat nunc</li>
+</ol>
+```
+*/
+
+
+// Variables
+// --------------------------------------------------------------------------
+
+$headings-font-family:    $font-family-base;
+$headings-font-style:     normal;
+$headings-font-weight:    600;
+$headings-line-height:    1.15;
+$headings-letter-spacing: .5px;
+
+$font-size-h1:            $font-size-base + 2.6;
+$font-size-h2:            $font-size-base + 1.8;
+$font-size-h3:            $font-size-base + .6;
+$font-size-h4:            $font-size-base + .4;
+$font-size-h5:            $font-size-base + .2;
+$font-size-h6:            $font-size-base + .1;
+
+
+// Headings
+// --------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0;
+    font-family: $headings-font-family;
+    font-style: $headings-font-style;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    letter-spacing: $headings-letter-spacing;
+}
+
+h1, h2, h3 {
+    margin-top: 1.5rem;
+}
+
+h1 {
+    font-size: $font-size-h1;
+}
+
+h2 {
+    font-size: $font-size-h2;
+}
+
+h3 {
+    font-size: $font-size-h3;
+}
+
+h4 {
+    font-size: $font-size-h4;
+}
+
+h5 {
+    font-size: $font-size-h5;
+}
+
+h6 {
+    font-size: $font-size-h6;
+}
+
+
+// Paragraphs
+// --------------------------------------------------------------------------
+
+p {
+    margin: 0 0 1rem;
+}
+
+
+
+// Lists
+// --------------------------------------------------------------------------
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+
+    ul,
+    ol {
+        margin-bottom: 0;
+    }
+}
+
+
+// Links
+// --------------------------------------------------------------------------
+
+a {
+    text-decoration: $link-decoration;
+    @if ($link-decoration == underline) {
+        text-decoration-skip: ink;
+    }
+    color: $link-color;
+    transition: color .1s ease-in-out;
+
+    @include hover() {
+        color: $link-hover-color;
+    }
+}

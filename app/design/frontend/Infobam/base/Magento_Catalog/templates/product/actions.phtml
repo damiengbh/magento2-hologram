@@ -1,0 +1,86 @@
+<?php
+/**
+ * Product actions template
+ *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ */
+
+use Magento\Framework\App\Action\Action;
+
+$_product = $block->getProduct();
+$_productAvailability = $block->getProductAvailability();
+$_rapidotoHelper = $this->helper('Rapidoto\Catalog\Helper\Data');
+?>
+<div class="catalog-product__addto">
+    <?php /* @escapeNotVerified */ echo $block->getProductPrice($_product); ?>
+
+    <?php if ($_productAvailability === Rapidoto\Catalog\Helper\Data::PRODUCT_AVAILABLE): ?>
+        <div class="catalog-product__shipping">
+            <?php $timeRemaining = $_rapidotoHelper->getProductTimeRemaining($_product->getId()); ?>
+            <span class="catalog-product__shipping-badge">
+                <?php echo __('<em>24h</em> delivery'); ?>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-chrono-alt'); ?>"></use>
+                </svg>
+            </span>
+            <?php if ($timeRemaining): ?>
+                <span class="catalog-product__shipping-infos">
+                    <?php echo sprintf(__('Order within <em>%s</em> to be delivered tomorrow!'), $timeRemaining); ?>
+                </span>
+            <?php endif; ?>
+        </div>
+        <!--<div class="catalog-product__estimate">
+            <button type="button">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-localisation'); ?>"></use>
+                </svg>
+                <?php echo __('Estimate my shipping cost'); ?>
+            </button>
+        </div>-->
+    <?php elseif ($_productAvailability === Rapidoto\Catalog\Helper\Data::PRODUCT_WAITING): ?>
+        <div class="catalog-list__details-message">
+            <?php $estimatedDate = $_rapidotoHelper->getWaitingProductEstimatedDate(); ?>
+            <span class="catalog-product__message">
+                <?php echo sprintf(__('Order now and receive your order the %s'), $estimatedDate); ?>
+            </span>
+        </div>
+        <!--<div class="catalog-list__details-estimate">
+            <div class="catalog-product__estimate">
+                <button type="button">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="<?php echo $this->getViewFileUrl('images/icons.svg#icon-localisation'); ?>"></use>
+                    </svg>
+                    <?php echo __('Estimate my shipping cost'); ?>
+                </button>
+            </div>
+        </div>-->
+    <?php else : ?>
+        <div class="catalog-list__details-message">
+            <span class="catalog-product__message">
+                <?php echo __('This product will be available soon !'); ?>
+            </span>
+            <?php echo $block->getChildBlock('productalert_stock')->setProduct($_product)->toHtml(); ?>
+        </div>
+    <?php endif ?>
+
+    <?php if ($_product->isSaleable() && $_productAvailability !== Rapidoto\Catalog\Helper\Data::PRODUCT_NOT_AVAILABLE): ?>
+        <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+        <form class="catalog-product__addtocart" data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
+            <input type="hidden" name="product" value="<?php /* @escapeNotVerified */ echo $postParams['data']['product']; ?>">
+            <input type="hidden" name="<?php /* @escapeNotVerified */ echo Action::PARAM_NAME_URL_ENCODED; ?>" value="<?php /* @escapeNotVerified */ echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+            <?php echo $block->getBlockHtml('formkey'); ?>
+            <button type="submit" class="btn btn--primary action tocart">
+                <?php /* @escapeNotVerified */ echo __('I Add to My Cart'); ?>
+            </button>
+        </form>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {
+                    "checkCompatibilityUrl": "<?php echo $block->getUrl('rapidoto_catalog/vehicleIdentification/checkCompatibility'); ?>"
+                }
+            }
+        }
+        </script>
+    <?php endif; ?>
+</div>

@@ -1,0 +1,25 @@
+<?php
+/**
+ * @license All rights reserved
+ * @author Maxime Huran <m.huran@monsieurbiz.com> <@MaximeHuran>
+ * @copyright Copyright (c) 2017 Monsieur Biz (https://monsieurbiz.com/)
+ */
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+?>
+<?php if ($block->getCollection()->getSize()): ?>
+    <?php if ($block->getIsTopToolbar()): ?>
+        <div class="catalog-head" data-mage-init='<?php echo $block->getWidgetOptionsJson(); ?>'>
+            <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/amount.phtml')); ?>
+            <?php echo $block->getChildHtml('brand_toolbar'); ?>
+        </div>
+    <?php else : ?>
+        <?php echo $block->getPagerHtml(); ?>
+    <?php endif; ?>
+<?php endif; ?>

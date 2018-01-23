@@ -1,0 +1,58 @@
+//
+// Checkout connect
+// --------------------------------------------------------------------------
+
+.checkout-connect {
+    margin: 0 0 16px;
+    padding: 16px 0;
+    background-color: #fbfbfb;
+
+    @media (min-width: $screen-md-min) {
+        margin: 0 0 32px;
+    }
+}
+
+
+// Inner
+// --------------------------------------------------------------------------
+
+.checkout-connect__inner {
+    @include container();
+
+    @media (min-width: $screen-md-min) {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+
+// Title
+// --------------------------------------------------------------------------
+
+.checkout-connect__title {
+    display: block;
+    margin: 0 0 16px;
+    font-size: $font-size-large + .2rem;
+    font-weight: bold;
+    letter-spacing: .8px;
+    line-height: 1.3;
+
+    @media (min-width: $screen-md-min) {
+        flex: 1 1 auto;
+        margin: 0;
+    }
+}
+
+
+// Title
+// --------------------------------------------------------------------------
+
+.checkout-connect__login {
+    text-align: center;
+}
+
+// Error
+.error-password-message__checkout{
+    width: 80%; margin: auto;
+}

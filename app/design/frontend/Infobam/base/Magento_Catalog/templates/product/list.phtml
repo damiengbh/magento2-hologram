@@ -1,0 +1,122 @@
+<?php
+/**
+ * Product list template
+ *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ * @var $_product \Magento\Catalog\Model\Product
+ */
+
+use Magento\Catalog\Pricing\Price\FinalPrice;
+use Magento\Catalog\Pricing\Price\RegularPrice;
+use Magento\Framework\App\Action\Action;
+
+$_productCollection = $block->getLoadedProductCollection();
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_rapidotoHelper = $this->helper('Rapidoto\Catalog\Helper\Data');
+$_exactTitleDisplayed = false;
+$_equivalentTitleDisplayed = false;
+?>
+<div class="container">
+    <?php if (!$_productCollection->count()): ?>
+        <div class="message message--info">
+            <?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.'); ?>
+        </div>
+    <?php else: ?>
+        <?php echo $block->getChildBlock('toolbar')->setIsTopToolbar(true)->toHtml(); ?>
+        <?php echo $block->getAdditionalHtml(); ?>
+        <?php
+        $viewMode = 'list';
+        $imageDisplayArea = 'category_page_list';
+        $showDescription = false;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+        /**
+        * Position for actions regarding image size changing in vde if needed
+        */
+        $pos = $block->getPositioned();
+        ?>
+        <ul class="catalog-list">
+            <?php foreach ($_productCollection as $_product): ?>
+                <?php
+                    // Get additional info
+                    $productAvailability = $_rapidotoHelper->getProductAvailability($_product->getId());
+                    $productBrands = $_rapidotoHelper->getBrandsByProductId($_product->getId());
+                    $productBrand = (!empty($productBrands)) ? current($productBrands) : '';
+                ?>
+
+                <?php /** Title to display in catalog search  */ ?>
+                <?php if($_product->getIsEquivalent() === '0' && !$_exactTitleDisplayed) : ?>
+                    <?php $_exactTitleDisplayed = true; ?>
+                    <li><h3><?php echo __('Références exactes'); ?></h3></li>
+                <?php endif; ?>
+                <?php if($_product->getIsEquivalent() === '1' && !$_equivalentTitleDisplayed) : ?>
+                    <?php $_equivalentTitleDisplayed = true; ?>
+                    <li><h3><?php echo __('Références équivalentes'); ?></h3></li>
+                <?php endif; ?>
+
+                <?php if ($productAvailability === Rapidoto\Catalog\Helper\Data::PRODUCT_AVAILABLE) {
+                    $productClass = 'catalog-list__item--available';
+                } elseif ($productAvailability === Rapidoto\Catalog\Helper\Data::PRODUCT_WAITING) {
+                    $productClass = 'catalog-list__item--waiting';
+                } else {
+                    $productClass = 'catalog-list__item--outofstock';
+                }
+                $finalPrice = $_product->getPriceInfo()->getPrice(FinalPrice::PRICE_CODE)->getAmount()->getValue();
+                $regularPrice = $_product->getPpc() ?? $_product->getPriceInfo()->getPrice(RegularPrice::PRICE_CODE)->getAmount()->getValue();
+                $hasSpecialPrice = $finalPrice < $regularPrice;
+                ?>
+                <li class="catalog-list__item <?php echo $productClass; ?> <?php if ($hasSpecialPrice): ?>catalog-list__item--promotion<?php endif; ?>">
+                    <div class="catalog-list__infos">
+                        <div class="catalog-list__infos-content">
+                            <?php if (!empty($productBrand) && !empty($productBrand['brand_thumbnail'])) : ?>
+                                <div class="catalog-list__infos-brand">
+                                    <img src="<?php echo $productBrand['brand_thumbnail']; ?>" alt="<?php echo $productBrand['brand_name']; ?>">
+                                </div>
+                            <?php endif; ?>
+                            <h3 class="catalog-list__infos-title">
+                                <a class="product-item-link" href="<?php echo $_product->getProductUrl(); ?>">
+                                    <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                </a>
+                            </h3>
+                            <span class="catalog-list__infos-reference"><?php echo sprintf(__('SKU. %s'), $_product->getRefBrandShort()); ?></span>
+
+                            <?php if($_product->getIsEquivalent() === '1') : ?>
+                                <?php $_equivalentTo = $this->helper('Rapidoto\Catalog\Helper\Data')->getEquivalentTo($_product->getRefBrandShort()); ?>
+                                <?php if (!empty($_equivalentTo)) : ?>
+                                    <div class="equivalent_to">
+                                        <?php echo sprintf(__('Équivalent à : <br /> %s'), implode('<br />', $_equivalentTo)); ?>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endif; ?>
+
+                            <div class="catalog-list__infos-description">
+                                <?php echo $block->getChildBlock('technical-details')->setProduct($_product)->toHtml(); ?>
+                            </div>
+                            <div class="catalog-list__infos-link">
+                                <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                                <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl(); ?>" aria-label="<?php /* @escapeNotVerified */ echo $_productNameStripped; ?>">
+                                    <?php /* @escapeNotVerified */ echo __('More info'); ?>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="catalog-list__infos-image">
+                            <?php $productImage = $block->getImage($_product, $imageDisplayArea); ?>
+                            <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl(); ?>" tabindex="-1">
+                                <?php echo $productImage->toHtml(); ?>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="catalog-list__details">
+                        <?php
+                            // Get block with price, availability and add to cart
+                            echo $block->getChildBlock('product.actions')
+                                ->setProduct($_product)
+                                ->setProductAvailability($productAvailability)
+                                ->toHtml();
+                        ?>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+        <?php echo $block->getChildBlock('toolbar')->setIsTopToolbar(false)->toHtml(); ?>
+    <?php endif; ?>
+</div>

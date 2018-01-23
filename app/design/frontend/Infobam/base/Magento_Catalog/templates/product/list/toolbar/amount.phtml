@@ -1,0 +1,35 @@
+<?php
+/**
+ * @license All rights reserved
+ * @author Maxime Huran <m.huran@monsieurbiz.com> <@MaximeHuran>
+ * @copyright Copyright (c) 2017 Monsieur Biz (https://monsieurbiz.com/)
+ */
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+
+
+/** @var \Rapidoto\Catalog\Helper\Data $_rapidotoCatalogHelper */
+$_rapidotoCatalogHelper = $this->helper('Rapidoto\Catalog\Helper\Data');
+$versionId = $_rapidotoCatalogHelper->getCurrentVersionId();
+?>
+<strong class="catalog-head__infos">
+    <?php if (!empty($versionId)) : ?>
+        <?php if ($block->getTotalNum() > 1): ?>
+            <?php echo sprintf(__('<em>%d</em> products compatible with my car'), $block->getTotalNum()); ?>
+        <?php else : ?>
+            <?php echo sprintf(__('<em>%d</em> product compatible with my car'), $block->getTotalNum()); ?>
+        <?php endif; ?>
+    <?php else : ?>
+        <?php if ($block->getTotalNum() > 1): ?>
+            <?php echo sprintf(__('<em>%d</em> available products'), $block->getTotalNum()); ?>
+        <?php else : ?>
+            <?php echo sprintf(__('<em>%d</em> available product'), $block->getTotalNum()); ?>
+        <?php endif; ?>
+    <?php endif; ?>
+</strong>

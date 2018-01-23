@@ -1,0 +1,252 @@
+//
+// These styles will be inlined
+// --------------------------------------------------------------------------
+
+
+// Generic
+// --------------------------------------------------------------------------
+
+body {
+    margin: 0;
+    mso-line-height-rule: exactly;
+    background-color: #ebebeb;
+}
+
+ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+
+a {
+    text-decoration: underline;
+    color: #ffab07;
+
+    img {
+        border: none;
+    }
+}
+
+
+// Wrapper
+// --------------------------------------------------------------------------
+
+.wrapper {
+    background-color: #ebebeb;
+}
+
+
+// Container
+// --------------------------------------------------------------------------
+
+.container {
+    margin: auto;
+    font-family: sans-serif;
+    background-color: #ebebeb;
+}
+
+
+// Logo
+// --------------------------------------------------------------------------
+
+.logo {
+    padding: 20px 0;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    img {
+        display: block;
+        height: auto;
+        font-family: sans-serif;
+        font-size: 15px;
+        line-height: 20px;
+        color: #555555;
+    }
+}
+
+
+// Content
+// --------------------------------------------------------------------------
+
+.content {
+    padding: 20px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.content-title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.content-subtitle {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+
+// Highlight
+// --------------------------------------------------------------------------
+
+.highlight {
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+}
+
+.highlight-inner {
+    border: 15px solid #f2f2f2;
+    border-radius: 3px;
+
+    a {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+    }
+}
+
+
+// Button
+// --------------------------------------------------------------------------
+
+.button-td {
+    text-align: center;
+    background: #ffab07;
+    border-radius: 40px;
+}
+
+.button-a {
+    display: block;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: .5px;
+    line-height: 1.1;
+    text-decoration: none;
+    text-align: center;
+    background: #ffab07;
+    border: 15px solid #ffab07;
+    border-width: 12px 40px;
+    border-radius: 40px;
+}
+
+.button-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+// Table
+// --------------------------------------------------------------------------
+
+.force-col {
+    vertical-align: top;
+}
+
+.table-bordered {
+    width: 100%;
+}
+
+.table-bordered table,
+.table-order {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+.table-bordered table thead th,
+.table-bordered table tbody td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}
+
+.table-order thead th,
+.table-order tbody td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.table-bordered table thead th,
+.table-order thead th {
+    font-weight: bold;
+    vertical-align: middle;
+    border-bottom: 2px solid #dddddd;
+    white-space: nowrap;
+}
+
+.table-bordered table tbody td {
+    vertical-align: top;
+    border: 1px solid #dddddd;
+}
+
+.table-order .subtotal td {
+    border-top: 1px solid #dddddd;
+}
+
+.table-order-item {
+    text-align: left;
+    padding:10px;
+    color:#CC0000;
+}
+
+.table-order-qty {
+    text-align: center;
+}
+
+.table-order-total {
+    text-align: right;
+}
+
+.table-order-gift-title {
+    padding: 3px 8px;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+
+.table-order-gift-message {
+    font-size: 13px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-order {
+    tfoot {
+        th,
+        td {
+            padding: 4px 8px;
+            text-align: right;
+        }
+
+        .subtotal {
+            th,
+            td {
+                padding: 8px 8px 4px;
+                border-top: 1px solid #dddddd;
+            }
+        }
+    }
+}
+
+
+// Notes
+// --------------------------------------------------------------------------
+
+.notes {
+    padding: 15px 20px 20px;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #9f9f9f;
+
+    a {
+        text-decoration: none;
+        color: #7d7d7d;
+    }
+}
