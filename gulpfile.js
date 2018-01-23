@@ -6,10 +6,10 @@ var reload = browserSync.reload;
 var $ = require('gulp-load-plugins')({camelize: true});
 
 
-//var sass_path = 'app_github/**/*.scss'; //Github Theme
-var sass_path = 'app/design/frontend/Infobam/base/web/css/**/*.scss'; //Infobam
-var sass_dest = 'static/css';
-var sass_dest_clear = 'static';
+//var sass_path = 'theme-github/**/*.scss'; //Github Theme
+var sass_path = 'theme-magento2-frontend-infobam/web/css/**/*.scss'; //Infobam
+var sass_dest = 'styleguide/css';
+var sass_dest_clear = 'styleguide';
 
 gulp.task('browser-sync', function() {
   browserSync({
