@@ -12,8 +12,9 @@ Installer dans C:/Ruby/
 ### INSTALLER LE DEV KIT RUBY
 
 https://github.com/oneclick/rubyinstaller/wiki/Development-Kit#installation-instructions
-Ajouter les lignes dans C:\Ruby\config.yml
-C:/Ruby/Ruby25-x64
+
+Ajouter cette ligne dans C:\Ruby\config.yml
+> C:/Ruby/Ruby25-x64
 
 ### INSTALLER GEM
 https://rubygems.org/pages/download?locale=fr
