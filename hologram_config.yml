@@ -3,7 +3,8 @@ global_title: Styleguide Infobam
 
 # Relative path(s) to your source files
 # source: theme-github # GITHUB THEME
-source: theme-magento2-frontend-infobam/web # INFOBAM THEME
+# source: theme-rapidoto/web # RAPIDOTO THEME
+source: theme-infobam/web # INFOBAM THEME
 
 # Relative path where you want the documentation to be built
 destination: styleguide

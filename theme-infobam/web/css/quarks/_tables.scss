@@ -1,0 +1,135 @@
+ //
+// Tables
+// --------------------------------------------------------------------------
+
+
+// Documentation
+// --------------------------------------------------------------------------
+
+/*doc
+---
+title: Tables
+name: tables
+category: Content
+---
+To add basic styling to a table, add the base class `table` to any `<table>`. It may seem super redundant, but it's to avoid conflicts with other use of the `<table>` markup.
+
+You can add `table--responsive` class to `table`s and it will make them mobile friendly by enabling horizontal scrolling. Only applies &lt;768px. Everything above that will display normally. This isn't included with the `table` class because it will depend on the table size. Also other possibilities exist to make `<table>` mobile friendly, this one is just the more generic.
+
+```html_example
+<table class="table table--responsive">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First</th>
+            <th>Second</th>
+            <th>Third</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>First</td>
+            <td>Second</td>
+            <td>Third</td>
+        </tr>
+    </tbody>
+</table>
+```
+*/
+
+
+// Variables
+// --------------------------------------------------------------------------
+
+$table-cell-padding:           8px;
+$table-cell-color:             $text-color;
+$table-bg:                     #fff;
+$table-bg-thead:               $color-primary;
+$table-color-thead:            #fff;
+$table-border-color:           #d2d2d2;
+
+
+// Normalize
+// --------------------------------------------------------------------------
+
+table {
+    background-color: transparent;
+    border-collapse: collapse;
+}
+
+caption {
+    padding-top: $table-cell-padding;
+    padding-bottom: $table-cell-padding;
+    text-align: left;
+    color: $color-gray-dark;
+}
+
+th {
+    text-align: left;
+}
+
+
+// Base
+// --------------------------------------------------------------------------
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: $table-bg;
+
+    // Cells
+    th,
+    td {
+        padding: $table-cell-padding;
+        vertical-align: top;
+        font-weight: 600;
+        color: $table-cell-color;
+        border: 1px solid $table-border-color;
+        border-width: 1px 0 0;
+    }
+
+    // Bottom align for column headings
+    thead th {
+        font-weight: 700;
+        white-space: nowrap;
+        vertical-align: bottom;
+        color: $table-color-thead;
+        background-color: $table-bg-thead;
+        border-color: $table-border-color;
+        border-width: 0 0 1px;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        th,
+        td {
+            padding: $table-cell-padding + 4;
+        }
+    }
+}
+
+
+// Responsive tables
+// --------------------------------------------------------------------------
+
+.table--responsive {
+    @media screen and (max-width: $screen-xs-max) {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -ms-overflow-style: -ms-autohiding-scrollbar; // Windows Phone 8 fix
+    }
+}

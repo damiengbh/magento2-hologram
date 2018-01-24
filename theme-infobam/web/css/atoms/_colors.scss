@@ -1,0 +1,132 @@
+//
+// Colors
+// --------------------------------------------------------------------------
+
+
+// Documentation
+// --------------------------------------------------------------------------
+
+/*doc
+---
+title: Colors
+name: 00_Colors
+category: Colors
+---
+
+```html_example
+<div class="colors">
+    <div class="bgcolor-primary">
+        <p>Primary color</p>
+    </div>
+    <div class="bgcolor-primary-light">
+        <p>Primary light color</p>
+    </div>
+    <div class="bgcolor-secondary">
+        <p>Secondary color</p>
+    </div>
+    <div class="bgcolor-tertiary">
+        <p>Tertiary color</p>
+    </div>
+    <div class="bgcolor-quaternary">
+        <p>Quaternary color</p>
+    </div>
+    <div class="bgcolor-quinary">
+        <p>Quinary color</p>
+    </div>
+    <div class="bgcolor-senary">
+        <p>Senary color</p>
+    </div>
+    <div class="bgcolor-info">
+        <p>Info color</p>
+    </div>
+    <div class="bgcolor-success">
+        <p>Success color</p>
+    </div>
+    <div class="bgcolor-warning">
+        <p>Warning color</p>
+    </div>
+    <div class="bgcolor-error">
+        <p>Error color</p>
+    </div>
+</div>
+```
+
+*/
+
+
+// Mixins
+// --------------------------------------------------------------------------
+
+@mixin bgcolor($color) {    
+    background: $color;
+    &::before {
+        content: "" + $color + "";
+        position:absolute;
+        width:100%;
+        height:30px;
+        top:10px;
+        left:0px;
+        text-align:center;
+        vertical-align:top;
+        font-weight:bold;
+    } 
+}
+
+// Couleurs
+// --------------------------------------------------------------------------
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.colors > div { 
+    position:relative;
+    display: inline-block;
+    width: 80px;
+    height:80px;
+    margin: 0 25px 75px 0; 
+    & p {
+        position:absolute;
+        width:100%;
+        height:40px;
+        bottom:-60px;
+        left:0px;
+        text-align:center;
+        vertical-align:top;
+        font-weight:bold;
+    }    
+    &.bgcolor-primary {
+        @include bgcolor($color-primary); 
+    }
+    &.bgcolor-primary-light {
+        @include bgcolor($color-primary-light);
+    }
+    &.bgcolor-secondary {
+        @include bgcolor($color-secondary);
+    }
+    &.bgcolor-tertiary {
+        @include bgcolor($color-tertiary);
+    }
+    &.bgcolor-quaternary {
+        @include bgcolor($color-quaternary);
+    }
+    &.bgcolor-quinary {
+        @include bgcolor($color-quinary);
+    }
+    &.bgcolor-senary {
+        @include bgcolor($color-senary);
+    }
+    &.bgcolor-info {
+        @include bgcolor($color-info);
+    }
+    &.bgcolor-success {
+        @include bgcolor($color-success);
+    }
+    &.bgcolor-warning {
+        @include bgcolor($color-warning);
+    }
+    &.bgcolor-error {
+        @include bgcolor($color-error);
+    }
+}

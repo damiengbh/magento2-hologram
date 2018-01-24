@@ -1,0 +1,279 @@
+//
+// Buttons
+// --------------------------------------------------------------------------
+
+
+// Documentation
+// --------------------------------------------------------------------------
+
+/*doc
+---
+title: Buttons
+name: 03_Buttons
+category: Buttons
+---
+The `btn` classes are designed to be used with the `<button>` element. However, you can also use these classes on `<a>` or `<input>` elements (though some browsers may apply a slightly different rendering).
+
+When using button classes on `<a>` elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a `role="button"` to appropriately convey their purpose to assistive technologies such as screen readers.
+
+```html_example_table
+<a href="#" class="btn btn--primary" role="button">Link</a>
+
+<button type="button" class="btn btn--primary">Button</button>
+
+<input type="button" value="Input" class="btn btn--primary">
+
+<input type="submit" value="Submit" class="btn btn--primary">
+
+<input type="reset" value="Reset" class="btn btn--primary">
+```
+
+## Button styles
+
+There are three styles for buttons: default, primary and secondary. Simply add the style modifier class for the desired style.
+
+```html_example_table
+<button type="button" class="btn btn--default">Button default</button>
+
+<button type="button" class="btn btn--primary">Button primary</button>
+
+<button type="button" class="btn btn--secondary">Button secondary</button>
+```
+
+## Button sizes
+
+There are three 3 sizes for buttons: Large, medium (default) and small. Simply add the size modifier class for the desired size.
+
+```html_example_table
+<button type="button" class="btn btn--primary btn--lg">Button large</button>
+
+<button type="button" class="btn btn--primary btn--sm">Button small</button>
+```
+
+## Button disabled state
+
+Make buttons look inactive by adding the `disabled` boolean attribute to any `<button>` element.
+
+```html_example
+<button type="button" class="btn btn--primary" disabled>Disabled button</button>
+```
+
+Disabled buttons using the `<a>` element behave a bit different:
+* `<a>` don’t support the disabled attribute, so you must add the `disabled` class to make it visually appear disabled.
+* Some future-friendly styles are included to disable all pointer-events on anchor buttons. In browsers which support that property, you won’t see the disabled cursor at all.
+* Disabled buttons should include the `aria-disabled="true"` attribute to indicate the state of the element to assistive technologies.
+
+```html_example
+<a href="#" class="btn btn--primary disabled" role="button" aria-disabled="true">Disabled link</a>
+```
+
+In addition, even in browsers that do support `pointer-events: none`, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, add a `tabindex="-1"` attribute on these links (to prevent them from receiving keyboard focus) and use custom JavaScript to disable their functionality.
+
+## Button link
+
+In particular cases, you may want to use `<button>` tag but have the display and behavior of a classic link. To do that, add the `btn--link` modifier class.
+
+```html_example
+<p>Maecenas sed diam eget risus varius <button type="button" class="btn btn--link">blandit</button> sit amet non magna.</p>
+```
+*/
+
+
+// Variables
+// --------------------------------------------------------------------------
+
+$btn-font-family:           $font-family-base;
+$btn-font-size:             $font-size-base + .1rem;
+$btn-font-weight:           600;
+$btn-text-transform:        uppercase;
+
+$btn-padding-vertical:      12px;
+$btn-padding-horizontal:    40px;
+
+$btn-line-height:           1.1;
+$btn-letter-spacing:        .5px;
+
+$btn-border-radius-base:    40px;
+
+$btn-default-color:         #fff;
+$btn-default-bg:            $color-gray;
+$btn-default-color-hover:   $btn-default-color;
+$btn-default-bg-hover:      darken($btn-default-bg, 40%);
+
+$btn-primary-color:         #fff;
+$btn-primary-bg:            $color-primary;
+$btn-primary-color-hover:   $btn-primary-color;
+$btn-primary-bg-hover:      adjust-hue($btn-primary-bg, -10deg);
+
+$btn-secondary-color:       #fff;
+$btn-secondary-bg:          $color-secondary;
+$btn-secondary-color-hover: $btn-secondary-color;
+$btn-secondary-bg-hover:    darken($btn-secondary-bg, 20%);
+
+
+// Mixins
+// --------------------------------------------------------------------------
+
+@mixin button-variant($color, $background, $color-hover, $background-hover) {
+    color: $color;
+    background-color: $background;
+
+    &:active {
+        background-image: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $color-hover;
+        background-color: $background-hover;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $background;
+        }
+    }
+}
+
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height) {
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+
+// Base styles
+// --------------------------------------------------------------------------
+
+.btn {
+    display: inline-block;
+    //overflow: hidden;
+    vertical-align: middle;
+    @include button-size($btn-padding-vertical, $btn-padding-horizontal, $btn-font-size, $btn-line-height);
+    font-family: $btn-font-family;
+    font-weight: $btn-font-weight;
+    letter-spacing: $btn-letter-spacing;
+    white-space: nowrap;
+    text-transform: $btn-text-transform;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    text-align: center;
+    background-image: none; // Reset unusual Firefox-on-Android default style see https://github.com/necolas/normalize.css/issues/214
+    border: 0;
+    border-radius: $btn-border-radius-base;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    &:active {
+        background-image: none;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        pointer-events: none; // Future-proof disabling of clicks
+        opacity: .5;
+        box-shadow: none;
+    }
+
+    .icon {
+        width: 1.5em;
+        height: 1.5em;
+        margin: -5px 8px -5px 0;
+        vertical-align: top;
+    }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------------------------------
+
+.btn--default {
+    @include button-variant($btn-default-color, $btn-default-bg, $btn-default-color-hover, $btn-default-bg-hover);
+}
+
+.btn--primary {
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-color-hover, $btn-primary-bg-hover);
+}
+
+.btn--secondary {
+    @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-color-hover, $btn-secondary-bg-hover);
+}
+
+
+// Button Sizes
+// --------------------------------------------------------------------------
+
+.btn--lg {
+    // line-height ensure even-numbered height of button next to large input
+    @include button-size($btn-padding-vertical + 3px, $btn-padding-horizontal + 5px, $font-size-large + .1rem, $btn-line-height);
+}
+
+.btn--sm {
+    // line-height ensure proper height of button next to small input
+    @include button-size($btn-padding-vertical - 4px, $btn-padding-horizontal - 15px, $font-size-base, $btn-line-height + .1);
+}
+
+
+// Link buttons
+//
+// Make a button look and behave like a link
+// --------------------------------------------------------------------------
+
+.btn--link {
+    display: inline;
+    vertical-align: baseline;
+    padding: 0;
+    font-size: $font-size-base + .1rem;
+    font-weight: normal;
+    letter-spacing: .5px;
+    line-height: $line-height-base;
+    text-transform: none;
+    text-decoration: $link-decoration;
+    @if ($link-decoration == underline) {
+        text-decoration-skip: ink;
+    }
+    text-align: left;
+    color: $color-gray;
+    transition: color .1s ease-in-out;
+    border-radius: 0;
+
+    &,
+    &:active,
+    &[disabled],
+    fieldset[disabled] & {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: $link-decoration;
+        @if ($link-decoration == underline) {
+            text-decoration-skip: ink;
+        }
+        color: $link-hover-color;
+        background-color: transparent;
+    }
+
+    &:active {
+        box-shadow: none;
+    }
+}

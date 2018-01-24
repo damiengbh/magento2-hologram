@@ -1,52 +1,52 @@
-/* line 9, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 9, theme-infobam/web/css/email-inline.scss */
 body {
   margin: 0;
   mso-line-height-rule: exactly;
   background-color: #ebebeb;
 }
 
-/* line 15, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 15, theme-infobam/web/css/email-inline.scss */
 ul {
   margin: 0;
   padding: 0 0 0 20px;
 }
 
-/* line 20, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 20, theme-infobam/web/css/email-inline.scss */
 a {
   text-decoration: underline;
   color: #ffab07;
 }
 
-/* line 24, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 24, theme-infobam/web/css/email-inline.scss */
 a img {
   border: none;
 }
 
-/* line 33, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 33, theme-infobam/web/css/email-inline.scss */
 .wrapper {
   background-color: #ebebeb;
 }
 
-/* line 41, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 41, theme-infobam/web/css/email-inline.scss */
 .container {
   margin: auto;
   font-family: sans-serif;
   background-color: #ebebeb;
 }
 
-/* line 51, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 51, theme-infobam/web/css/email-inline.scss */
 .logo {
   padding: 20px 0;
   text-align: center;
 }
 
-/* line 55, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 55, theme-infobam/web/css/email-inline.scss */
 .logo a {
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 60, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 60, theme-infobam/web/css/email-inline.scss */
 .logo img {
   display: block;
   height: auto;
@@ -56,7 +56,7 @@ a img {
   color: #555555;
 }
 
-/* line 74, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 74, theme-infobam/web/css/email-inline.scss */
 .content {
   padding: 20px;
   font-size: 15px;
@@ -65,48 +65,48 @@ a img {
   background-color: #ffffff;
 }
 
-/* line 82, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 82, theme-infobam/web/css/email-inline.scss */
 .content-title {
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
 }
 
-/* line 88, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 88, theme-infobam/web/css/email-inline.scss */
 .content-subtitle {
   font-size: 15px;
   font-weight: bold;
   line-height: 20px;
 }
 
-/* line 98, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 98, theme-infobam/web/css/email-inline.scss */
 .highlight {
   background-color: #f2f2f2;
   border: 1px solid #dddddd;
   border-radius: 3px;
 }
 
-/* line 104, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 104, theme-infobam/web/css/email-inline.scss */
 .highlight-inner {
   border: 15px solid #f2f2f2;
   border-radius: 3px;
 }
 
-/* line 108, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 108, theme-infobam/web/css/email-inline.scss */
 .highlight-inner a {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
 }
 
-/* line 119, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 119, theme-infobam/web/css/email-inline.scss */
 .button-td {
   text-align: center;
   background: #ffab07;
   border-radius: 40px;
 }
 
-/* line 125, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 125, theme-infobam/web/css/email-inline.scss */
 .button-a {
   display: block;
   font-family: sans-serif;
@@ -122,23 +122,23 @@ a img {
   border-radius: 40px;
 }
 
-/* line 140, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 140, theme-infobam/web/css/email-inline.scss */
 .button-link {
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 149, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 149, theme-infobam/web/css/email-inline.scss */
 .force-col {
   vertical-align: top;
 }
 
-/* line 153, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 153, theme-infobam/web/css/email-inline.scss */
 .table-bordered {
   width: 100%;
 }
 
-/* line 157, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 157, theme-infobam/web/css/email-inline.scss */
 .table-bordered table,
 .table-order {
   max-width: 100%;
@@ -146,7 +146,7 @@ a img {
   border-collapse: collapse;
 }
 
-/* line 164, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 164, theme-infobam/web/css/email-inline.scss */
 .table-bordered table thead th,
 .table-bordered table tbody td {
   padding: 8px;
@@ -154,14 +154,14 @@ a img {
   border: 1px solid #dddddd;
 }
 
-/* line 171, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 171, theme-infobam/web/css/email-inline.scss */
 .table-order thead th,
 .table-order tbody td {
   padding: 8px;
   vertical-align: middle;
 }
 
-/* line 177, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 177, theme-infobam/web/css/email-inline.scss */
 .table-bordered table thead th,
 .table-order thead th {
   font-weight: bold;
@@ -170,62 +170,62 @@ a img {
   white-space: nowrap;
 }
 
-/* line 185, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 185, theme-infobam/web/css/email-inline.scss */
 .table-bordered table tbody td {
   vertical-align: top;
   border: 1px solid #dddddd;
 }
 
-/* line 190, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 190, theme-infobam/web/css/email-inline.scss */
 .table-order .subtotal td {
   border-top: 1px solid #dddddd;
 }
 
-/* line 194, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 194, theme-infobam/web/css/email-inline.scss */
 .table-order-item {
   text-align: left;
   padding: 10px;
   color: #CC0000;
 }
 
-/* line 200, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 200, theme-infobam/web/css/email-inline.scss */
 .table-order-qty {
   text-align: center;
 }
 
-/* line 204, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 204, theme-infobam/web/css/email-inline.scss */
 .table-order-total {
   text-align: right;
 }
 
-/* line 208, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 208, theme-infobam/web/css/email-inline.scss */
 .table-order-gift-title {
   padding: 3px 8px;
   text-align: center;
   border: 1px solid #dddddd;
 }
 
-/* line 214, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 214, theme-infobam/web/css/email-inline.scss */
 .table-order-gift-message {
   font-size: 13px;
   border-bottom: 1px solid #dddddd;
 }
 
-/* line 221, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 221, theme-infobam/web/css/email-inline.scss */
 .table-order tfoot th,
 .table-order tfoot td {
   padding: 4px 8px;
   text-align: right;
 }
 
-/* line 228, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 228, theme-infobam/web/css/email-inline.scss */
 .table-order tfoot .subtotal th,
 .table-order tfoot .subtotal td {
   padding: 8px 8px 4px;
   border-top: 1px solid #dddddd;
 }
 
-/* line 241, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 241, theme-infobam/web/css/email-inline.scss */
 .notes {
   padding: 15px 20px 20px;
   font-size: 12px;
@@ -234,7 +234,7 @@ a img {
   color: #9f9f9f;
 }
 
-/* line 248, theme-magento2-frontend-infobam/web/css/email-inline.scss */
+/* line 248, theme-infobam/web/css/email-inline.scss */
 .notes a {
   text-decoration: none;
   color: #7d7d7d;

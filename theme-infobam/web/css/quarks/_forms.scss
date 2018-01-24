@@ -1,0 +1,868 @@
+//
+// Forms
+// --------------------------------------------------------------------------
+
+
+// Documentation
+// --------------------------------------------------------------------------
+
+/*doc
+---
+title: Forms
+name: forms
+category: Forms
+---
+Individual form controls automatically receive some global styling. All textual `<input>`, `<textarea>`, and `<select>` elements with `.form-control` are set to `width: 100%;` by default. Wrap labels and controls in .form-group for optimum spacing.
+
+```html_example
+<form>
+    <div class="form-group">
+        <label for="example-input">Input text</label>
+        <input type="text" id="example-input" class="form-control" placeholder="Placeholder">
+    </div>
+    <div class="form-group">
+        <label for="example-textarea">Textarea</label>
+        <textarea id="example-textarea" class="form-control" rows="6"></textarea>
+    </div>
+</form>
+```
+
+## Selects
+
+Select have differents styles between browsers and some styles that cannot be modified. To be able to be consistent across browsers and have a custom style, the the `select` is wrapped with a `form-control-select` class.
+
+```html_example
+<label for="example-select">Select</label>
+<div class="form-control-select">
+    <select id="example-select" class="form-control">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
+    </select>
+</div>
+```
+
+To be disabled, the custom `select` require to add a `disabled` class in addition to the `disabled` attribute on the `select` itself.
+
+```html_example
+<label for="example-select">Select</label>
+<div class="form-control-select disabled">
+    <select id="example-select" class="form-control" disabled>
+        <option>Option 1</option>
+        <option>Option 2</option>
+    </select>
+</div>
+```
+
+## Checkbox and radio
+
+Similar as the select, to have the same render across browsers we add the class `form-control-checkbox` for checkbox and `form-control-radio` for radio.
+
+```html_example
+<div class="form-control-checkbox">
+    <input type="checkbox" id="example-checkbox-1" value="">
+    <label for="example-checkbox-1">Option one</label>
+</div>
+```
+
+```html_example
+<div class="form-control-checkbox">
+    <input type="checkbox" id="example-checkbox-2" value="" checked>
+    <label for="example-checkbox-2">Option two is checked</label>
+</div>
+```
+
+```html_example
+<div class="form-control-checkbox">
+    <input type="checkbox" id="example-checkbox-3" value="" disabled>
+    <label for="example-checkbox-3">Option three is disabled</label>
+</div>
+```
+
+```html_example
+<div class="form-control-radio">
+    <input type="radio" name="example-radio" id="example-radio-1" value="">
+    <label for="example-radio-1">Option one</label>
+</div>
+```
+
+```html_example
+<div class="form-control-radio">
+    <input type="radio" name="example-radio" id="example-radio-2" value="" checked>
+    <label for="example-radio-2">Option two is checked</label>
+</div>
+```
+
+```html_example
+<div class="form-control-radio">
+    <input type="radio" name="example-radio" id="example-radio-3" value="" disabled>
+    <label for="example-radio-3">Option three is disabled</label>
+</div>
+```
+
+## Form container
+
+A form can be visually delimited for better readability.
+
+```html_example
+<div class="form-container">
+    <div class="form-group">
+        <label for="container-example-input">Input text</label>
+        <input type="text" id="container-example-input" class="form-control">
+    </div>
+    <div class="form-submit">
+        <button type="submit" class="btn btn--primary">Submit</button>
+    </div>
+</div>
+```
+
+## Validation states
+
+There are two validation states: Success and error. To use, add `valid` or `mage-error` to any `input.form-control` element. A validation message error with the class `mage-error` can be added to give more information about the error.
+
+It use the classes used by Magento 2 in the default scripts, so Magento 2 will add the corresponding class by itself when form validation will perform.
+
+```html_example
+<div class="form-group">
+    <label for="example-input-success">Validation success</label>
+    <input type="text" id="example-input-success" class="form-control valid">
+</div>
+<div class="form-group">
+    <label for="example-input-error">Validation error</label>
+    <input type="text" id="example-input-error" class="form-control mage-error">
+    <div class="mage-error">Validation error message</div>
+</div>
+```
+*/
+
+
+// Variables
+// --------------------------------------------------------------------------
+
+$input-bg:                       #fff;
+$input-color:                    $text-color;
+$input-border:                   #d2d2d2;
+$input-border-focus:             $color-primary;
+$input-color-placeholder:        rgba($text-color, .3);
+$input-height:                   40px;
+
+$input-padding-vertical:         8px;
+$input-padding-horizontal:       16px;
+
+$input-checkbox-border-color:    #e3e2e2;
+
+$form-group-margin:              8px;
+
+$label-color:                    $color-gray-dark;
+
+$input-disabled-opacity:         .6;
+$cursor-disabled:                not-allowed;
+
+
+// Mixins
+// --------------------------------------------------------------------------
+
+@mixin form-control-validation($border-color: $color-primary) {
+    border-color: $border-color;
+
+    &:focus {
+        border-color: darken($border-color, 10%);
+    }
+}
+
+
+// Normalize
+// --------------------------------------------------------------------------
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    // Chrome and Firefox set a `min-width min-content` on fieldsets, so we
+    // reset that to ensure it behaves more like a standard block element.
+    min-width: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    margin: 0 0 $input-padding-vertical;
+    padding: 0;
+    font-size: $font-size-base + .1rem;
+    font-style: normal;
+    letter-spacing: .5px;
+    line-height: inherit;
+    color: $label-color;
+    border: 0;
+}
+
+label {
+    display: inline-block;
+    font-weight: normal;
+}
+
+// Override content-box in Normalize (* isn't specific enough)
+input[type="search"] {
+    box-sizing: border-box;
+}
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9; // IE8-9
+    line-height: normal;
+}
+
+// Set the height of file controls to match text inputs
+input[type="file"] {
+    display: block;
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+// Set cursor for select to highlight the action
+select {
+    cursor: pointer;
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+    height: auto;
+}
+
+// Adjust output element
+output {
+    display: block;
+    padding-top: 7px;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $input-color;
+}
+
+
+// Form container
+//
+// To give a provide a frame for better form readability.
+// --------------------------------------------------------------------------
+
+.form-container {
+    @media (min-width: $screen-sm-min) {
+        max-width: 700px;
+        margin: 0 0 32px;
+        padding: 32px;
+        border: 1px solid $color-gray-light;
+        border-radius: 5px;
+    }
+}
+
+
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms.
+// --------------------------------------------------------------------------
+
+.form-group {
+    margin-bottom: $form-group-margin;
+
+    @media (min-width: $screen-sm-min) {
+        margin-bottom: $form-group-margin * 2;
+    }
+}
+
+.form-group__nested {
+    margin: 8px 0 0;
+
+    label {
+        @include sr-only();
+    }
+}
+
+
+// Label
+//
+// Default label styles
+// --------------------------------------------------------------------------
+
+label,
+.label {
+    margin: 0 0 $input-padding-vertical;
+    font-family: $font-family-base;
+    font-size: $font-size-base + .1rem;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: .5px;
+    color: $color-gray-dark;
+    cursor: pointer;
+
+    em {
+        font-size: $font-size-small;
+        font-style: italic;
+        font-weight: normal;
+        text-transform: lowercase;
+    }
+}
+
+
+// Common form controls
+//
+// Shared size and type resets for form controls. Apply `.form-control` to
+// any of the following form controls:
+//
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+// --------------------------------------------------------------------------
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: $input-height; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+    padding: $input-padding-vertical $input-padding-horizontal;
+    font-size: 1.6rem; // To avoid zoom on focus on iOS
+    font-weight: 600;
+    line-height: 1;
+    color: $input-color;
+    background-color: $input-bg;
+    background-image: none; // Reset unusual Firefox-on-Android default style see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid $input-border;
+    border-radius: $input-height;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+    // Customize the `:focus` state
+    &:focus {
+        border-color: $input-border-focus;
+        outline: 0;
+    }
+
+    // Placeholder
+    &::placeholder {
+        font-family: $font-family-base;
+        color: $input-color-placeholder;
+        opacity: 1; // Override Firefox's unusual default opacity
+    }
+
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't
+    // be disabled if the fieldset is disabled. Due to implementation
+    // difficulty, we don't honor that edge case we style them as disabled
+    // anyway.
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        opacity: $input-disabled-opacity;
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: $cursor-disabled;
+    }
+
+    &.valid {
+        &[type="text"],
+        &[type="email"],
+        &[type="password"] {
+            padding-right: $input-padding-horizontal + $input-height;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 57 40'%3E%3Cpath fill='%2361D2B9' d='M13.3 0L57 0 57 40 0 40 13.3 0ZM39.7 13.3C39.4 13.1 39.1 13 38.7 13 38.3 13 38 13.2 37.8 13.5L29.2 23.7 24.7 18.3C24.5 18 24.1 17.8 23.8 17.8 23.4 17.8 23.1 17.9 22.8 18.1 22.5 18.3 22.4 18.7 22.3 19 22.3 19.4 22.4 19.7 22.7 20L28.1 26.6C28.4 26.9 28.8 27.1 29.2 27.1 29.2 27.1 29.2 27.1 29.2 27.1 29.2 27.1 29.2 27.1 29.3 27.1 29.3 27.1 29.3 27.1 29.4 27.1 29.5 27 29.5 27 29.6 27 29.6 27 29.6 27 29.7 27 29.9 26.9 30.1 26.8 30.3 26.6L39.8 15.2C40.3 14.7 40.3 13.8 39.7 13.3'/%3E%3C/svg%3E");
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+    }
+
+    &.mage-error {
+        @include form-control-validation($color-quinary);
+
+        &[type="text"],
+        &[type="email"],
+        &[type="password"] {
+            padding-right: $input-padding-horizontal + $input-height;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 57 40'%3E%3Cpath fill='%23EE385C' d='M13.3 0L57 0 57 40 0 40 13.3 0ZM29.5 21.5C29.5 22 29.1 22.4 28.7 22.4 28.2 22.4 27.8 22 27.8 21.5L27.8 18.9C27.8 18.4 28.2 18 28.7 18 29.1 18 29.5 18.4 29.5 18.9L29.5 21.5ZM28.7 25.4C28.2 25.4 27.8 25 27.8 24.5 27.8 24 28.2 23.6 28.7 23.6 29.1 23.6 29.5 24 29.5 24.5 29.5 25 29.1 25.4 28.7 25.4L28.7 25.4ZM37.6 27.5L29 11.2C28.9 10.9 28.5 10.9 28.3 11.2L19.7 27.5C19.6 27.9 19.8 28.2 20.1 28.2L37.2 28.2C37.5 28.2 37.7 27.9 37.6 27.5L37.6 27.5Z'/%3E%3C/svg%3E");
+            background-position: 100% 50%;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+
+    // More adjusted font-size for supported browsers
+    @media (pointer: fine) {
+        font-size: $font-size-base + .1rem;
+    }
+}
+
+// Reset height for `textarea`s
+textarea.form-control {
+    height: auto;
+    border-radius: $input-height - 20px;
+}
+
+
+// Search inputs in iOS
+//
+// This overrides the extra rounded corners on search inputs in iOS so that
+// our `.form-control` class can properly style them. Note that this cannot
+// simply be added to `.form-control` as it's not specific enough.
+// --------------------------------------------------------------------------
+
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+
+// Special styles for iOS temporal inputs
+//
+// In Mobile Safari, setting `display block` on temporal inputs causes the
+// text within the input to become vertically misaligned. As a workaround,
+// we set a pixel line-height that matches the given height of the input,
+// but only for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
+// --------------------------------------------------------------------------
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"] {
+        line-height: $input-height;
+    }
+}
+
+
+// Select
+// --------------------------------------------------------------------------
+
+.form-control-select {
+    position: relative;
+
+    .form-control {
+        padding-right: $input-padding-horizontal + 24px;
+        color: $input-color;
+        appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &.active {
+            color: $input-color;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        width: 12px;
+        height: 12px;
+        background-color: transparent;
+        border: 2px solid $text-color;
+        border-width: 0 2px 2px 0;
+        border-radius: 2px;
+        transform: rotate(45deg);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &.disabled {
+        &::after {
+            opacity: .2;
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        &::after {
+            top: 11px;
+            width: 14px;
+            height: 14px;
+            border-width: 0 3px 3px 0;
+            border-radius: 3px;
+        }
+    }
+}
+
+
+// Checkboxes and radios
+// --------------------------------------------------------------------------
+
+.form-control-checkbox {
+    &:not(:last-of-type) {
+        margin: 0 0 $form-group-margin;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+
+        &:checked {
+            & + label {
+                &::before {
+                    background-color: $color-secondary;
+                    border-color: $color-secondary;
+                }
+
+                &::after {
+                    display: block;
+                }
+            }
+        }
+
+        &:disabled {
+            & + label {
+                opacity: .6;
+                cursor: $cursor-disabled;
+            }
+
+            &:not(:checked) + label {
+                &::before {
+                    background-color: lighten($color-gray-light, 5%);
+                }
+            }
+        }
+    }
+
+    label {
+        position: relative;
+        margin: 0;
+        padding: 0 0 0 24px;
+        font-weight: normal;
+        line-height: 20px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            background-color: $input-bg;
+            border: 2px solid $input-checkbox-border-color;
+            transition: background-color .1s ease-in-out, border-color .1s ease-in-out;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 3px;
+            display: none;
+            width: 10px;
+            height: 6px;
+            border: 2px solid #fff;
+            border-width: 0 0 2px 2px;
+            transform: rotate(-45deg);
+            z-index: 10;
+        }
+    }
+}
+
+.form-control-radio {
+    @extend .form-control-checkbox;
+
+    input {
+        &:checked {
+            & + label {
+                &::before {
+                    background-color: $color-secondary;
+                    border-color: $input-checkbox-border-color;
+                }
+            }
+        }
+    }
+
+    label {
+        &::before {
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: none;
+        }
+    }
+}
+
+
+// Specific label for change billing address
+// --------------------------------------------------------------------------
+
+    .form-control-checkbox-hidden input:checked + label::after, .form-control-radio-hidden input:checked + label::after{
+        display: none; margin: 0;
+    }
+    .form-control-checkbox-hidden label::before, .form-control-radio-hidden label::before{
+        display: none; margin: 0;
+    }
+    .form-control-checkbox-hidden input[type="radio"], .form-control-checkbox-hidden input[type="checkbox"]{
+        display: none;
+    }
+    .form-control-checkbox-hidden label{
+        margin: 0; color: white; font-weight: 600;
+    }
+    .hidden-checkbox-button{
+        margin: 0;
+    }
+
+
+// Form Guest identification order
+// --------------------------------------------------------------------------
+
+.form-info_guest{
+    width: 50%;
+    margin-left: auto; margin-right: auto;
+    text-align: center;
+
+    font-weight: bold;
+    letter-spacing: .8px;
+    line-height: 1.3;
+
+    .admin__legend {
+        font-size: 2rem;
+    }
+}
+
+.form-guest_order{
+    width: 50%;
+    margin-left: auto; margin-right: auto;
+
+    .admin__legend{
+        padding: 0 24px;
+        font-size: 2.8rem;
+        font-weight: bold;
+        letter-spacing: .8px;
+        line-height: 1.3;
+    }
+
+    label{
+        padding: 0 24px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: .8px;
+        line-height: 1.3;
+        margin-top: 10px;
+        margin-left: 9%;
+    }
+
+    #quick-search-type-id{
+        width: 80%; margin-left: auto; margin-right: auto;
+        text-align: center; text-align-last:center;
+        height: 30px;
+        background: transparent;
+        padding: 5px;
+        font-size: 16px;
+        line-height: 1;
+        border-radius: 40px;
+        height: 34px;
+    }
+
+    input[type=text], input[type=email]{
+        text-align: center;
+        width: 80%; margin-left: auto; margin-right: auto;
+    }
+
+    .control{
+        text-align: center;
+    }
+
+    .btn-form-guest{
+        margin-top: 20px; margin-bottom: 35px;
+        text-align: center;
+    }
+}
+
+// Form quantity
+// --------------------------------------------------------------------------
+
+.form-quantity {
+    position: relative;
+
+    .form-control {
+        text-align: center;
+
+        -moz-appearance: textfield;
+        &[type="number"]::-webkit-outer-spin-button,
+        &[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}
+
+.form-quantity-plus,
+.form-quantity-minus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $input-height;
+    height: $input-height;
+    padding: 0;
+    @include text-hide();
+    font-size: $font-size-small;
+    line-height: 1;
+    background-color: $color-secondary;
+    border: 0;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: background-color .15s ease-in-out;
+    z-index: 1;
+
+    @include hover() {
+        background-color: darken($color-secondary, 20%);
+    }
+}
+
+.form-quantity-plus {
+    left: auto;
+    right: 0;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: #fff;
+        border-radius: 2px;
+        transform: translate(-50%,-50%);
+    }
+
+    &::before {
+        width: 50%;
+        height: 2px;
+    }
+
+    &::after {
+        width: 2px;
+        height: 50%;
+    }
+}
+
+.form-quantity-minus {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 2px;
+        transform: translate(-50%,-50%);
+    }
+}
+
+
+// Submit
+// --------------------------------------------------------------------------
+
+.form-submit {
+    display: flex;
+    width: 100%;
+    margin-top: ($form-group-margin * 2);
+    text-align: right;
+
+    .btn {
+        flex-shrink: 0;
+        margin: ($form-group-margin * 2) 0 0;
+    }
+
+    @media (max-width: $screen-xs-max) {
+        flex-direction: column;
+        align-items: center;
+
+        .btn {
+            &:not(.btn--link) {
+                width: 100%;
+            }
+        }
+
+        .btn--link {
+            order: 1;
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        align-items: center;
+        justify-content: flex-end;
+
+        .btn {
+            margin-left: ($form-group-margin * 2);
+        }
+
+        .btn--primary
+        .btn--secondary {
+            order: 1;
+        }
+    }
+}
+
+
+// Help and error text
+//
+// Apply to any element you wish to create light text for placement immediately
+// below a form control. Use for general help, formatting, or instructional text.
+// --------------------------------------------------------------------------
+
+.form-help,
+div.mage-error {
+    display: block; // account for any element using help-block
+    margin: $input-padding-vertical 0 0 $input-padding-horizontal;
+    font-size: $font-size-base;
+    color: lighten($text-color, 25%); // lighten the text some for contrast
+}
+
+div.mage-error {
+    color: $color-quinary;
+}
+
+//.form-help .form-help-account
+// To accentuate the message account creation to the customer
+
+.form-help .form-help-account{
+    font-weight: 700; font-style: italic; font-size: $font-size-base + .5rem;
+    color: #61d2b9;
+}
+
+
+// Form strength
+//
+// Indicate the strength of a password for example, with a color indication
+// --------------------------------------------------------------------------
+
+.form-strength {
+    .password-strength-meter-1 & {
+        color: $color-error;
+    }
+
+    .password-strength-meter-2 & {
+        color: $color-warning;
+    }
+
+    .password-strength-meter-3 &,
+    .password-strength-meter-4 & {
+        color: $color-success;
+    }
+}

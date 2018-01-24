@@ -1,51 +1,51 @@
-/* line 12, theme-magento2-frontend-infobam/web/css/print.scss */
+/* line 12, theme-infobam/web/css/print.scss */
 .page-print {
   padding: 0;
   background-color: #fff;
 }
 
-/* line 17, theme-magento2-frontend-infobam/web/css/print.scss */
+/* line 17, theme-infobam/web/css/print.scss */
 .container {
   max-width: 1200px;
 }
 
-/* line 25, theme-magento2-frontend-infobam/web/css/print.scss */
+/* line 25, theme-infobam/web/css/print.scss */
 .logo {
   margin: 30px 0;
 }
 
 @media print {
-  /* line 33, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 33, theme-infobam/web/css/print.scss */
   html,
   body {
     height: auto;
   }
-  /* line 38, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 38, theme-infobam/web/css/print.scss */
   body {
     max-width: 100%;
     margin: 0;
   }
-  /* line 43, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 43, theme-infobam/web/css/print.scss */
   .container {
     max-width: inherit;
     margin: 0;
     padding: 0;
   }
-  /* line 52, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 52, theme-infobam/web/css/print.scss */
   * {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 6pt !important;
     color: #000;
   }
-  /* line 58, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 58, theme-infobam/web/css/print.scss */
   .wrapper {
     flex: none;
   }
-  /* line 65, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 65, theme-infobam/web/css/print.scss */
   .logo {
     margin: 0 0 10pt;
   }
-  /* line 68, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 68, theme-infobam/web/css/print.scss */
   .logo img {
     width: 120pt;
     font-family: Helvetica, Arial, sans-serif;
@@ -53,53 +53,53 @@
     font-weight: bold;
     line-height: 1;
   }
-  /* line 79, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 79, theme-infobam/web/css/print.scss */
   .section-head {
     margin: 0 0 8pt;
   }
-  /* line 83, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 83, theme-infobam/web/css/print.scss */
   .section-head__title {
     font-size: 10pt !important;
   }
-  /* line 87, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 87, theme-infobam/web/css/print.scss */
   .section-head__status {
     margin: 5pt 0 0;
   }
-  /* line 93, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 93, theme-infobam/web/css/print.scss */
   .table {
     margin: 0;
   }
-  /* line 99, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 99, theme-infobam/web/css/print.scss */
   .account-invoice__ref {
     margin: 0 0 8pt;
     font-size: 7pt !important;
   }
-  /* line 104, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 104, theme-infobam/web/css/print.scss */
   .account-invoice__infos {
     margin: 0 0 8pt;
   }
-  /* line 108, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 108, theme-infobam/web/css/print.scss */
   .account-invoice__blocks {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
   }
-  /* line 115, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 115, theme-infobam/web/css/print.scss */
   .account-invoice__block {
     width: calc(50% - 8pt);
     margin: 0 0 8pt;
   }
-  /* line 120, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 120, theme-infobam/web/css/print.scss */
   .account-invoice__heading {
     padding: 4pt;
     color: #323232;
   }
-  /* line 125, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 125, theme-infobam/web/css/print.scss */
   .account-invoice__content {
     padding: 4pt;
   }
-  /* line 131, theme-magento2-frontend-infobam/web/css/print.scss */
+  /* line 131, theme-infobam/web/css/print.scss */
   .account-invoice__table thead th {
     color: #323232;
   }

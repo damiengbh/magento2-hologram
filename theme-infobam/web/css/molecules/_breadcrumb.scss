@@ -1,0 +1,131 @@
+//
+// Breadcrumb
+// --------------------------------------------------------------------------
+
+
+// Documentation
+// --------------------------------------------------------------------------
+
+/*doc
+---
+title: Breadcrumb
+name: breadcrumb
+category: Navigation
+---
+Breadcrumb use microdata, useful for search engine optimisation. The position store in a `meta` tag need to be updated.
+
+```html_example
+<ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+    <li class="breadcrumb__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <a href="#" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+    </li>
+    <li class="breadcrumb__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <a href="#" itemprop="item"><span itemprop="name">Catalogue</span></a>
+        <meta itemprop="position" content="2">
+    </li>
+    <li class="breadcrumb__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <a href="#" itemprop="item"><span itemprop="name">Amortisseurs</span></a>
+        <meta itemprop="position" content="3">
+    </li>
+    <li class="breadcrumb__item" itemscope="" itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+        <strong itemprop="item"><span itemprop="name">Amortisseurs avant</span></strong>
+        <meta itemprop="position" content="4">
+    </li>
+</ol>
+```
+*/
+
+
+// Base
+// --------------------------------------------------------------------------
+
+.breadcrumb {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    @include list-unstyled();
+
+    @media (max-width: $screen-xs-max) {
+        margin: 8px (-$gutter-sm / 2) 0;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        flex-wrap: wrap;
+        margin: 30px 0;
+    }
+}
+
+
+// Item
+// --------------------------------------------------------------------------
+
+.breadcrumb__item {
+    @media (max-width: $screen-xs-max) {
+       &:not(:nth-last-child(n+2)) {
+            display: none;
+        }
+
+        a {
+            position: absolute; // a tester
+            top: 1px;
+            left: 0;
+            display: block;
+            width: 58px;
+            height: 60px;
+            @include text-hide();
+            background-color: $color-gray-lighter;
+            @include border-right-radius(40%);
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 16px;
+                height: 2px;
+                background-color: $color-gray-darker;
+                border-radius: 2px;
+                transform: translate(-50%,-50%);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: calc(50% - 3px);
+                width: 11px;
+                height: 11px;
+                background-color: transparent;
+                border: 2px solid $color-gray-darker;
+                border-width: 0 2px 2px 0;
+                transform: translate(-50%,-50%) rotate(135deg);
+            }
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        &:not(:last-child) {
+            &::after {
+                content: ">";
+                margin: 0 5px 0 0;
+                color: $color-gray;
+            }
+        }
+        a {
+            margin: 0 4px 0 0;
+            letter-spacing: .2px;
+            text-decoration: none;
+            color: $color-gray;
+
+            @include hover() {
+                color: $link-hover-color;
+            }
+        }
+
+        strong {
+            font-weight: 600;
+        }
+    }
+}
