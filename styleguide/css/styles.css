@@ -1533,6 +1533,278 @@ th {
 */
 /*doc
 ---
+title: Colors
+name: 00_Colors
+category: Colors
+---
+
+```html_example
+<div class="colors">
+    <div class="bgcolor-primary">
+        <p>Primary color</p>
+    </div>
+    <div class="bgcolor-primary-light">
+        <p>Primary light color</p>
+    </div>
+    <div class="bgcolor-secondary">
+        <p>Secondary color</p>
+    </div>
+    <div class="bgcolor-tertiary">
+        <p>Tertiary color</p>
+    </div>
+    <div class="bgcolor-quaternary">
+        <p>Quaternary color</p>
+    </div>
+    <div class="bgcolor-quinary">
+        <p>Quinary color</p>
+    </div>
+    <div class="bgcolor-senary">
+        <p>Senary color</p>
+    </div>
+    <div class="bgcolor-info">
+        <p>Info color</p>
+    </div>
+    <div class="bgcolor-success">
+        <p>Success color</p>
+    </div>
+    <div class="bgcolor-warning">
+        <p>Warning color</p>
+    </div>
+    <div class="bgcolor-error">
+        <p>Error color</p>
+    </div>
+</div>
+```
+
+*/
+/* line 77, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* line 83, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin: 0 25px 75px 0;
+}
+
+/* line 89, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div p {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: -60px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 99, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-primary {
+  background: #ffab07;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-primary::before {
+  content: "#ffab07";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 102, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-primary-light {
+  background: #fde4bd;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-primary-light::before {
+  content: "#fde4bd";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 105, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-secondary {
+  background: #61d2b9;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-secondary::before {
+  content: "#61d2b9";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 108, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-tertiary {
+  background: #68dec4;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-tertiary::before {
+  content: "#68dec4";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 111, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-quaternary {
+  background: #ff8900;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-quaternary::before {
+  content: "#ff8900";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 114, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-quinary {
+  background: #ee385c;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-quinary::before {
+  content: "#ee385c";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 117, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-senary {
+  background: #2898f8;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-senary::before {
+  content: "#2898f8";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 120, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-info {
+  background: #5bc0de;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-info::before {
+  content: "#5bc0de";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 123, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-success {
+  background: #5cb85c;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-success::before {
+  content: "#5cb85c";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 126, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-warning {
+  background: #f0ad4e;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-warning::before {
+  content: "#f0ad4e";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/* line 129, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-error {
+  background: #d9534f;
+}
+
+/* line 62, theme-magento2-frontend-infobam/web/css/atoms/_colors.scss */
+.colors > div.bgcolor-error::before {
+  content: "#d9534f";
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 10px;
+  left: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+/*doc
+---
 title: Buttons
 name: 03_Buttons
 category: Buttons
