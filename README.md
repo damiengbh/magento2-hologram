@@ -1,5 +1,6 @@
 # HOLOGRAM POUR MAGENTO 2
 
+Petit guide pour l'install et le déploiement d'Hologram
 
 ## INSTALL D'HOLOGRAM EN LOCAL
 
