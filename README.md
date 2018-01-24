@@ -84,8 +84,6 @@ Lancer :
 
 
 ## SOURCES
-Front-end Starter Kit
-https://github.com/jsheffers/frontend_starter_kit
 
 TUTO GULP ET HOLOGRAM :
 https://blog.thebrickfactory.com/2016/09/generate-style-guide-using-hologram-gulp/
@@ -95,3 +93,6 @@ https://www.npmjs.com/package/gulp-hologram
 
 SITE OFFICIEL
 http://trulia.github.io/hologram/
+
+UN BON KIT FRONT
+https://github.com/jsheffers/frontend_starter_kit
