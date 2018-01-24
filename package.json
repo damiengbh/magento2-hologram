@@ -1,7 +1,8 @@
 {
-  "name": "plugins",
+  "name": "hologram-magento",
   "version": "0.0.1",
   "devDependencies": {
+    "browser-sync": "^2.6.4",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-hologram": "^1.2.3",
