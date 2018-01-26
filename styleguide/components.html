@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Content &ndash; Styleguide Infobam</title>
+    <title>Components &ndash; Styleguide Infobam</title>
 
     <!-- Styleguide CSS -->
     <link rel="stylesheet" href="styles/hgt-syntax.css">
@@ -37,14 +37,14 @@
             Text
           </a>
           
-          <a href="content.html"
-             class="hgt-pagehead-nav-item selected">
-            Content
-          </a>
-          
           <a href="buttons.html"
              class="hgt-pagehead-nav-item ">
             Buttons
+          </a>
+          
+          <a href="components.html"
+             class="hgt-pagehead-nav-item selected">
+            Components
           </a>
           
           <a href="navigation.html"
@@ -55,6 +55,11 @@
           <a href="forms.html"
              class="hgt-pagehead-nav-item ">
             Forms
+          </a>
+          
+          <a href="pages.html"
+             class="hgt-pagehead-nav-item ">
+            Pages
           </a>
           
           <a href="index.html"
@@ -75,10 +80,6 @@
             <nav class="hgt-menu">
               
                 
-                  <a href="#02_General" class="hgt-menu-item">General</a>
-                
-              
-                
                   <a href="#blocks" class="hgt-menu-item">Blocks</a>
                 
               
@@ -87,11 +88,11 @@
                 
               
                 
-                  <a href="#store" class="hgt-menu-item">Store</a>
+                  <a href="#tables" class="hgt-menu-item">Tables</a>
                 
               
                 
-                  <a href="#tables" class="hgt-menu-item">Tables</a>
+                  <a href="#tooltip" class="hgt-menu-item">Tooltip</a>
                 
               
             </nav>
@@ -100,8 +101,6 @@
 
         <div class="hgt-column three-fourths">
           <div class="hgt-content">
-<h1 id="02_General" class="styleguide">General</h1>
-<p class="styleguide">When creating a new cms page, be sure to set the <code class="styleguide">1 column</code> template in order to have the correct layout applied. This is valid for all the CMS templates.</p><p class="styleguide">The heading will be displayed at the top of the page. Most of the time, we recommend to match the page title and the heading.</p>
 <h1 id="blocks" class="styleguide">Blocks</h1>
 <p class="styleguide">This allow to organize CMS page content in blocks with image and text. On large screens the blocks are listed tow by two.</p><div class="codeExample">
   <div class="exampleOutput">
@@ -390,154 +389,6 @@
   </div>
 </div>
 
-<h1 id="store" class="styleguide">Store</h1>
-<p class="styleguide">This page model can be used to display informations about a store.</p><p class="styleguide">The map is optional and it will require a Google Maps Embed API key to work. You can learn more about Google Maps Embed API here : https://developers.google.com/maps/documentation/embed/guide
-This tool can be useful to generate the map: https://developers.google.com/maps/documentation/embed/start</p><div class="codeExample">
-  <div class="exampleOutput">
-    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-<p>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-<div class="page-store">
-    <div class="page-store__infos">
-        <div class="page-store__address">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="{{view url="images/icons.svg#icon-localisation"}}"></use>
-            </svg>
-            GBH
-            <br>
-            Acajou
-            <br>
-            97232 Le Lamentin
-        </div>
-        <div class="page-store__phone">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="{{view url="images/icons.svg#icon-phone"}}"></use>
-            </svg>
-            01 02 03 04 05
-        </div>
-        <div class="page-store__openingtime">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="{{view url="images/icons.svg#icon-store"}}"></use>
-            </svg>
-            <strong>Horaires d’ouverture</strong>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>Lundi</th>
-                        <td>9h - 12h</td>
-                        <td>14h - 18h</td>
-                    </tr>
-                    <tr>
-                        <th>Mardi</th>
-                        <td>9h - 12h</td>
-                        <td>14h - 18h</td>
-                    </tr>
-                    <tr>
-                        <th>Mercredi</th>
-                        <td>9h - 12h</td>
-                        <td>14h - 18h</td>
-                    </tr>
-                    <tr>
-                        <th>Jeudi</th>
-                        <td>9h - 12h</td>
-                        <td>14h - 18h</td>
-                    </tr>
-                    <tr>
-                        <th>Vendredi</th>
-                        <td>9h - 12h</td>
-                        <td>14h - 18h</td>
-                    </tr>
-                    <tr>
-                        <th>Samedi</th>
-                        <td>9h - 12h</td>
-                        <td>-</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <div class="page-store__map">
-        <div class="page-store__map-iframe">
-            <iframe class="embed" width="600" height="300" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=GBH,+Le+Lamentin&amp;key=YOUR_API_KEY"
-                allowfullscreen=""></iframe>
-        </div>
-    </div>
-</div>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight">
-      <pre><span class="nt">&lt;p&gt;</span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p&gt;</span>Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__infos"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__address"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{view url="</span><span class="na">images</span><span class="err">/</span><span class="na">icons</span><span class="err">.</span><span class="na">svg</span><span class="err">#</span><span class="na">icon-localisation</span><span class="err">"}}"</span><span class="nt">&gt;&lt;/use&gt;</span>
-            <span class="nt">&lt;/svg&gt;</span>
-            GBH
-            <span class="nt">&lt;br&gt;</span>
-            Acajou
-            <span class="nt">&lt;br&gt;</span>
-            97232 Le Lamentin
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__phone"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{view url="</span><span class="na">images</span><span class="err">/</span><span class="na">icons</span><span class="err">.</span><span class="na">svg</span><span class="err">#</span><span class="na">icon-phone</span><span class="err">"}}"</span><span class="nt">&gt;&lt;/use&gt;</span>
-            <span class="nt">&lt;/svg&gt;</span>
-            01 02 03 04 05
-        <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__openingtime"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"icon"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{view url="</span><span class="na">images</span><span class="err">/</span><span class="na">icons</span><span class="err">.</span><span class="na">svg</span><span class="err">#</span><span class="na">icon-store</span><span class="err">"}}"</span><span class="nt">&gt;&lt;/use&gt;</span>
-            <span class="nt">&lt;/svg&gt;</span>
-            <span class="nt">&lt;strong&gt;</span>Horaires d’ouverture<span class="nt">&lt;/strong&gt;</span>
-            <span class="nt">&lt;table&gt;</span>
-                <span class="nt">&lt;tbody&gt;</span>
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Lundi<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Mardi<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Mercredi<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Jeudi<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Vendredi<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>14h - 18h<span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;th&gt;</span>Samedi<span class="nt">&lt;/th&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>9h - 12h<span class="nt">&lt;/td&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>-<span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-                <span class="nt">&lt;/tbody&gt;</span>
-            <span class="nt">&lt;/table&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__map"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-store__map-iframe"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;iframe</span> <span class="na">class=</span><span class="s">"embed"</span> <span class="na">width=</span><span class="s">"600"</span> <span class="na">height=</span><span class="s">"300"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">src=</span><span class="s">"https://www.google.com/maps/embed/v1/place?q=GBH,+Le+Lamentin&amp;amp;key=YOUR_API_KEY"</span>
-                <span class="na">allowfullscreen=</span><span class="s">""</span><span class="nt">&gt;&lt;/iframe&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
 <h1 id="tables" class="styleguide">Tables</h1>
 <p class="styleguide">To add basic styling to a table, add the base class <code class="styleguide">table</code> to any <code class="styleguide">&lt;table&gt;</code>. It may seem super redundant, but it&#39;s to avoid conflicts with other use of the <code class="styleguide">&lt;table&gt;</code> markup.</p><p class="styleguide">You can add <code class="styleguide">table--responsive</code> class to <code class="styleguide">table</code>s and it will make them mobile friendly by enabling horizontal scrolling. Only applies &lt;768px. Everything above that will display normally. This isn&#39;t included with the <code class="styleguide">table</code> class because it will depend on the table size. Also other possibilities exist to make <code class="styleguide">&lt;table&gt;</code> mobile friendly, this one is just the more generic.</p><div class="codeExample">
   <div class="exampleOutput">
@@ -605,6 +456,19 @@ This tool can be useful to generate the map: https://developers.google.com/maps/
         <span class="nt">&lt;/tr&gt;</span>
     <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="tooltip" class="styleguide">Tooltip</h1>
+<p class="styleguide">The tooltip provide extra informations when it&#39;s hovered or clicked. It can be use in a <code class="styleguide">&lt;label&gt;</code>, for example, to give more information about the field.</p><p class="styleguide">The hidden text must be placed in the <code class="styleguide">aria-label</code> attribute.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button" class="tooltip" aria-label="This text provide extra informations" role="tooltip">Help</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"tooltip"</span> <span class="na">aria-label=</span><span class="s">"This text provide extra informations"</span> <span class="na">role=</span><span class="s">"tooltip"</span><span class="nt">&gt;</span>Help<span class="nt">&lt;/button&gt;</span></pre>
     </div>
   </div>
 </div>

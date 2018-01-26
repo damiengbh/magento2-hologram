@@ -1,0 +1,122 @@
+//
+// Messages
+// --------------------------------------------------------------------------
+
+
+// Documentation
+// --------------------------------------------------------------------------
+
+/*doc
+---
+title: Messages
+name: messages
+category: Forms
+---
+Message is used to display information to the user. This message can be an information, a success message, a warning, or a error.
+
+```html_example
+<div class="message message--info">
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+</div>
+
+<div class="message message--success">
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+</div>
+
+<div class="message message--warning">
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+</div>
+
+<div class="message message--error">
+    Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+</div>
+```
+*/
+
+
+// Variables
+// --------------------------------------------------------------------------
+
+$state-info-text:      #31708f;
+$state-info-bg:        #d9edf7;
+$state-info-border:    darken(adjust-hue($state-info-bg, -10), 7%);
+
+$state-success-text:   #3c763d;
+$state-success-bg:     #dff0d8;
+$state-success-border: darken(adjust-hue($state-success-bg, -10), 5%);
+
+$state-warning-text:   #8a6d3b;
+$state-warning-bg:     #fcf8e3;
+$state-warning-border: darken(adjust-hue($state-warning-bg, -10), 5%);
+
+$state-error-text:     #a94442;
+$state-error-bg:       #f2dede;
+$state-error-border:   darken(adjust-hue($state-error-bg, -10), 5%);
+
+
+// Mixins
+// --------------------------------------------------------------------------
+
+@mixin message-variant($background, $border, $text-color) {
+    color: $text-color;
+    background-color: $background;
+    border-color: $border;
+
+    a {
+        color: darken($text-color, 10%);
+    }
+}
+
+
+// Base styles
+// --------------------------------------------------------------------------
+
+.message {
+    padding: 10px 15px;
+    margin: 20px 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+
+    ul {
+        @include list-unstyled();
+    }
+
+    li {
+        margin: 0 0 5px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    p {
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    a {
+        font-weight: bold;
+    }
+}
+
+
+// Alternate styles
+// --------------------------------------------------------------------------
+
+.message--info {
+    @include message-variant($state-info-bg, $state-info-border, $state-info-text);
+}
+
+.message--success {
+    @include message-variant($state-success-bg, $state-success-border, $state-success-text);
+}
+
+.message--warning {
+    @include message-variant($state-warning-bg, $state-warning-border, $state-warning-text);
+}
+
+.message--error {
+    @include message-variant($state-error-bg, $state-error-border, $state-error-text);
+}

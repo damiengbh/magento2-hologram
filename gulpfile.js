@@ -8,7 +8,8 @@ var $ = require('gulp-load-plugins')({camelize: true});
 
 //var sass_path = 'theme-github/**/*.scss'; //Github Theme
 //var sass_path = 'theme-rapidoto/web/css/**/*.scss'; //Rapidoto Theme
-var sass_path = 'theme-infobam/web/css/**/*.scss'; //Infobam Theme
+//var sass_path = 'theme-infobam/web/css/**/*.scss'; //Infobam Theme
+var sass_path = 'theme-mecabam/scss/**/*.scss'; //Mecabam Theme
 var sass_dest = 'styleguide/css';
 var sass_dest_clear = 'styleguide';
 

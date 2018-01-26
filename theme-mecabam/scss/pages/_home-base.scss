@@ -1,0 +1,41 @@
+//
+// Homepage section
+// --------------------------------------------------------------------------
+
+.homepage-section {
+    margin: 18px 0 32px;
+
+    @media (min-width: $screen-sm-min) {
+        margin: 48px 0;
+    }
+}
+
+
+// Homepage section Title
+// --------------------------------------------------------------------------
+
+.homepage-section__title {
+    position:relative;
+    display: block;
+    width:100%;
+    margin: 0 0 16px;
+    font-size: $font-size-large + .2rem;
+    font-weight: 300;
+    letter-spacing: .5px;
+    text-align: center;
+    &::after {
+        content:'';
+        position:absolute;
+        bottom:-20px;
+        left: calc(50% - 45px);
+        width:90px;
+        height:2px;
+        background:$color-primary;
+    } 
+
+    @media (min-width: $screen-sm-min) {
+        margin: 0 0 32px;
+        font-size: $font-size-h2;
+        letter-spacing: .8px;
+    }
+}

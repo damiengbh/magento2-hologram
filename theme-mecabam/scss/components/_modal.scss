@@ -1,0 +1,337 @@
+//
+// Modal
+// --------------------------------------------------------------------------
+
+
+// Variables
+// --------------------------------------------------------------------------
+
+$modal-inner-padding:       32px;
+
+$modal-content-bg:          #fff;
+
+$modal-backdrop-bg:         $color-gray-darker;
+$modal-backdrop-opacity:    .75;
+
+$modal-xs:                  460px;
+$modal-sm:                  720px;
+$modal-md:                  880px;
+
+
+// Body class
+// --------------------------------------------------------------------------
+
+.modal-open,
+._has-modal {
+    overflow: hidden;
+
+    .modal,
+    .modal-popup,
+    .modal-slide {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+
+// Modal container
+// --------------------------------------------------------------------------
+
+.modal,
+.modal-popup,
+.modal-slide {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+    z-index: $zindex-fixed + 20;
+
+    .modal-dialog,
+    .modal-inner-wrap {
+        transform: translate(0,-25%);
+        transition: transform .3s ease-out;
+    }
+
+    &.show,
+    &._show {
+        display: block;
+
+        .modal-dialog,
+        .modal-inner-wrap {
+            transform: translate(0,0);
+        }
+    }
+}
+
+.modal-popup,
+.modal-slide {
+    display: block;
+    visibility: hidden;
+
+    .modal-inner-wrap {
+        transition: transform .3s ease-out, visibility .3s ease;
+    }
+
+    &._show {
+        visibility: visible;
+    }
+}
+
+
+// Modal inner
+// --------------------------------------------------------------------------
+
+.modal-dialog,
+.modal-inner-wrap {
+    position: relative;
+    width: auto;
+    margin: 80px 10px 10px;
+
+    @media (min-width: $screen-xs-min) {
+        width: $modal-xs;
+        margin: 80px auto;
+    }
+
+    @media (min-width: $screen-sm-min) {
+        width: $modal-sm;
+        margin: 160px auto;
+    }
+
+    @media (min-width: $screen-md-min) {
+        width: $modal-md;
+    }
+}
+
+
+// Modal sizes
+// --------------------------------------------------------------------------
+
+.modal--xs {
+    @media (min-width: $screen-sm-min) {
+        .modal-dialog,
+        .modal-inner-wrap {
+            width: $modal-xs;
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        .modal-dialog,
+        .modal-inner-wrap {
+            width: $modal-xs;
+        }
+    }
+}
+
+.modal-popup {
+    @media (min-width: $screen-sm-min) {
+        .modal-dialog,
+        .modal-inner-wrap {
+            width: $modal-xs + 60px;
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        .modal-dialog,
+        .modal-inner-wrap {
+            width: $modal-xs + 60px;
+        }
+    }
+}
+
+.googlemap-frame{
+    height: 500px;
+    width: 80%;
+}
+
+// Modal content
+// --------------------------------------------------------------------------
+
+.modal-content,
+.modal-inner-wrap {
+    &:not([data-role="content"]) {
+        position: relative;
+        padding: $modal-inner-padding / 2;
+        color: $text-color;
+        background-color: $modal-content-bg;
+        background-clip: padding-box;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+        border-radius: 5px;
+        outline: 0;
+
+        @media (min-width: $screen-sm-min) {
+            padding: $modal-inner-padding + 5px;
+        }
+    }
+}
+
+
+// Modal header
+// --------------------------------------------------------------------------
+
+.modal-header {
+    margin: 0 0 32px;
+}
+
+
+// Modal title
+// --------------------------------------------------------------------------
+
+.modal-title {
+    display: block;
+    margin: 0 0 16px;
+    font-size: $font-size-large + .2rem;
+    font-weight: bold;
+    letter-spacing: .8px;
+    text-transform: none;
+    text-align: center;
+}
+
+
+// Modal body
+// --------------------------------------------------------------------------
+
+.modal-body,
+.modal-content[data-role="content"] {
+    position: relative;
+    font-size: $font-size-base + .1rem;
+    letter-spacing: .5px;
+    text-align: center;
+
+    .form-group {
+        padding: 0 24px;
+        text-align: left;
+    }
+}
+
+
+// Modal footer
+// --------------------------------------------------------------------------
+
+.modal-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 24px 0 0;
+    text-align: center;
+
+    a,
+    button {
+        margin: 8px 0 0;
+    }
+
+    .action-primary,
+    .action-secondary {
+        @extend .btn;
+    }
+
+    .action-primary {
+        @extend .btn--primary;
+    }
+
+    .action-secondary {
+        @extend .btn--link;
+        order: 1;
+    }
+    a,
+    .action-secondary {
+        font-size: $font-size-base + .1rem;
+        letter-spacing: .5px;
+        color: $color-gray;
+
+        @include hover() {
+            color: $link-hover-color;
+        }
+    }
+}
+
+
+// Measure scrollbar
+// --------------------------------------------------------------------------
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+
+
+// Modal close
+// --------------------------------------------------------------------------
+
+.modal-close,
+.action-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    line-height: 1;
+    color: $link-color;
+    background-color: $color-gray-darker;
+    border: 0;
+    border-radius: 50%;
+    outline: 0;
+    transition: background-color .15s ease-in-out;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 2px;
+    }
+
+    &::before {
+        transform: translate(-50%,-50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%,-50%) rotate(-45deg);
+    }
+
+    @include hover() {
+        background-color: #000;
+    }
+
+    span {
+        @include sr-only();
+    }
+}
+
+
+// Modal backdrop
+// --------------------------------------------------------------------------
+
+.modal-backdrop,
+.modals-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: $modal-backdrop-bg;
+    transition: opacity .15s linear;
+    z-index: $zindex-fixed + 10;
+
+    &.show {
+        opacity: $modal-backdrop-opacity;
+    }
+}
+
+.modals-overlay {
+    opacity: $modal-backdrop-opacity;
+}

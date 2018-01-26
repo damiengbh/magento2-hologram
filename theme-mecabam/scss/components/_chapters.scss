@@ -1,0 +1,290 @@
+//
+// Page chapters
+// --------------------------------------------------------------------------
+
+
+// Documentation
+// --------------------------------------------------------------------------
+
+/*doc
+---
+title: Chapters
+name: chapters
+category: Components
+---
+This page may include anchors or links to other pages. However, this is optional.
+
+The content can be organized into an accordion if the HTMl markup is respected according to the example below:
+
+```html_example
+<div class="page-chapters">
+    <div class="page-chapters__aside">
+        <button type="button" class="page-chapters__summary" data-toggle="collapse" data-target="#chapters-navigation" aria-expanded="false"
+            aria-controls="chapters-navigation">Sommaire</button>
+        <ul id="chapters-navigation" class="page-chapters__navigation collapse">
+            <li>
+                <a class="active" href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+            <li>
+                <a href="#">Maecenas faucibus mollis interdum</a>
+            </li>
+        </ul>
+    </div>
+    <div id="chapters" class="page-chapters__main" role="tablist">
+        <div class="page-chapters__panel" data-collapse="group">
+            <div id="chapters-head-1" class="page-chapters__panel-head" role="tab">
+                <h2 class="page-chapters__panel-title">
+                    <a href="#chapters-content-1" data-toggle="collapse" data-parent="#chapters" aria-expanded="true" aria-controls="chapters-content-1"
+                        role="button">Duis mollis est non commodo luctus nisi erat porttitor ligula</a>
+                </h2>
+            </div>
+            <div id="chapters-content-1" class="page-chapters__panel-content collapse in" aria-labelledby="chapters-head-1"
+                aria-expanded="true" role="tabpanel">
+                <div class="page-chapters__panel-text">
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-chapters__panel" data-collapse="group">
+            <div id="chapters-head-2" class="page-chapters__panel-head" role="tab">
+                <h2 class="page-chapters__panel-title">
+                    <a href="#chapters-content-2" data-toggle="collapse" data-parent="#chapters" aria-expanded="false" aria-controls="chapters-content-2"
+                        role="button">Duis mollis est non commodo luctus nisi erat porttitor ligula</a>
+                </h2>
+            </div>
+            <div id="chapters-content-2" class="page-chapters__panel-content collapse" aria-labelledby="chapters-head-2"
+                aria-expanded="false" role="tabpanel">
+                <div class="page-chapters__panel-text">
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-chapters__panel" data-collapse="group">
+            <div id="chapters-head-3" class="page-chapters__panel-head" role="tab">
+                <h2 class="page-chapters__panel-title">
+                    <a href="#chapters-content-3" data-toggle="collapse" data-parent="#chapters" aria-expanded="false" aria-controls="chapters-content-3"
+                        role="button">Duis mollis est non commodo luctus nisi erat porttitor ligula</a>
+                </h2>
+            </div>
+            <div id="chapters-content-3" class="page-chapters__panel-content collapse" aria-labelledby="chapters-head-3"
+                aria-expanded="false" role="tabpanel">
+                <div class="page-chapters__panel-text">
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula
+                        ut id elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+```
+*/
+
+
+// Chapters
+// --------------------------------------------------------------------------
+
+.page-chapters {
+    @media (min-width: $screen-md-min) {
+        display: flex;
+        width: 100%;
+    }
+}
+
+
+// Aside
+// --------------------------------------------------------------------------
+
+.page-chapters__aside {
+    margin: 0 0 24px;
+
+    @media (min-width: $screen-md-min) {
+        flex: 1 0 auto;
+        width: 280px;
+        margin: 0 32px 0 0;
+    }
+}
+
+
+// Summary
+// --------------------------------------------------------------------------
+
+.page-chapters__summary {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 8px 40px 8px 16px;
+    font-size: $font-size-large + .2rem;
+    font-weight: 300;
+    letter-spacing: .5px;
+    text-align: left;
+    background-color: lighten($color-gray-light, 5%);
+    border: 0;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 21px;
+        right: 16px;
+        width: 11px;
+        height: 2px;
+        background-color: currentColor;
+        border-radius: 2px;
+        transform: rotate(-45deg);
+        transition: transform .1s ease;
+    }
+
+    &::after {
+        right: 23px;
+        transform: rotate(45deg);
+    }
+
+    &[aria-expanded="true"] {
+        font-weight: bold;
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        display: none;
+    }
+}
+
+
+.page-chapters__navigation {
+    @include list-unstyled();
+    border-top: 1px solid $color-gray-light;
+    background-color: lighten($color-gray-light, 5%);
+
+    a {
+        position: relative;
+        display: block;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: color .1s ease-in-out, background-color .1s ease-in-out;
+
+        &.active {
+            color: #fff;
+            background-color: $color-primary;
+        }
+
+        @include hover() {
+            color: #fff;
+            background-color: $color-primary;
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        display: block !important;
+        height: auto !important;
+        padding: 8px 0;
+        border: 0;
+    }
+}
+
+
+// Panel
+// --------------------------------------------------------------------------
+
+.page-chapters__panel {
+    &:not(:first-child) {
+        margin: 16px 0 0;
+    }
+}
+
+.page-chapters__panel-title {
+    margin: 0;
+
+    a {
+        position: relative;
+        display: block;
+        padding: 8px 48px 8px 16px;
+        font-size: $font-size-large;
+        font-weight: bold;
+        letter-spacing: .5px;
+        text-decoration: none;
+        background-color: lighten($color-gray-light, 5%);
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 17px;
+            right: 16px;
+            width: 11px;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 2px;
+            transform: rotate(-45deg);
+            transition: transform .1s ease;
+        }
+
+        &::after {
+            right: 23px;
+            transform: rotate(45deg);
+        }
+
+        &[aria-expanded="true"] {
+            font-weight: bold;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+
+        @include hover() {
+            color: currentColor;
+        }
+    }
+
+    @media (min-width: $screen-md-min) {
+        a {
+            font-size: $font-size-large +.2rem;;
+        }
+    }
+}
+
+.page-chapters__panel-content {
+    @include clearfix();
+}
+
+.page-chapters__panel-text {
+    margin: 8px 0 0;
+
+    p {
+        &:last-child {
+            margin: 0;
+        }
+    }
+}

@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /* Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. */
-/* line 7, theme-infobam/web/css/email.scss */
+/* line 7, theme-mecabam/scss/email.scss */
 * {
   font-family: sans-serif !important;
 }
 
 /* Remove spaces around the email design added by some email clients. */
 /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
-/* line 15, theme-infobam/web/css/email.scss */
+/* line 15, theme-mecabam/scss/email.scss */
 html,
 body {
   margin: 0 auto !important;
@@ -17,20 +17,20 @@ body {
 }
 
 /* Stops email clients resizing small text. */
-/* line 26, theme-infobam/web/css/email.scss */
+/* line 26, theme-mecabam/scss/email.scss */
 * {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 /* Centers email on Android 4.4 */
-/* line 34, theme-infobam/web/css/email.scss */
+/* line 34, theme-mecabam/scss/email.scss */
 div[style*="margin: 16px 0"] {
   margin: 0 !important;
 }
 
 /* Stops Outlook from adding extra spacing to tables. */
-/* line 41, theme-infobam/web/css/email.scss */
+/* line 41, theme-mecabam/scss/email.scss */
 table,
 td {
   mso-table-lspace: 0pt !important;
@@ -38,7 +38,7 @@ td {
 }
 
 /* Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
-/* line 50, theme-infobam/web/css/email.scss */
+/* line 50, theme-mecabam/scss/email.scss */
 table {
   border-spacing: 0 !important;
   border-collapse: collapse !important;
@@ -46,19 +46,19 @@ table {
   margin: 0 auto !important;
 }
 
-/* line 57, theme-infobam/web/css/email.scss */
+/* line 57, theme-mecabam/scss/email.scss */
 table table table {
   table-layout: auto;
 }
 
 /* Uses a better rendering method when resizing images in IE. */
-/* line 64, theme-infobam/web/css/email.scss */
+/* line 64, theme-mecabam/scss/email.scss */
 img {
   -ms-interpolation-mode: bicubic;
 }
 
 /* A work-around for iOS meddling in triggered links. */
-/* line 71, theme-infobam/web/css/email.scss */
+/* line 71, theme-mecabam/scss/email.scss */
 .mobile-link--footer a,
 a[x-apple-data-detectors] {
   color: inherit !important;
@@ -66,14 +66,14 @@ a[x-apple-data-detectors] {
 }
 
 /* Prevents underlining the button text in Windows 10 */
-/* line 80, theme-infobam/web/css/email.scss */
+/* line 80, theme-mecabam/scss/email.scss */
 .button-link {
   text-decoration: none !important;
 }
 
 /* French specific: Useless media querie to prevent the first media querie to be ignored on LaPoste Mobile web client. Also, for the first specification all properties must set to !important to not be ignored on LaPoste, Orange, SFR and Voilà web client */
 @media screen and (max-width: 0) {
-  /* line 88, theme-infobam/web/css/email.scss */
+  /* line 88, theme-mecabam/scss/email.scss */
   body {
     margin: 0 !important;
   }
@@ -83,32 +83,32 @@ a[x-apple-data-detectors] {
 /* Create one of these media queries for each additional viewport size you'd like to fix */
 @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
   /* iPhone 6 and 6+ */
-  /* line 99, theme-infobam/web/css/email.scss */
+  /* line 99, theme-mecabam/scss/email.scss */
   .container {
     min-width: 375px !important;
   }
 }
 
 /* Links styles */
-/* line 111, theme-infobam/web/css/email.scss */
+/* line 111, theme-mecabam/scss/email.scss */
 a {
   text-decoration-skip: ink;
   transition: color 0.1s ease-in-out;
 }
 
-/* line 115, theme-infobam/web/css/email.scss */
+/* line 115, theme-mecabam/scss/email.scss */
 a:focus, a:hover {
   color: #e49700 !important;
 }
 
 /* Hover styles for buttons */
-/* line 124, theme-infobam/web/css/email.scss */
+/* line 124, theme-mecabam/scss/email.scss */
 .button-td,
 .button-a {
   transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 }
 
-/* line 128, theme-infobam/web/css/email.scss */
+/* line 128, theme-mecabam/scss/email.scss */
 .button-td:hover,
 .button-a:hover {
   background: #ff8207 !important;
@@ -117,25 +117,25 @@ a:focus, a:hover {
 
 /* Media Queries */
 @media screen and (max-width: 600px) {
-  /* line 138, theme-infobam/web/css/email.scss */
+  /* line 138, theme-mecabam/scss/email.scss */
   .container {
     width: 100% !important;
     margin: auto !important;
   }
   /* Forces table cells into full-width rows. */
-  /* line 144, theme-infobam/web/css/email.scss */
+  /* line 144, theme-mecabam/scss/email.scss */
   .force-col {
     display: block;
     padding-right: 0 !important;
   }
-  /* line 149, theme-infobam/web/css/email.scss */
+  /* line 149, theme-mecabam/scss/email.scss */
   .col {
     float: none !important;
     width: 100% !important;
     margin-bottom: 10px !important;
     padding-bottom: 10px !important;
   }
-  /* line 156, theme-infobam/web/css/email.scss */
+  /* line 156, theme-mecabam/scss/email.scss */
   .separator {
     display: none;
   }
@@ -143,16 +143,16 @@ a:focus, a:hover {
 
 /* Give content more room on mobile */
 @media screen and (max-width: 480px) {
-  /* line 165, theme-infobam/web/css/email.scss */
+  /* line 165, theme-mecabam/scss/email.scss */
   .content {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
-  /* line 170, theme-infobam/web/css/email.scss */
+  /* line 170, theme-mecabam/scss/email.scss */
   .table-order-img {
     padding: 0 !important;
   }
-  /* line 174, theme-infobam/web/css/email.scss */
+  /* line 174, theme-mecabam/scss/email.scss */
   .table-order-img img {
     display: none;
   }
