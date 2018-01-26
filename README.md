@@ -13,30 +13,30 @@ https://rubyinstaller.org/downloads/
 https://rubygems.org/pages/download?locale=fr
 
 ### 3. Installer hologram via Gem
-gem install hologram
+`gem install hologram`
 
 
 ## INIT DU REPO
 #### 1. Installer les dépendances (dont gulp-hologram)
-> npm install
+`npm install`
 
 #### 2. Lancer gulp (watch est dans la task gulp) 
-> gulp
+`gulp`
 
 #### 3. Aller sur 
-> http://localhost:3000
+http://localhost:3000
 
 #### 4. Penser à configurer Wamp en mettant comme chemin 
-> CHEMINDUREPO/styleguide
+CHEMINDUREPO/styleguide
 
 
 ## COMMANDES POUR DEPLOYER LE STYLEGUIDE
 
 CLEAN THE STYLEGUIDE
-> gulp clear
+`gulp clear`
 
 BUILD THE STYLEGUIDE
-> hologram -c hologram_config.yml
+`hologram -c hologram_config.yml`
 
 
 
@@ -44,7 +44,7 @@ BUILD THE STYLEGUIDE
 https://github.com/wearecube/hologram-github-theme
 
 Lancer :
-> npm install --save-dev hologram-github-theme
+`npm install --save-dev hologram-github-theme`
 
 
 ## SOURCES
