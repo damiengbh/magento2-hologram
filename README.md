@@ -2,7 +2,7 @@
 
 Petit guide pour l'install et le déploiement d'Hologram
 
-## INSTALL D'HOLOGRAM
+## Install d'Hologram
 
 ### 1. Installer Ruby
 
@@ -16,7 +16,7 @@ https://rubygems.org/pages/download?locale=fr
 `gem install hologram`
 
 
-## INIT DU REPO
+## Déployer le styleguide avec Hologram
 #### 1. Installer les dépendances (dont gulp-hologram)
 `npm install`
 
@@ -33,7 +33,7 @@ http://localhost:3000
 CHEMINDUREPO/styleguide
 
 
-## COMMANDES POUR DEPLOYER LE STYLEGUIDE
+## Commandes
 
 #### Supprimer le répertoire styleguide
 `gulp clear`
@@ -46,14 +46,14 @@ CHEMINDUREPO/styleguide
 (attention, cela crée le fichier hologram_config.yml avec les paramètres par défaut)
 
 
-## THEME HOLOGRAM DE BASE
+## Thème de base Hologram
 https://github.com/wearecube/hologram-github-theme
 
 Lancer :
 `npm install --save-dev hologram-github-theme`
 
 
-## SOURCES
+## Sources
 
 TUTO GULP ET HOLOGRAM :
 https://blog.thebrickfactory.com/2016/09/generate-style-guide-using-hologram-gulp/
