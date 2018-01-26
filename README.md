@@ -20,24 +20,30 @@ https://rubygems.org/pages/download?locale=fr
 #### 1. Installer les dépendances (dont gulp-hologram)
 `npm install`
 
-#### 2. Lancer gulp (watch est dans la task gulp) 
+#### 2. Créer le styleguide
+`hologram -c hologram_config.yml`
+
+#### 3. Lancer gulp (watch est dans la task gulp) 
 `gulp`
 
-#### 3. Aller sur 
+#### 4. Aller sur 
 http://localhost:3000
 
-#### 4. Penser à configurer Wamp en mettant comme chemin 
+#### 5. Pour du local , penser à configurer Wamp en mettant comme chemin 
 CHEMINDUREPO/styleguide
 
 
 ## COMMANDES POUR DEPLOYER LE STYLEGUIDE
 
-CLEAN THE STYLEGUIDE
+#### Supprimer le répertoire styleguide
 `gulp clear`
 
-BUILD THE STYLEGUIDE
+#### Créer le styleguide
 `hologram -c hologram_config.yml`
 
+#### Init le styleguide 
+`hologram init`
+(attention, cela crée le fichier hologram_config.yml avec les paramètres par défaut)
 
 
 ## THEME HOLOGRAM DE BASE
