@@ -4,15 +4,15 @@ Petit guide pour l'install et le déploiement d'Hologram
 
 ## INSTALL D'HOLOGRAM
 
-### 1. INSTALLATION DE RUBY
+### 1. Installer Ruby
 
 Télécharger la dernière version du RubyInstaller : 
 https://rubyinstaller.org/downloads/
 
-### 2. INSTALLER RUBYGEM
+### 2. Installer RubyGem
 https://rubygems.org/pages/download?locale=fr
 
-### 3. INSTALL D'HOLOGRAM VIA GEM
+### 3. Installer hologram via Gem
 gem install hologram
 
 
